@@ -62,3 +62,11 @@ profile.json.gz
 .codex/skills/*
 !.codex/skills/load-github-action-thread/
 !.codex/skills/load-github-action-thread/**
+
+# Jupyter stuff
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
