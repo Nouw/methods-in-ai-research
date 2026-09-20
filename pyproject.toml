@@ -15,5 +15,6 @@ dependencies = [
     "jupyterlab>=4.6.3",
     "pandas>=2.3.3",
     # Tornado 6.5.9 breaks Jupyter Server 2.21.0 static file handling.
+    "scikit-learn>=1.7.2",
     "tornado>=6.5.8,<6.5.9",
 ]

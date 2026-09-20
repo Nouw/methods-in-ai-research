@@ -35,3 +35,7 @@ for example:
 ```python
 from methods_in_ai_research.processing import preprocess
 ```
+
+# Notes
+
+The grouped split uses StratifiedGroupKFold with normalized utterances as groups, ensuring that duplicate utterances never occur in both partitions. Because groups cannot be divided, the grouped split results in an approximately 84/16 division. The reqmore label is absent from the grouped test set because all five examples share the same utterance (more) and must remain together.
