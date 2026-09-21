@@ -3,9 +3,11 @@ import logging
 from methods_in_ai_research.evaluation import evaluate_classifier, save_evaluation
 import pandas as pd
 from pathlib import Path
-from methods_in_ai_research.models.classifier import Classifier
+from methods_in_ai_research.models.classifier import BagOfWordsClassifier, Classifier
+from methods_in_ai_research.models.linear_svm import LinearSVMBagOfWordsClassifier
+from methods_in_ai_research.models.logistic_regression import LogisticRegressionBagOfWordsClassifier
 from methods_in_ai_research.models.rule_based import RuleBasedClassifier
-from methods_in_ai_research.processing import preprocess, load_dialog_acts
+from methods_in_ai_research.processing import load_dialog_acts
 from methods_in_ai_research.splitting import create_original_split, create_grouped_split, log_split_summary, validate_split, save_split
 
 logger = logging.getLogger(__name__)
@@ -19,7 +21,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--train-path", help="Existing training CSV used without --split")
     parser.add_argument("--test-path", help="Existing test CSV used without --split")
     parser.add_argument("--split-strategy", choices=("original", "grouped", "both"), default="both")
-    parser.add_argument("--classifier", choices=("rule-based",), default="rule-based")
+    parser.add_argument("--classifier", choices=("rule-based", "bow-logistic-regression", "bow-linear-svm"), default="rule-based")
     parser.add_argument("--split-output-dir", default="artifacts/splits")
     parser.add_argument("--results-dir", default="results")
 
@@ -42,6 +44,12 @@ def parse_arguments() -> argparse.Namespace:
 def create_classifier(name: str) -> Classifier:
     if name == "rule-based":
         return RuleBasedClassifier()
+
+    if name == "bow-logistic-regression":
+        return LogisticRegressionBagOfWordsClassifier()
+    
+    if name == "bow-linear-svm":
+        return LinearSVMBagOfWordsClassifier()
 
     raise ValueError(f"Unknown classifier: {name}")
 
@@ -75,7 +83,7 @@ def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Pat
 
     return splits
 
-def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame, test_data: pd.DataFrame, *, train_enabled: bool, evaluate_enabled: bool, results_directory: str | Path) -> None:
+def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame | None, test_data: pd.DataFrame | None, *, train_enabled: bool, evaluate_enabled: bool, results_directory: str | Path) -> None:
     classifier = create_classifier(classifier_name)
 
     if train_enabled:
@@ -102,6 +110,22 @@ def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame
         logger.info(f"Balanced accuracy: {result.summary['balanced_accuracy']}")
         logger.info(f"Macro F1: {result.summary['macro_f1']}")
         logger.info(f"Results saved to {results_directory}")
+
+        if isinstance(classifier, BagOfWordsClassifier):
+            oov = classifier.calculate_oov_statistics(
+                test_data["utterance"]
+            )
+
+            logger.info("Test tokens: %d", oov.total_tokens)
+            logger.info("OOV tokens: %d", oov.oov_tokens)
+            logger.info(
+                "OOV token rate: %.2f%%",
+                oov.oov_token_rate * 100,
+            )
+            logger.info(
+                "All-OOV utterances: %d",
+                oov.zero_vector_utterances,
+            )
  
 
 
