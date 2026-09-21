@@ -1,6 +1,7 @@
 import re
 from collections.abc import Iterable
 
+from methods_in_ai_research.models.classifier import Classifier
 from methods_in_ai_research.processing import normalize_utterance
 
 def contains_phrase(
@@ -18,10 +19,7 @@ def contains_phrase(
 
     return False
 
-class RuleBasedClassifier:
-    def predict(self, utterances: Iterable[str]) -> list[str]:
-        return [self.predict_one(utterance) for utterance in utterances]
-
+class RuleBasedClassifier(Classifier): 
     def predict_one(self, utterance: str) -> str:
         text = normalize_utterance(utterance)
 
@@ -45,8 +43,6 @@ class RuleBasedClassifier:
 
         if contains_phrase(text, ("hello", "hi")):
             return "hello"
-
-        #TODO: add inform rule
 
         if contains_phrase(text, ("no",)):
             return "negate"
