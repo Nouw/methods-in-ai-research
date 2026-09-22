@@ -9,8 +9,11 @@ from methods_in_ai_research.models.logistic_regression import LogisticRegression
 from methods_in_ai_research.models.rule_based import RuleBasedClassifier
 from methods_in_ai_research.processing import load_dialog_acts
 from methods_in_ai_research.splitting import create_original_split, create_grouped_split, log_split_summary, validate_split, save_split
+from transformers.utils import logging as hf_logging
 
 logger = logging.getLogger(__name__)
+
+classifier_names = ("rule-based", "bow-logistic-regression", "bow-linear-svm", "embedding-logistic-regression", "embedding-linear-svm",)
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Methods in AI Research dialog-act classification pipeline.")
@@ -21,7 +24,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--train-path", help="Existing training CSV used without --split")
     parser.add_argument("--test-path", help="Existing test CSV used without --split")
     parser.add_argument("--split-strategy", choices=("original", "grouped", "both"), default="both")
-    parser.add_argument("--classifier", choices=("rule-based", "bow-logistic-regression", "bow-linear-svm", "embedding-logistic-regression", "embedding-linear-svm"), default="rule-based")
+    parser.add_argument("--classifier", choices=(*classifier_names, "all"), default="rule-based")
     parser.add_argument("--split-output-dir", default="artifacts/splits")
     parser.add_argument("--results-dir", default="results")
 
@@ -90,52 +93,52 @@ def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Pat
     return splits
 
 def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame | None, test_data: pd.DataFrame | None, *, train_enabled: bool, evaluate_enabled: bool, results_directory: str | Path) -> None:
-    classifier = create_classifier(classifier_name)
+    if classifier_name == "all":
+        for name in classifier_names:
+            run_pipeline(classifier_name=name, split_name=split_name, train_data=train_data, test_data=test_data, train_enabled=train_enabled, evaluate_enabled=evaluate_enabled, results_directory=results_directory)
+    else:
+        classifier = create_classifier(classifier_name)
 
-    if train_enabled:
-        if train_data is None:
-            raise ValueError("Training data is required")
+        if train_enabled:
+            if train_data is None:
+                raise ValueError("Training data is required")
 
-        logger.info(f"Training {classifier_name} on the {split_name}")
+            logger.info(f"Training {classifier_name} on the {split_name}")
 
-        classifier.fit(train_data["utterance"], train_data["label"])
+            classifier.fit(train_data["utterance"], train_data["label"])
 
-    if evaluate_enabled:
-        if test_data is None:
-            raise ValueError("Test data is required")
+        if evaluate_enabled:
+            if test_data is None:
+                raise ValueError("Test data is required")
 
-        logger.info(f"Evaluating {classifier_name} on the {split_name} split")
+            logger.info(f"Evaluating {classifier_name} on the {split_name} split")
 
-        result = evaluate_classifier(classifier, test_data)
+            result = evaluate_classifier(classifier, test_data)
 
-        results_directory = (Path(results_directory) / classifier_name / split_name)
+            results_directory = (Path(results_directory) / classifier_name / split_name)
 
-        save_evaluation(result, results_directory)
+            save_evaluation(result, results_directory)
+            logger.info("===[EVALUATION]===")
+            logger.info(f"Accuracy: {result.summary['accuracy']}")
+            logger.info(f"Balanced accuracy: {result.summary['balanced_accuracy']}")
+            logger.info(f"Macro F1: {result.summary['macro_f1']}")
+            logger.info(f"Results saved to {results_directory}")
 
-        logger.info(f"Accuracy: {result.summary['accuracy']}")
-        logger.info(f"Balanced accuracy: {result.summary['balanced_accuracy']}")
-        logger.info(f"Macro F1: {result.summary['macro_f1']}")
-        logger.info(f"Results saved to {results_directory}")
+            if isinstance(classifier, BagOfWordsClassifier):
+                oov = classifier.calculate_oov_statistics(
+                    test_data["utterance"]
+                )
 
-        if isinstance(classifier, BagOfWordsClassifier):
-            oov = classifier.calculate_oov_statistics(
-                test_data["utterance"]
-            )
-
-            logger.info("Test tokens: %d", oov.total_tokens)
-            logger.info("OOV tokens: %d", oov.oov_tokens)
-            logger.info(
-                "OOV token rate: %.2f%%",
-                oov.oov_token_rate * 100,
-            )
-            logger.info(
-                "All-OOV utterances: %d",
-                oov.zero_vector_utterances,
-            )
- 
-
-
-
+                logger.info("Test tokens: %d", oov.total_tokens)
+                logger.info("OOV tokens: %d", oov.oov_tokens)
+                logger.info(
+                    "OOV token rate: %.2f%%",
+                    oov.oov_token_rate * 100,
+                )
+                logger.info(
+                    "All-OOV utterances: %d",
+                    oov.zero_vector_utterances,
+                )
 
 def main():
     args = parse_arguments() 
@@ -155,6 +158,20 @@ def main():
 
     
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+    # Disable huggingface logs
+    hf_logging.set_verbosity_error()
+    hf_logging.disable_default_handler()
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("httpcore").setLevel(logging.WARNING)
+    logging.getLogger("huggingface_hub").setLevel(logging.WARNING)
+
+    logging.basicConfig(
+            level=logging.INFO,
+            format="%(levelname)s: %(message)s",
+            handlers=[
+                logging.FileHandler("app.log"),
+                logging.StreamHandler()
+            ],
+        )
 
     main()

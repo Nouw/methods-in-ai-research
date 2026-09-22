@@ -12,6 +12,8 @@ from sklearn.metrics import (
     classification_report,
     confusion_matrix,
     f1_score,
+    precision_score,
+    recall_score,
 )
 
 @dataclass(frozen=True)
@@ -42,6 +44,10 @@ def evaluate_classifier(classifier: Classifier, data: pd.DataFrame):
 
     summary = {
             "examples": len(expected),
+            "precision_macro": float(precision_score(expected, predicted, average="macro", zero_division=0)),
+            "precision_weighted": float(precision_score(expected, predicted, average="macro", zero_division=0)),
+            "recall_macro": float(recall_score(expected, predicted, average="macro", zero_division=0)),
+            "recall_weighted": float(recall_score(expected, predicted, average="weighted", zero_division=0)),
             "accuracy": float(accuracy_score(expected, predicted)),
             "balanced_accuracy": float(balanced_accuracy_score(expected, predicted)),
             "macro_f1": float(f1_score(expected, predicted, average="macro", zero_division=0)),

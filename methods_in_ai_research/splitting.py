@@ -103,6 +103,7 @@ def log_split_summary(
     train_percentage = 100 * len(train_data) / total
     test_percentage = 100 * len(test_data) / total
     
+    logger.info("===[SPLIT SUMMARY]===")
     logger.info(f"{name} split:")
     logger.info(f"Training {len(train_data)} records {train_percentage}")
     logger.info(f"Testing {len(test_data)} records {test_percentage}") 
