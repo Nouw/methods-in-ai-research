@@ -2,7 +2,7 @@
   "summary": {
     "examples": 3600,
     "precision_macro": 0.9100404276282954,
-    "precision_weighted": 0.9100404276282954,
+    "precision_weighted": 0.9839088221806512,
     "recall_macro": 0.9484423947912519,
     "recall_weighted": 0.9836111111111111,
     "accuracy": 0.9836111111111111,

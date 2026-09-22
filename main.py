@@ -1,9 +1,11 @@
 import argparse
 import logging
+import pickle
 from methods_in_ai_research.evaluation import evaluate_classifier, save_evaluation
 import pandas as pd
 from pathlib import Path
-from methods_in_ai_research.models.classifier import BagOfWordsClassifier, Classifier
+from methods_in_ai_research.interactive import run_interactive
+from methods_in_ai_research.models.classifier import BagOfWordsClassifier, Classifier, EmbeddingClassifier
 from methods_in_ai_research.models.linear_svm import LinearSVMBagOfWordsClassifier, LinearSVMEmbeddingClassifier
 from methods_in_ai_research.models.logistic_regression import LogisticRegressionBagOfWordsClassifier, LogisticRegressionEmbeddingClassifier
 from methods_in_ai_research.models.rule_based import RuleBasedClassifier
@@ -15,34 +17,42 @@ logger = logging.getLogger(__name__)
 
 classifier_names = ("rule-based", "bow-logistic-regression", "bow-linear-svm", "embedding-logistic-regression", "embedding-linear-svm",)
 
+DEFAULT_DATA_PATH = "data/dailog_acts.dat"
+DEFAULT_MODELS_DIRECTORY = "artifacts/models"
+DEFAULT_RESULTS_DIRECTORY = "results"
+DEFAULT_SPLITS_DIRECTORY = "artifacts/splits"
+
+def add_classifier_argument(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--classifier", choices=(*classifier_names, "all"), default="all")
+
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Methods in AI Research dialog-act classification pipeline.")
-    parser.add_argument("--split", action="store_true", help="Create new train/test splits from a raw .dat file")
-    parser.add_argument("--train", action="store_true", help="Train the selected classifier")
-    parser.add_argument("--evaluate", action="store_true", help="Evaluate the selected classifier")
-    parser.add_argument("--data-path", help="Raw .dat file used when --split is enabled")
-    parser.add_argument("--train-path", help="Existing training CSV used without --split")
-    parser.add_argument("--test-path", help="Existing test CSV used without --split")
-    parser.add_argument("--split-strategy", choices=("original", "grouped", "both"), default="both")
-    parser.add_argument("--classifier", choices=(*classifier_names, "all"), default="rule-based")
-    parser.add_argument("--split-output-dir", default="artifacts/splits")
-    parser.add_argument("--results-dir", default="results")
+    commands = parser.add_subparsers(dest="command", required=True)
 
-    args = parser.parse_args()
+    experiment_parser = commands.add_parser("experiment", help="Train and evaluate models on generated splits")
+    experiment_parser.add_argument("--data", default=DEFAULT_DATA_PATH)
+    experiment_parser.add_argument("--split-strategy", choices=("original", "grouped", "both"), default="both")
+    experiment_parser.add_argument("--results-dir", default=DEFAULT_RESULTS_DIRECTORY)
+    experiment_parser.add_argument("--save-splits", action="store_true")
+    experiment_parser.add_argument("--splits-dir", default=DEFAULT_SPLITS_DIRECTORY)
+    add_classifier_argument(experiment_parser)
 
-    if not any((args.split, args.train, args.evaluate)):
-        parser.error("Enable at least one of --split --train or --evaluate")
+    train_parser = commands.add_parser("train", help="Train and save final models")
+    train_parser.add_argument("--data", default=DEFAULT_DATA_PATH)
+    train_parser.add_argument("--models-dir", default=DEFAULT_MODELS_DIRECTORY)
+    add_classifier_argument(train_parser)
 
-    if args.split and not args.data_path:
-        parser.error("--split requires --data-path")
+    evaluate_parser = commands.add_parser("evaluate", help="Evaluate saved models on labeled data")
+    evaluate_parser.add_argument("data")
+    evaluate_parser.add_argument("--models-dir", default=DEFAULT_MODELS_DIRECTORY)
+    evaluate_parser.add_argument("--results-dir", default=DEFAULT_RESULTS_DIRECTORY)
+    add_classifier_argument(evaluate_parser)
 
-    if not args.split and args.train and not args.train_path:
-        parser.error("--train without --split requires --train_path")
+    interactive_parser = commands.add_parser("interactive", help="Classify utterances using saved models")
+    interactive_parser.add_argument("--models-dir", default=DEFAULT_MODELS_DIRECTORY)
+    add_classifier_argument(interactive_parser)
 
-    if not args.split and args.evaluate and not args.test_path:
-        parser.error("--evaluate without --split requires --test_path")
-
-    return args
+    return parser.parse_args()
 
 def create_classifier(name: str) -> Classifier:
     if name == "rule-based":
@@ -62,10 +72,100 @@ def create_classifier(name: str) -> Classifier:
 
     raise ValueError(f"Unknown classifier: {name}")
 
-def load_split(file_path: str | Path) -> pd.DataFrame:
-    return pd.read_csv(file_path, index_col="row_id", keep_default_na=False)
+def load_dataset(file_path: str | Path) -> pd.DataFrame:
+    path = Path(file_path)
 
-def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Path) -> dict[str, tuple[pd.DataFrame, pd.DataFrame]]:
+    if path.suffix.lower() == ".dat":
+        return load_dialog_acts(path)
+
+    if path.suffix.lower() == ".csv":
+        return pd.read_csv(path, index_col="row_id", keep_default_na=False)
+
+    raise ValueError(f"Unsupported dataset format: {path.suffix or '<none>'}. Expected .csv or .dat")
+
+def save_classifier(classifier_name: str, classifier: Classifier, file_path: str | Path) -> None:
+    path = Path(file_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    if isinstance(classifier, BagOfWordsClassifier):
+        state = {"pipeline": classifier.pipeline}
+    elif isinstance(classifier, EmbeddingClassifier):
+        state = {"estimator": classifier.estimator}
+    elif isinstance(classifier, RuleBasedClassifier):
+        state = {}
+    else:
+        raise TypeError(f"Unsupported classifier type: {type(classifier).__name__}")
+
+    artifact = {
+        "format_version": 1,
+        "classifier_name": classifier_name,
+        "state": state,
+    }
+
+    with path.open("wb") as model_file:
+        pickle.dump(artifact, model_file)
+
+def load_classifier(classifier_name: str, file_path: str | Path) -> Classifier:
+    path = Path(file_path)
+
+    if not path.is_file():
+        raise FileNotFoundError(f"Saved model not found: {path}")
+
+    with path.open("rb") as model_file:
+        artifact = pickle.load(model_file)
+
+    if not isinstance(artifact, dict) or artifact.get("format_version") != 1:
+        raise ValueError(f"Unsupported saved model format: {path}")
+
+    saved_classifier_name = artifact.get("classifier_name")
+
+    if saved_classifier_name != classifier_name:
+        raise ValueError(
+            f"Saved model contains {saved_classifier_name!r}, not {classifier_name!r}"
+        )
+
+    classifier = create_classifier(classifier_name)
+    state = artifact.get("state")
+
+    if not isinstance(state, dict):
+        raise ValueError(f"Saved model has invalid state: {path}")
+
+    if isinstance(classifier, BagOfWordsClassifier):
+        classifier.pipeline = state["pipeline"]
+    elif isinstance(classifier, EmbeddingClassifier):
+        classifier.estimator = state["estimator"]
+    elif not isinstance(classifier, RuleBasedClassifier):
+        raise TypeError(f"Unsupported classifier type: {type(classifier).__name__}")
+
+    return classifier
+
+def load_interactive_models(classifier_name: str, models_directory: str | Path) -> dict[str, Classifier]:
+    classifiers = {}
+    names = classifier_names if classifier_name == "all" else (classifier_name,)
+
+    for classifier_name in names:
+        model_path = Path(models_directory) / f"{classifier_name}.pkl"
+        logger.info(f"Loading {classifier_name} from {model_path}")
+        classifiers[classifier_name] = load_classifier(classifier_name, model_path)
+
+    return classifiers
+
+def resolve_model_path(
+    classifier_name: str,
+    split_name: str,
+    models_directory: str | Path | None,
+) -> Path | None:
+    if not models_directory:
+        return None
+
+    directory = Path(models_directory)
+
+    if split_name != "provided":
+        directory /= split_name
+
+    return directory / f"{classifier_name}.pkl"
+
+def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Path, *, save_splits: bool = False) -> dict[str, tuple[pd.DataFrame, pd.DataFrame]]:
     splits = {}
     
     if strategy in {"original", "both"}:
@@ -75,7 +175,8 @@ def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Pat
 
         log_split_summary("Original", data, train_data, test_data)
 
-        save_split(train_data, test_data, Path(output_directory) / "original")
+        if save_splits:
+            save_split(train_data, test_data, Path(output_directory) / "original")
 
         splits["original"] = (train_data, test_data)
 
@@ -86,18 +187,25 @@ def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Pat
 
         log_split_summary("Grouped", data, train_data, test_data)
 
-        save_split(train_data, test_data, Path(output_directory) / "grouped")
+        if save_splits:
+            save_split(train_data, test_data, Path(output_directory) / "grouped")
 
         splits["grouped"] = (train_data, test_data)
 
     return splits
 
-def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame | None, test_data: pd.DataFrame | None, *, train_enabled: bool, evaluate_enabled: bool, results_directory: str | Path) -> None:
+def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame | None, test_data: pd.DataFrame | None, *, train_enabled: bool, evaluate_enabled: bool, results_directory: str | Path, models_directory: str | Path | None = None) -> None:
     if classifier_name == "all":
         for name in classifier_names:
-            run_pipeline(classifier_name=name, split_name=split_name, train_data=train_data, test_data=test_data, train_enabled=train_enabled, evaluate_enabled=evaluate_enabled, results_directory=results_directory)
+            run_pipeline(classifier_name=name, split_name=split_name, train_data=train_data, test_data=test_data, train_enabled=train_enabled, evaluate_enabled=evaluate_enabled, results_directory=results_directory, models_directory=models_directory)
     else:
-        classifier = create_classifier(classifier_name)
+        resolved_model_path = resolve_model_path(classifier_name, split_name, models_directory)
+
+        if resolved_model_path and not train_enabled:
+            logger.info(f"Loading {classifier_name} from {resolved_model_path}")
+            classifier = load_classifier(classifier_name, resolved_model_path)
+        else:
+            classifier = create_classifier(classifier_name)
 
         if train_enabled:
             if train_data is None:
@@ -106,6 +214,10 @@ def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame
             logger.info(f"Training {classifier_name} on the {split_name}")
 
             classifier.fit(train_data["utterance"], train_data["label"])
+
+            if resolved_model_path:
+                save_classifier(classifier_name, classifier, resolved_model_path)
+                logger.info(f"Saved {classifier_name} to {resolved_model_path}")
 
         if evaluate_enabled:
             if test_data is None:
@@ -141,19 +253,60 @@ def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame
                 )
 
 def main():
-    args = parse_arguments() 
+    args = parse_arguments()
 
-    if args.split:
-        source_data = load_dialog_acts(args.data_path)
-        datasets = create_splits(source_data, args.split_strategy, args.split_output_dir)
-    else:
-        train_data = (load_split(args.train_path) if args.train_path else None)
-        test_data = (load_split(args.test_path) if args.test_path else None)
-        datasets = {"provided": (train_data, test_data)}
+    if args.command == "interactive":
+        classifiers = load_interactive_models(args.classifier, args.models_dir)
+        run_interactive(classifiers)
+        return
 
-    for split_name, (train_data, test_data) in datasets.items():
-        if args.train or args.evaluate:
-            run_pipeline(classifier_name=args.classifier, split_name=split_name, train_data=train_data, test_data=test_data, train_enabled=args.train, evaluate_enabled=args.evaluate, results_directory=args.results_dir)
+    if args.command == "experiment":
+        source_data = load_dataset(args.data)
+        datasets = create_splits(
+            source_data,
+            args.split_strategy,
+            args.splits_dir,
+            save_splits=args.save_splits,
+        )
+
+        for split_name, (train_data, test_data) in datasets.items():
+            run_pipeline(
+                classifier_name=args.classifier,
+                split_name=split_name,
+                train_data=train_data,
+                test_data=test_data,
+                train_enabled=True,
+                evaluate_enabled=True,
+                results_directory=args.results_dir,
+            )
+
+        return
+
+    if args.command == "train":
+        train_data = load_dataset(args.data)
+        run_pipeline(
+            classifier_name=args.classifier,
+            split_name="provided",
+            train_data=train_data,
+            test_data=None,
+            train_enabled=True,
+            evaluate_enabled=False,
+            results_directory=DEFAULT_RESULTS_DIRECTORY,
+            models_directory=args.models_dir,
+        )
+        return
+
+    test_data = load_dataset(args.data)
+    run_pipeline(
+        classifier_name=args.classifier,
+        split_name="provided",
+        train_data=None,
+        test_data=test_data,
+        train_enabled=False,
+        evaluate_enabled=True,
+        results_directory=args.results_dir,
+        models_directory=args.models_dir,
+    )
 
 
     
@@ -167,7 +320,7 @@ if __name__ == "__main__":
 
     logging.basicConfig(
             level=logging.INFO,
-            format="%(levelname)s: %(message)s",
+            format="%(asctime)s %(levelname)s: %(message)s",
             handlers=[
                 logging.FileHandler("app.log"),
                 logging.StreamHandler()

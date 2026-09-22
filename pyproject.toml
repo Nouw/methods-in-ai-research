@@ -12,11 +12,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "jupyterlab>=4.6.3",
     "pandas>=2.3.3",
-    # Tornado 6.5.9 breaks Jupyter Server 2.21.0 static file handling.
     "scikit-learn>=1.7.2",
     "torch>=2.14.0",
-    "tornado>=6.5.8,<6.5.9",
     "transformers>=5.17.0",
 ]

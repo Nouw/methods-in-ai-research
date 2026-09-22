@@ -2,7 +2,7 @@
   "summary": {
     "examples": 3845,
     "precision_macro": 0.5440953207843964,
-    "precision_weighted": 0.5440953207843964,
+    "precision_weighted": 0.9019299779251004,
     "recall_macro": 0.4714436834495682,
     "recall_weighted": 0.9237971391417426,
     "accuracy": 0.9237971391417426,
@@ -77,6 +77,12 @@
       "f1-score": 0.970843183609141,
       "support": 633.0
     },
+    "reqmore": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
     "request": {
       "precision": 0.9866555462885738,
       "recall": 0.9752679307502061,
@@ -97,9 +103,9 @@
     },
     "accuracy": 0.9237971391417426,
     "macro avg": {
-      "precision": 0.5440953207843964,
-      "recall": 0.4714436834495682,
-      "f1-score": 0.48817405637891786,
+      "precision": 0.50782229939877,
+      "recall": 0.44001410455293033,
+      "f1-score": 0.45562911928699,
       "support": 3845.0
     },
     "weighted avg": {

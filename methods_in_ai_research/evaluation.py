@@ -21,6 +21,7 @@ class EvaluationResult:
     summary: dict[str, float | int]
     report: dict[str, Any]
     confusion_matrix: pd.DataFrame
+    predictions: pd.DataFrame
 
 def evaluate_classifier(classifier: Classifier, data: pd.DataFrame):
     required_columns = { "label", "utterance" }
@@ -40,12 +41,12 @@ def evaluate_classifier(classifier: Classifier, data: pd.DataFrame):
     if unknown_labels:
         raise ValueError(f"Classifier returned unknown labels: {sorted(unknown_labels)}")
 
-    observed_labels = sorted(set(expected) | set(predicted))
+    labels = sorted(VALID_LABELS)
 
     summary = {
             "examples": len(expected),
             "precision_macro": float(precision_score(expected, predicted, average="macro", zero_division=0)),
-            "precision_weighted": float(precision_score(expected, predicted, average="macro", zero_division=0)),
+            "precision_weighted": float(precision_score(expected, predicted, average="weighted", zero_division=0)),
             "recall_macro": float(recall_score(expected, predicted, average="macro", zero_division=0)),
             "recall_weighted": float(recall_score(expected, predicted, average="weighted", zero_division=0)),
             "accuracy": float(accuracy_score(expected, predicted)),
@@ -54,23 +55,31 @@ def evaluate_classifier(classifier: Classifier, data: pd.DataFrame):
             "weighted_f1": float(f1_score(expected, predicted, average="weighted", zero_division=0))
         }
 
-    report = classification_report(expected, predicted, labels=observed_labels, output_dict=True, zero_division=0)
+    report = classification_report(expected, predicted, labels=labels, output_dict=True, zero_division=0)
     matrix = pd.DataFrame(
         confusion_matrix(
             expected,
             predicted,
-            labels=observed_labels,
+            labels=labels,
         ),
-        index=observed_labels,
-        columns=observed_labels,
+        index=labels,
+        columns=labels,
     )
     matrix.index.name = "true_label"
     matrix.columns.name = "predicted_label"
+
+    predictions = pd.DataFrame({
+        "utterance": data["utterance"].tolist(),
+        "expected_label": expected,
+        "predicted_label": predicted,
+    })
+    predictions["correct"] = predictions["expected_label"] == predictions["predicted_label"]
     
     return EvaluationResult(
         summary=summary,
         report=report,
         confusion_matrix=matrix,
+        predictions=predictions,
     )
 
 def save_evaluation(result: EvaluationResult, output_directory: str | Path) -> None:
@@ -86,3 +95,4 @@ def save_evaluation(result: EvaluationResult, output_directory: str | Path) -> N
     metrics_path.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
 
     result.confusion_matrix.to_csv(output_path / "confusion_matrix.csv")
+    result.predictions.to_csv(output_path / "predictions.csv", index=False)

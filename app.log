@@ -1,200 +1,108 @@
-INFO: Original split:
-INFO: Training 20398 records 84.99874989582466
-INFO: Testing 3600 records 15.001250104175348
-INFO: Training labels: 15
-INFO: Testing labels: 15
-INFO: HTTP Request: HEAD https://huggingface.co/distilbert/distilbert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/distilbert/distilbert-base-uncased/12040accade4e8a0f71eabdb258fecc2e7e948be/config.json?%2Fdistilbert%2Fdistilbert-base-uncased%2Fresolve%2Fmain%2Fconfig.json=&etag=%22150367d8744161cd17b3f6462a14f3a9648752da%22 "HTTP/1.1 200 OK"
-INFO: HTTP Request: HEAD https://huggingface.co/distilbert/distilbert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/distilbert/distilbert-base-uncased/12040accade4e8a0f71eabdb258fecc2e7e948be/tokenizer_config.json?%2Fdistilbert%2Fdistilbert-base-uncased%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22e5c73d8a50df1f56fb5b0b8002d7cf4010afdccb%22 "HTTP/1.1 200 OK"
-INFO: HTTP Request: GET https://huggingface.co/api/models/distilbert/distilbert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-INFO: HTTP Request: GET https://huggingface.co/api/models/distilbert/distilbert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-INFO: HTTP Request: HEAD https://huggingface.co/distilbert/distilbert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/distilbert/distilbert-base-uncased/12040accade4e8a0f71eabdb258fecc2e7e948be/config.json?%2Fdistilbert%2Fdistilbert-base-uncased%2Fresolve%2Fmain%2Fconfig.json=&etag=%22150367d8744161cd17b3f6462a14f3a9648752da%22 "HTTP/1.1 200 OK"
-INFO: Training embedding-logistic-regression on the original
-INFO: Evaluating embedding-logistic-regression on the original split
-INFO: Accuracy: 0.9819444444444444
-INFO: Balanced accuracy: 0.8699094584416797
-INFO: Macro F1: 0.8592574013388348
-INFO: Results saved to results/embedding-logistic-regression/original
-INFO: ===[SPLIT SUMMARY]===
-INFO: Original split:
-INFO: Training 20398 records 84.99874989582466
-INFO: Testing 3600 records 15.001250104175348
-INFO: Training labels: 15
-INFO: Testing labels: 15
-INFO: HTTP Request: HEAD https://huggingface.co/distilbert/distilbert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/distilbert/distilbert-base-uncased/12040accade4e8a0f71eabdb258fecc2e7e948be/config.json?%2Fdistilbert%2Fdistilbert-base-uncased%2Fresolve%2Fmain%2Fconfig.json=&etag=%22150367d8744161cd17b3f6462a14f3a9648752da%22 "HTTP/1.1 200 OK"
-INFO: HTTP Request: HEAD https://huggingface.co/distilbert/distilbert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/distilbert/distilbert-base-uncased/12040accade4e8a0f71eabdb258fecc2e7e948be/tokenizer_config.json?%2Fdistilbert%2Fdistilbert-base-uncased%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22e5c73d8a50df1f56fb5b0b8002d7cf4010afdccb%22 "HTTP/1.1 200 OK"
-INFO: HTTP Request: GET https://huggingface.co/api/models/distilbert/distilbert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-INFO: HTTP Request: GET https://huggingface.co/api/models/distilbert/distilbert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-INFO: HTTP Request: HEAD https://huggingface.co/distilbert/distilbert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/distilbert/distilbert-base-uncased/12040accade4e8a0f71eabdb258fecc2e7e948be/config.json?%2Fdistilbert%2Fdistilbert-base-uncased%2Fresolve%2Fmain%2Fconfig.json=&etag=%22150367d8744161cd17b3f6462a14f3a9648752da%22 "HTTP/1.1 200 OK"
-INFO: Training embedding-logistic-regression on the original
-INFO: Evaluating embedding-logistic-regression on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9819444444444444
-INFO: Balanced accuracy: 0.8699094584416797
-INFO: Macro F1: 0.8592574013388348
-INFO: Results saved to results/embedding-logistic-regression/original
-INFO: ===[SPLIT SUMMARY]===
-INFO: Original split:
-INFO: Training 20398 records 84.99874989582466
-INFO: Testing 3600 records 15.001250104175348
-INFO: Training labels: 15
-INFO: Testing labels: 15
-INFO: Training embedding-logistic-regression on the original
-INFO: Evaluating embedding-logistic-regression on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9819444444444444
-INFO: Balanced accuracy: 0.8699094584416797
-INFO: Macro F1: 0.8592574013388348
-INFO: Results saved to results/embedding-logistic-regression/original
-INFO: ===[SPLIT SUMMARY]===
-INFO: Original split:
-INFO: Training 20398 records 84.99874989582466
-INFO: Testing 3600 records 15.001250104175348
-INFO: Training labels: 15
-INFO: Testing labels: 15
-INFO: ===[SPLIT SUMMARY]===
-INFO: Grouped split:
-INFO: Training 20153 records 83.97783148595717
-INFO: Testing 3845 records 16.022168514042836
-INFO: Training labels: 15
-INFO: Testing labels: 14
-INFO: Training rule-based on the original
-INFO: Evaluating rule-based on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.8452777777777778
-INFO: Balanced accuracy: 0.730850918428957
-INFO: Macro F1: 0.617558554457198
-INFO: Results saved to results/rule-based/original
-INFO: Training bow-logistic-regression on the original
-INFO: Evaluating bow-logistic-regression on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9697222222222223
-INFO: Balanced accuracy: 0.6564733972819652
-INFO: Macro F1: 0.7028792545924655
-INFO: Results saved to results/bow-logistic-regression/original
-INFO: Test tokens: 12762
-INFO: OOV tokens: 48
-INFO: OOV token rate: 0.38%
-INFO: All-OOV utterances: 4
-INFO: Training bow-linear-svm on the original
-INFO: Evaluating bow-linear-svm on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9844444444444445
-INFO: Balanced accuracy: 0.9406370536641635
-INFO: Macro F1: 0.9439635672644037
-INFO: Results saved to results/bow-linear-svm/original
-INFO: Test tokens: 12762
-INFO: OOV tokens: 48
-INFO: OOV token rate: 0.38%
-INFO: All-OOV utterances: 4
-INFO: Training embedding-logistic-regression on the original
-INFO: Evaluating embedding-logistic-regression on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9819444444444444
-INFO: Balanced accuracy: 0.8699094584416797
-INFO: Macro F1: 0.8592574013388348
-INFO: Results saved to results/embedding-logistic-regression/original
-INFO: Training embedding-linear-svm on the original
-INFO: ===[SPLIT SUMMARY]===
-INFO: Original split:
-INFO: Training 20398 records 84.99874989582466
-INFO: Testing 3600 records 15.001250104175348
-INFO: Training labels: 15
-INFO: Testing labels: 15
-INFO: ===[SPLIT SUMMARY]===
-INFO: Grouped split:
-INFO: Training 20153 records 83.97783148595717
-INFO: Testing 3845 records 16.022168514042836
-INFO: Training labels: 15
-INFO: Testing labels: 14
-INFO: Training rule-based on the original
-INFO: Evaluating rule-based on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.8452777777777778
-INFO: Balanced accuracy: 0.730850918428957
-INFO: Macro F1: 0.617558554457198
-INFO: Results saved to results/rule-based/original
-INFO: Training bow-logistic-regression on the original
-INFO: Evaluating bow-logistic-regression on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9697222222222223
-INFO: Balanced accuracy: 0.6564733972819652
-INFO: Macro F1: 0.7028792545924655
-INFO: Results saved to results/bow-logistic-regression/original
-INFO: Test tokens: 12762
-INFO: OOV tokens: 48
-INFO: OOV token rate: 0.38%
-INFO: All-OOV utterances: 4
-INFO: Training bow-linear-svm on the original
-INFO: Evaluating bow-linear-svm on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9844444444444445
-INFO: Balanced accuracy: 0.9406370536641635
-INFO: Macro F1: 0.9439635672644037
-INFO: Results saved to results/bow-linear-svm/original
-INFO: Test tokens: 12762
-INFO: OOV tokens: 48
-INFO: OOV token rate: 0.38%
-INFO: All-OOV utterances: 4
-INFO: Training embedding-logistic-regression on the original
-INFO: Evaluating embedding-logistic-regression on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9819444444444444
-INFO: Balanced accuracy: 0.8699094584416797
-INFO: Macro F1: 0.8592574013388348
-INFO: Results saved to results/embedding-logistic-regression/original
-INFO: Training embedding-linear-svm on the original
-INFO: Evaluating embedding-linear-svm on the original split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9836111111111111
-INFO: Balanced accuracy: 0.9484423947912519
-INFO: Macro F1: 0.9266415319163477
-INFO: Results saved to results/embedding-linear-svm/original
-INFO: Training rule-based on the grouped
-INFO: Evaluating rule-based on the grouped split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.8496749024707412
-INFO: Balanced accuracy: 0.6845842534278941
-INFO: Macro F1: 0.6397222422502135
-INFO: Results saved to results/rule-based/grouped
-INFO: Training bow-logistic-regression on the grouped
-INFO: Evaluating bow-logistic-regression on the grouped split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9237971391417426
-INFO: Balanced accuracy: 0.4714436834495682
-INFO: Macro F1: 0.48817405637891786
-INFO: Results saved to results/bow-logistic-regression/grouped
-INFO: Test tokens: 17218
-INFO: OOV tokens: 91
-INFO: OOV token rate: 0.53%
-INFO: All-OOV utterances: 33
-INFO: Training bow-linear-svm on the grouped
-INFO: Evaluating bow-linear-svm on the grouped split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9318595578673602
-INFO: Balanced accuracy: 0.7400374322969557
-INFO: Macro F1: 0.7549548266217041
-INFO: Results saved to results/bow-linear-svm/grouped
-INFO: Test tokens: 17218
-INFO: OOV tokens: 91
-INFO: OOV token rate: 0.53%
-INFO: All-OOV utterances: 33
-INFO: Training embedding-logistic-regression on the grouped
-INFO: Evaluating embedding-logistic-regression on the grouped split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.9355006501950586
-INFO: Balanced accuracy: 0.6237223921561892
-INFO: Macro F1: 0.6336784700748173
-INFO: Results saved to results/embedding-logistic-regression/grouped
-INFO: Training embedding-linear-svm on the grouped
-INFO: Evaluating embedding-linear-svm on the grouped split
-INFO: ===[EVALUATION]===
-INFO: Accuracy: 0.941742522756827
-INFO: Balanced accuracy: 0.7614924033392066
-INFO: Macro F1: 0.7587379191118736
-INFO: Results saved to results/embedding-linear-svm/grouped
+2026-09-22 15:56:21,646 INFO: ===[SPLIT SUMMARY]===
+2026-09-22 15:56:21,646 INFO: Original split:
+2026-09-22 15:56:21,646 INFO: Training 20398 records 84.99874989582466
+2026-09-22 15:56:21,646 INFO: Testing 3600 records 15.001250104175348
+2026-09-22 15:56:21,647 INFO: Training labels: 15
+2026-09-22 15:56:21,647 INFO: Testing labels: 15
+2026-09-22 15:56:22,151 INFO: ===[SPLIT SUMMARY]===
+2026-09-22 15:56:22,151 INFO: Grouped split:
+2026-09-22 15:56:22,151 INFO: Training 20153 records 83.97783148595717
+2026-09-22 15:56:22,151 INFO: Testing 3845 records 16.022168514042836
+2026-09-22 15:56:22,152 INFO: Training labels: 15
+2026-09-22 15:56:22,152 INFO: Testing labels: 14
+2026-09-22 15:56:22,152 INFO: Training rule-based on the original
+2026-09-22 15:56:22,152 INFO: Evaluating rule-based on the original split
+2026-09-22 15:56:22,340 INFO: ===[EVALUATION]===
+2026-09-22 15:56:22,340 INFO: Accuracy: 0.8452777777777778
+2026-09-22 15:56:22,340 INFO: Balanced accuracy: 0.730850918428957
+2026-09-22 15:56:22,340 INFO: Macro F1: 0.617558554457198
+2026-09-22 15:56:22,340 INFO: Results saved to results/rule-based/original
+2026-09-22 15:56:22,340 INFO: Training bow-logistic-regression on the original
+2026-09-22 15:56:22,837 INFO: Evaluating bow-logistic-regression on the original split
+2026-09-22 15:56:22,929 INFO: ===[EVALUATION]===
+2026-09-22 15:56:22,929 INFO: Accuracy: 0.9697222222222223
+2026-09-22 15:56:22,929 INFO: Balanced accuracy: 0.6564733972819652
+2026-09-22 15:56:22,929 INFO: Macro F1: 0.7028792545924655
+2026-09-22 15:56:22,929 INFO: Results saved to results/bow-logistic-regression/original
+2026-09-22 15:56:22,947 INFO: Test tokens: 12762
+2026-09-22 15:56:22,947 INFO: OOV tokens: 48
+2026-09-22 15:56:22,947 INFO: OOV token rate: 0.38%
+2026-09-22 15:56:22,947 INFO: All-OOV utterances: 4
+2026-09-22 15:56:22,947 INFO: Training bow-linear-svm on the original
+2026-09-22 15:56:24,478 INFO: Evaluating bow-linear-svm on the original split
+2026-09-22 15:56:24,570 INFO: ===[EVALUATION]===
+2026-09-22 15:56:24,570 INFO: Accuracy: 0.9844444444444445
+2026-09-22 15:56:24,570 INFO: Balanced accuracy: 0.9406370536641635
+2026-09-22 15:56:24,570 INFO: Macro F1: 0.9439635672644037
+2026-09-22 15:56:24,570 INFO: Results saved to results/bow-linear-svm/original
+2026-09-22 15:56:24,587 INFO: Test tokens: 12762
+2026-09-22 15:56:24,588 INFO: OOV tokens: 48
+2026-09-22 15:56:24,588 INFO: OOV token rate: 0.38%
+2026-09-22 15:56:24,588 INFO: All-OOV utterances: 4
+2026-09-22 15:56:25,407 INFO: Training embedding-logistic-regression on the original
+2026-09-22 15:57:03,433 INFO: Evaluating embedding-logistic-regression on the original split
+2026-09-22 15:57:11,217 INFO: ===[EVALUATION]===
+2026-09-22 15:57:11,219 INFO: Accuracy: 0.9819444444444444
+2026-09-22 15:57:11,219 INFO: Balanced accuracy: 0.8699094584416797
+2026-09-22 15:57:11,219 INFO: Macro F1: 0.8592574013388348
+2026-09-22 15:57:11,219 INFO: Results saved to results/embedding-logistic-regression/original
+2026-09-22 15:57:11,916 INFO: Training embedding-linear-svm on the original
+2026-09-22 15:59:48,104 INFO: Evaluating embedding-linear-svm on the original split
+2026-09-22 15:59:54,496 INFO: ===[EVALUATION]===
+2026-09-22 15:59:54,496 INFO: Accuracy: 0.9836111111111111
+2026-09-22 15:59:54,496 INFO: Balanced accuracy: 0.9484423947912519
+2026-09-22 15:59:54,496 INFO: Macro F1: 0.9266415319163477
+2026-09-22 15:59:54,496 INFO: Results saved to results/embedding-linear-svm/original
+2026-09-22 15:59:54,500 INFO: Training rule-based on the grouped
+2026-09-22 15:59:54,500 INFO: Evaluating rule-based on the grouped split
+2026-09-22 15:59:54,725 INFO: ===[EVALUATION]===
+2026-09-22 15:59:54,725 INFO: Accuracy: 0.8496749024707412
+2026-09-22 15:59:54,725 INFO: Balanced accuracy: 0.6845842534278941
+2026-09-22 15:59:54,725 INFO: Macro F1: 0.6397222422502135
+2026-09-22 15:59:54,725 INFO: Results saved to results/rule-based/grouped
+2026-09-22 15:59:54,725 INFO: Training bow-logistic-regression on the grouped
+2026-09-22 15:59:55,188 INFO: Evaluating bow-logistic-regression on the grouped split
+2026-09-22 15:59:55,295 INFO: ===[EVALUATION]===
+2026-09-22 15:59:55,295 INFO: Accuracy: 0.9237971391417426
+2026-09-22 15:59:55,295 INFO: Balanced accuracy: 0.4714436834495682
+2026-09-22 15:59:55,295 INFO: Macro F1: 0.48817405637891786
+2026-09-22 15:59:55,295 INFO: Results saved to results/bow-logistic-regression/grouped
+2026-09-22 15:59:55,317 INFO: Test tokens: 17218
+2026-09-22 15:59:55,317 INFO: OOV tokens: 91
+2026-09-22 15:59:55,317 INFO: OOV token rate: 0.53%
+2026-09-22 15:59:55,317 INFO: All-OOV utterances: 33
+2026-09-22 15:59:55,317 INFO: Training bow-linear-svm on the grouped
+2026-09-22 15:59:56,985 INFO: Evaluating bow-linear-svm on the grouped split
+2026-09-22 15:59:57,097 INFO: ===[EVALUATION]===
+2026-09-22 15:59:57,097 INFO: Accuracy: 0.9318595578673602
+2026-09-22 15:59:57,097 INFO: Balanced accuracy: 0.7400374322969557
+2026-09-22 15:59:57,097 INFO: Macro F1: 0.7549548266217041
+2026-09-22 15:59:57,097 INFO: Results saved to results/bow-linear-svm/grouped
+2026-09-22 15:59:57,119 INFO: Test tokens: 17218
+2026-09-22 15:59:57,119 INFO: OOV tokens: 91
+2026-09-22 15:59:57,119 INFO: OOV token rate: 0.53%
+2026-09-22 15:59:57,119 INFO: All-OOV utterances: 33
+2026-09-22 15:59:57,832 INFO: Training embedding-logistic-regression on the grouped
+2026-09-22 16:00:37,995 INFO: Evaluating embedding-logistic-regression on the grouped split
+2026-09-22 16:00:45,613 INFO: ===[EVALUATION]===
+2026-09-22 16:00:45,613 INFO: Accuracy: 0.9355006501950586
+2026-09-22 16:00:45,613 INFO: Balanced accuracy: 0.6237223921561892
+2026-09-22 16:00:45,613 INFO: Macro F1: 0.6336784700748173
+2026-09-22 16:00:45,613 INFO: Results saved to results/embedding-logistic-regression/grouped
+2026-09-22 16:00:46,274 INFO: Training embedding-linear-svm on the grouped
+2026-09-22 16:03:36,115 INFO: Evaluating embedding-linear-svm on the grouped split
+2026-09-22 16:03:42,869 INFO: ===[EVALUATION]===
+2026-09-22 16:03:42,869 INFO: Accuracy: 0.941742522756827
+2026-09-22 16:03:42,869 INFO: Balanced accuracy: 0.7614924033392066
+2026-09-22 16:03:42,869 INFO: Macro F1: 0.7587379191118736
+2026-09-22 16:03:42,869 INFO: Results saved to results/embedding-linear-svm/grouped
+2026-09-22 16:09:57,037 INFO: Training rule-based on the provided
+2026-09-22 16:09:57,038 INFO: Saved rule-based to artifacts/models/rule-based.pkl
+2026-09-22 16:09:57,038 INFO: Training bow-logistic-regression on the provided
+2026-09-22 16:09:57,688 INFO: Saved bow-logistic-regression to artifacts/models/bow-logistic-regression.pkl
+2026-09-22 16:09:57,688 INFO: Training bow-linear-svm on the provided
+2026-09-22 16:09:59,869 INFO: Saved bow-linear-svm to artifacts/models/bow-linear-svm.pkl
+2026-09-22 16:10:00,717 INFO: Training embedding-logistic-regression on the provided
+2026-09-22 16:10:48,905 INFO: Saved embedding-logistic-regression to artifacts/models/embedding-logistic-regression.pkl
+2026-09-22 16:10:49,598 INFO: Training embedding-linear-svm on the provided
+2026-09-22 16:13:53,225 INFO: Saved embedding-linear-svm to artifacts/models/embedding-linear-svm.pkl
