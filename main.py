@@ -6,8 +6,10 @@ import pandas as pd
 from pathlib import Path
 from methods_in_ai_research.interactive import run_interactive
 from methods_in_ai_research.models.classifier import BagOfWordsClassifier, Classifier, EmbeddingClassifier
+from methods_in_ai_research.models.decision_tree import DecisionTreeBagOfWordsClassifier
 from methods_in_ai_research.models.linear_svm import LinearSVMBagOfWordsClassifier, LinearSVMEmbeddingClassifier
 from methods_in_ai_research.models.logistic_regression import LogisticRegressionBagOfWordsClassifier, LogisticRegressionEmbeddingClassifier
+from methods_in_ai_research.models.naive_bayes import NaiveBayesBagOfWordsClassifier
 from methods_in_ai_research.models.rule_based import RuleBasedClassifier
 from methods_in_ai_research.processing import load_dialog_acts
 from methods_in_ai_research.splitting import create_original_split, create_grouped_split, log_split_summary, validate_split, save_split
@@ -15,7 +17,7 @@ from transformers.utils import logging as hf_logging
 
 logger = logging.getLogger(__name__)
 
-classifier_names = ("rule-based", "bow-logistic-regression", "bow-linear-svm", "embedding-logistic-regression", "embedding-linear-svm",)
+classifier_names = ("rule-based", "bow-logistic-regression", "bow-linear-svm", "embedding-logistic-regression", "embedding-linear-svm", "naive-bayes", "decision-tree")
 
 DEFAULT_DATA_PATH = "data/dailog_acts.dat"
 DEFAULT_MODELS_DIRECTORY = "artifacts/models"
@@ -69,6 +71,12 @@ def create_classifier(name: str) -> Classifier:
 
     if name == "embedding-linear-svm":
         return LinearSVMEmbeddingClassifier()
+
+    if name == "naive-bayes":
+        return NaiveBayesBagOfWordsClassifier()
+
+    if name == "decision-tree":
+        return DecisionTreeBagOfWordsClassifier()
 
     raise ValueError(f"Unknown classifier: {name}")
 

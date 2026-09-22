@@ -106,3 +106,75 @@
 2026-09-22 16:10:48,905 INFO: Saved embedding-logistic-regression to artifacts/models/embedding-logistic-regression.pkl
 2026-09-22 16:10:49,598 INFO: Training embedding-linear-svm on the provided
 2026-09-22 16:13:53,225 INFO: Saved embedding-linear-svm to artifacts/models/embedding-linear-svm.pkl
+2026-09-22 16:30:22,041 INFO: ===[SPLIT SUMMARY]===
+2026-09-22 16:30:22,041 INFO: Original split:
+2026-09-22 16:30:22,041 INFO: Training 20398 records 84.99874989582466
+2026-09-22 16:30:22,041 INFO: Testing 3600 records 15.001250104175348
+2026-09-22 16:30:22,043 INFO: Training labels: 15
+2026-09-22 16:30:22,044 INFO: Testing labels: 15
+2026-09-22 16:30:22,545 INFO: ===[SPLIT SUMMARY]===
+2026-09-22 16:30:22,546 INFO: Grouped split:
+2026-09-22 16:30:22,546 INFO: Training 20153 records 83.97783148595717
+2026-09-22 16:30:22,546 INFO: Testing 3845 records 16.022168514042836
+2026-09-22 16:30:22,546 INFO: Training labels: 15
+2026-09-22 16:30:22,547 INFO: Testing labels: 14
+2026-09-22 16:30:22,547 INFO: Training naive-bayes on the original
+2026-09-22 16:30:22,639 INFO: Evaluating naive-bayes on the original split
+2026-09-22 16:30:22,742 INFO: ===[EVALUATION]===
+2026-09-22 16:30:22,742 INFO: Accuracy: 0.9419444444444445
+2026-09-22 16:30:22,742 INFO: Balanced accuracy: 0.43584223516423104
+2026-09-22 16:30:22,742 INFO: Macro F1: 0.45949335261772695
+2026-09-22 16:30:22,743 INFO: Results saved to results/naive-bayes/original
+2026-09-22 16:30:22,760 INFO: Test tokens: 12762
+2026-09-22 16:30:22,760 INFO: OOV tokens: 48
+2026-09-22 16:30:22,760 INFO: OOV token rate: 0.38%
+2026-09-22 16:30:22,760 INFO: All-OOV utterances: 4
+2026-09-22 16:30:22,760 INFO: Training naive-bayes on the grouped
+2026-09-22 16:30:22,844 INFO: Evaluating naive-bayes on the grouped split
+2026-09-22 16:30:22,946 INFO: ===[EVALUATION]===
+2026-09-22 16:30:22,946 INFO: Accuracy: 0.8967490247074122
+2026-09-22 16:30:22,946 INFO: Balanced accuracy: 0.29891791427298575
+2026-09-22 16:30:22,946 INFO: Macro F1: 0.29661304172364084
+2026-09-22 16:30:22,946 INFO: Results saved to results/naive-bayes/grouped
+2026-09-22 16:30:22,968 INFO: Test tokens: 17218
+2026-09-22 16:30:22,968 INFO: OOV tokens: 91
+2026-09-22 16:30:22,968 INFO: OOV token rate: 0.53%
+2026-09-22 16:30:22,968 INFO: All-OOV utterances: 33
+2026-09-22 16:30:36,093 INFO: ===[SPLIT SUMMARY]===
+2026-09-22 16:30:36,094 INFO: Original split:
+2026-09-22 16:30:36,094 INFO: Training 20398 records 84.99874989582466
+2026-09-22 16:30:36,094 INFO: Testing 3600 records 15.001250104175348
+2026-09-22 16:30:36,095 INFO: Training labels: 15
+2026-09-22 16:30:36,095 INFO: Testing labels: 15
+2026-09-22 16:30:36,605 INFO: ===[SPLIT SUMMARY]===
+2026-09-22 16:30:36,605 INFO: Grouped split:
+2026-09-22 16:30:36,605 INFO: Training 20153 records 83.97783148595717
+2026-09-22 16:30:36,605 INFO: Testing 3845 records 16.022168514042836
+2026-09-22 16:30:36,606 INFO: Training labels: 15
+2026-09-22 16:30:36,606 INFO: Testing labels: 14
+2026-09-22 16:30:36,606 INFO: Training decision-tree on the original
+2026-09-22 16:30:37,399 INFO: Evaluating decision-tree on the original split
+2026-09-22 16:30:37,492 INFO: ===[EVALUATION]===
+2026-09-22 16:30:37,492 INFO: Accuracy: 0.9822222222222222
+2026-09-22 16:30:37,492 INFO: Balanced accuracy: 0.897417755508657
+2026-09-22 16:30:37,492 INFO: Macro F1: 0.8508495988010302
+2026-09-22 16:30:37,492 INFO: Results saved to results/decision-tree/original
+2026-09-22 16:30:37,508 INFO: Test tokens: 12762
+2026-09-22 16:30:37,508 INFO: OOV tokens: 48
+2026-09-22 16:30:37,508 INFO: OOV token rate: 0.38%
+2026-09-22 16:30:37,508 INFO: All-OOV utterances: 4
+2026-09-22 16:30:37,508 INFO: Training decision-tree on the grouped
+2026-09-22 16:30:38,149 INFO: Evaluating decision-tree on the grouped split
+2026-09-22 16:30:38,250 INFO: ===[EVALUATION]===
+2026-09-22 16:30:38,250 INFO: Accuracy: 0.8749024707412224
+2026-09-22 16:30:38,250 INFO: Balanced accuracy: 0.6633443139203132
+2026-09-22 16:30:38,250 INFO: Macro F1: 0.6787824742442672
+2026-09-22 16:30:38,250 INFO: Results saved to results/decision-tree/grouped
+2026-09-22 16:30:38,270 INFO: Test tokens: 17218
+2026-09-22 16:30:38,273 INFO: OOV tokens: 91
+2026-09-22 16:30:38,273 INFO: OOV token rate: 0.53%
+2026-09-22 16:30:38,273 INFO: All-OOV utterances: 33
+2026-09-22 16:31:01,179 INFO: Training naive-bayes on the provided
+2026-09-22 16:31:01,284 INFO: Saved naive-bayes to artifacts/models/naive-bayes.pkl
+2026-09-22 16:31:14,162 INFO: Training decision-tree on the provided
+2026-09-22 16:31:15,171 INFO: Saved decision-tree to artifacts/models/decision-tree.pkl
