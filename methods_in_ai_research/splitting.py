@@ -90,10 +90,8 @@ def save_split(train_data: pd.DataFrame, test_data: pd.DataFrame, output_directo
     output_path = Path(output_directory)
     output_path.mkdir(parents=True, exist_ok=True)
     
-    timestr = time.strftime("%Y%m%d-%H%M%S")
-
-    train_data.to_csv(output_path / f"train_{timestr}.csv", index=True, index_label="row_id")
-    test_data.to_csv(output_path / f"test_{timestr}.csv", index=True, index_label="row_id")
+    train_data.to_csv(output_path / f"train.csv", index=True, index_label="row_id")
+    test_data.to_csv(output_path / f"test.csv", index=True, index_label="row_id")
 
 def log_split_summary(
     name: str,
@@ -104,24 +102,10 @@ def log_split_summary(
     total = len(source)
     train_percentage = 100 * len(train_data) / total
     test_percentage = 100 * len(test_data) / total
-
-    logger.info("%s split:", name)
-    logger.info(
-        "Training: %d records (%.2f%%)",
-        len(train_data),
-        train_percentage,
-    )
-    logger.info(
-        "Testing: %d records (%.2f%%)",
-        len(test_data),
-        test_percentage,
-    )
-    logger.info(
-        "Training labels: %d",
-        train_data["label"].nunique(),
-    )
-    logger.info(
-        "Testing labels: %d",
-        test_data["label"].nunique(),
-    )
+    
+    logger.info(f"{name} split:")
+    logger.info(f"Training {len(train_data)} records {train_percentage}")
+    logger.info(f"Testing {len(test_data)} records {test_percentage}") 
+    logger.info(f"Training labels: {train_data['label'].nunique()}") 
+    logger.info(f"Testing labels: {test_data['label'].nunique()}") 
  

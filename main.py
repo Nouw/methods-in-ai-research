@@ -4,8 +4,8 @@ from methods_in_ai_research.evaluation import evaluate_classifier, save_evaluati
 import pandas as pd
 from pathlib import Path
 from methods_in_ai_research.models.classifier import BagOfWordsClassifier, Classifier
-from methods_in_ai_research.models.linear_svm import LinearSVMBagOfWordsClassifier
-from methods_in_ai_research.models.logistic_regression import LogisticRegressionBagOfWordsClassifier
+from methods_in_ai_research.models.linear_svm import LinearSVMBagOfWordsClassifier, LinearSVMEmbeddingClassifier
+from methods_in_ai_research.models.logistic_regression import LogisticRegressionBagOfWordsClassifier, LogisticRegressionEmbeddingClassifier
 from methods_in_ai_research.models.rule_based import RuleBasedClassifier
 from methods_in_ai_research.processing import load_dialog_acts
 from methods_in_ai_research.splitting import create_original_split, create_grouped_split, log_split_summary, validate_split, save_split
@@ -21,7 +21,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--train-path", help="Existing training CSV used without --split")
     parser.add_argument("--test-path", help="Existing test CSV used without --split")
     parser.add_argument("--split-strategy", choices=("original", "grouped", "both"), default="both")
-    parser.add_argument("--classifier", choices=("rule-based", "bow-logistic-regression", "bow-linear-svm"), default="rule-based")
+    parser.add_argument("--classifier", choices=("rule-based", "bow-logistic-regression", "bow-linear-svm", "embedding-logistic-regression", "embedding-linear-svm"), default="rule-based")
     parser.add_argument("--split-output-dir", default="artifacts/splits")
     parser.add_argument("--results-dir", default="results")
 
@@ -50,6 +50,12 @@ def create_classifier(name: str) -> Classifier:
     
     if name == "bow-linear-svm":
         return LinearSVMBagOfWordsClassifier()
+
+    if name == "embedding-logistic-regression":
+        return LogisticRegressionEmbeddingClassifier()
+
+    if name == "embedding-linear-svm":
+        return LinearSVMEmbeddingClassifier()
 
     raise ValueError(f"Unknown classifier: {name}")
 
