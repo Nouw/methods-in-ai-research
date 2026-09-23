@@ -1,0 +1,13 @@
+utterance,expected_label,predicted_label,correct
+uh i uh want a cheap restaurant,inform,inform,True
+um im looking for a moderately priced restaurant,inform,inform,True
+noise im looking for korean food,inform,inform,True
+i uh want uh thai food uh,inform,inform,True
+i want a chinese restaur,inform,inform,True
+i want spenish food,inform,null,False
+im looking for a restaurnt in the north,inform,inform,True
+sil what is the phone number,request,request,True
+whats the uh address,request,request,True
+how about uh korean food,reqalts,null,False
+uh,null,null,True
+cough cough,null,null,True
