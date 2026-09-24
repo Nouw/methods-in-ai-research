@@ -1,0 +1,13 @@
+utterance,expected_label,predicted_label,correct
+i dont want an expensive restaurant,deny,inform,False
+i dont want vietnamese food,deny,inform,False
+i dont like italian food,deny,inform,False
+im not looking for a cheap place,deny,inform,False
+not in the centre,deny,inform,False
+anything but chinese food,deny,inform,False
+no i want cheap food,negate,negate,True
+no i said korean food,negate,negate,True
+no thai food please,negate,negate,True
+i dont care about the price range,inform,inform,True
+i do not care what kind of food,inform,inform,True
+i want something that is not expensive,inform,inform,True

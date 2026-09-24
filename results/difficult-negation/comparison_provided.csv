@@ -1,0 +1,13 @@
+utterance,expected_label,bow-linear-svm,bow-logistic-regression,decision-tree,embedding-linear-svm,embedding-logistic-regression,naive-bayes,rule-based,n_wrong
+im not looking for a cheap place,deny,inform,inform,inform,inform,inform,inform,inform,7
+not in the centre,deny,inform,inform,inform,inform,inform,inform,inform,7
+anything but chinese food,deny,inform,inform,inform,inform,inform,inform,inform,7
+i dont want an expensive restaurant,deny,inform,inform,null,inform,inform,inform,deny,6
+i dont like italian food,deny,inform,inform,inform,inform,inform,inform,deny,6
+i dont want vietnamese food,deny,deny,inform,deny,deny,inform,inform,deny,3
+no i want cheap food,negate,negate,negate,negate,negate,negate,inform,negate,1
+no i said korean food,negate,negate,negate,negate,negate,negate,inform,negate,1
+no thai food please,negate,negate,negate,negate,negate,negate,inform,negate,1
+i dont care about the price range,inform,inform,inform,inform,inform,inform,inform,deny,1
+i do not care what kind of food,inform,inform,inform,inform,inform,inform,inform,inform,0
+i want something that is not expensive,inform,inform,inform,inform,inform,inform,inform,inform,0

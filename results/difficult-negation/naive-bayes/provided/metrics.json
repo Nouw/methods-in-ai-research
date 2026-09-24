@@ -1,0 +1,118 @@
+{
+  "summary": {
+    "examples": 12,
+    "precision_macro": 0.08333333333333333,
+    "precision_weighted": 0.0625,
+    "recall_macro": 0.3333333333333333,
+    "recall_weighted": 0.25,
+    "accuracy": 0.25,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_f1": 0.13333333333333333,
+    "weighted_f1": 0.10000000000000002
+  },
+  "classification_report": {
+    "ack": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "affirm": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "bye": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "confirm": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "deny": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "hello": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "inform": {
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1-score": 0.4,
+      "support": 3.0
+    },
+    "negate": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "null": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "repeat": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "reqalts": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "reqmore": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "request": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "restart": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "thankyou": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "accuracy": 0.25,
+    "macro avg": {
+      "precision": 0.016666666666666666,
+      "recall": 0.06666666666666667,
+      "f1-score": 0.02666666666666667,
+      "support": 12.0
+    },
+    "weighted avg": {
+      "precision": 0.0625,
+      "recall": 0.25,
+      "f1-score": 0.10000000000000002,
+      "support": 12.0
+    }
+  }
+}

@@ -1,0 +1,13 @@
+utterance,expected_label,bow-linear-svm,bow-logistic-regression,decision-tree,embedding-linear-svm,embedding-logistic-regression,naive-bayes,rule-based,n_wrong
+how about uh korean food,reqalts,null,reqalts,null,reqalts,reqalts,reqalts,reqalts,2
+uh,null,null,null,null,null,null,inform,inform,2
+um im looking for a moderately priced restaurant,inform,inform,inform,inform,inform,inform,inform,null,1
+noise im looking for korean food,inform,inform,inform,inform,inform,inform,inform,null,1
+i want spenish food,inform,inform,inform,null,inform,inform,inform,inform,1
+uh i uh want a cheap restaurant,inform,inform,inform,inform,inform,inform,inform,inform,0
+i uh want uh thai food uh,inform,inform,inform,inform,inform,inform,inform,inform,0
+i want a chinese restaur,inform,inform,inform,inform,inform,inform,inform,inform,0
+sil what is the phone number,request,request,request,request,request,request,request,request,0
+im looking for a restaurnt in the north,inform,inform,inform,inform,inform,inform,inform,inform,0
+whats the uh address,request,request,request,request,request,request,request,request,0
+cough cough,null,null,null,null,null,null,null,null,0
