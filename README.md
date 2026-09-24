@@ -24,6 +24,7 @@ uv sync
 This downloads all the dependencies and creates a python virtual environment.
 Active the venv by running:
 ```bash
+# macOS / Linux
 source .venv/bin/activate
 ```
 
@@ -70,16 +71,12 @@ Train every classifier on the complete provided dataset and save them under `art
 uv run python main.py train
 ```
 
-Use `--classifier <name>` to train only one classifier. 
+Use `--classifier <name>` to train only one classifier.
+To get a list of available classifiers you can run:
 
-Available classifiers:
-1. rule-based 
-2. bow-logistic-regression
-3. bow-linear-svm 
-4. embedding-logistic-regression
-5. embedding-linear-svm
-6. naive-bayes 
-7. decision-tree
+```bash
+uv run python main.py train --help
+```
 
 ## Evaluating a held-out dataset
 
