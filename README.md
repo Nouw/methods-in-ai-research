@@ -9,6 +9,12 @@ Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if you hav
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
+```cmd
+# Windows
+pip install uv
+```
+
+
 From the project root, install the project and its dependencies:
 
 ```bash
@@ -19,6 +25,11 @@ This downloads all the dependencies and creates a python virtual environment.
 Active the venv by running:
 ```bash
 source .venv/bin/activate
+```
+
+```cmd
+# Windows
+.\.venv\Scripts\Activate
 ```
 
 ## Running the program
@@ -60,6 +71,15 @@ uv run python main.py train
 ```
 
 Use `--classifier <name>` to train only one classifier. 
+
+Available classifiers:
+1. rule-based 
+2. bow-logistic-regression
+3. bow-linear-svm 
+4. embedding-logistic-regression
+5. embedding-linear-svm
+6. naive-bayes 
+7. decision-tree
 
 ## Evaluating a held-out dataset
 
