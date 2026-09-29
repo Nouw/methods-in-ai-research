@@ -1,4 +1,4 @@
-from methods_in_ai_research.models.classifier import BagOfWordsClassifier
+from methods_in_ai_research.classification.models.classifier import BagOfWordsClassifier
 from sklearn.base import BaseEstimator
 from sklearn.naive_bayes import MultinomialNB
 

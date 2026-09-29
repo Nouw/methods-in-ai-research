@@ -1,7 +1,7 @@
-from methods_in_ai_research.models.classifier import BagOfWordsClassifier, EmbeddingClassifier
+from methods_in_ai_research.classification.models.classifier import BagOfWordsClassifier, EmbeddingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.base import BaseEstimator
-from methods_in_ai_research.splitting import RANDOM_STATE
+from methods_in_ai_research.classification.splitting import RANDOM_STATE
 
 class LogisticRegressionBagOfWordsClassifier(BagOfWordsClassifier):
     def create_estimator(self) -> BaseEstimator:

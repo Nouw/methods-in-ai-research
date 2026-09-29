@@ -1,7 +1,7 @@
 from collections.abc import Callable, Mapping
 
-from methods_in_ai_research.models.classifier import Classifier
-from methods_in_ai_research.processing import normalize_utterance
+from methods_in_ai_research.classification.models.classifier import Classifier
+from methods_in_ai_research.classification.processing import normalize_utterance
 
 
 def run_interactive(

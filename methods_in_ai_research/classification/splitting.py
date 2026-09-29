@@ -108,5 +108,36 @@ def log_split_summary(
     logger.info(f"Training {len(train_data)} records {train_percentage}")
     logger.info(f"Testing {len(test_data)} records {test_percentage}") 
     logger.info(f"Training labels: {train_data['label'].nunique()}") 
-    logger.info(f"Testing labels: {test_data['label'].nunique()}") 
+    logger.info(f"Testing labels: {test_data['label'].nunique()}")
+
+
+def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Path, *, save_splits: bool = False) -> \
+dict[str, tuple[pd.DataFrame, pd.DataFrame]]:
+    splits = {}
+
+    if strategy in {"original", "both"}:
+        train_data, test_data = create_original_split(data)
+
+        validate_split(data, train_data, test_data)
+
+        log_split_summary("Original", data, train_data, test_data)
+
+        if save_splits:
+            save_split(train_data, test_data, Path(output_directory) / "original")
+
+        splits["original"] = (train_data, test_data)
+
+    if strategy in {"grouped", "both"}:
+        train_data, test_data = create_grouped_split(data)
+
+        validate_split(data, train_data, test_data)
+
+        log_split_summary("Grouped", data, train_data, test_data)
+
+        if save_splits:
+            save_split(train_data, test_data, Path(output_directory) / "grouped")
+
+        splits["grouped"] = (train_data, test_data)
+
+    return splits
  

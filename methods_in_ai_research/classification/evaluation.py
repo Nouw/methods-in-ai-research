@@ -1,11 +1,11 @@
 from pathlib import Path
 import json
-from methods_in_ai_research.processing import VALID_LABELS
+from methods_in_ai_research.classification.processing import VALID_LABELS
 import pandas as pd
 from dataclasses import dataclass
 from typing import Any
 
-from methods_in_ai_research.models.classifier import Classifier
+from methods_in_ai_research.classification.models.classifier import Classifier
 from sklearn.metrics import (
     accuracy_score,
     balanced_accuracy_score,

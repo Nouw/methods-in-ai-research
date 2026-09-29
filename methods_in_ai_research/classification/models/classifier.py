@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.base import BaseEstimator
 from dataclasses import dataclass
 from methods_in_ai_research.embeddings import DistilBertEncoder
-from methods_in_ai_research.processing import normalize_utterance
+from methods_in_ai_research.classification.processing import normalize_utterance
 
 class Classifier(ABC):
     def __init__(self) -> None:

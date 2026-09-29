@@ -77,5 +77,18 @@ def preprocess(file_path: str) -> pd.DataFrame:
     print(df)
     df[["label", "sentence"]] = df["Column"].str.split(" ", n=1, expand=True)
     
-    return df 
+    return df
+
+def load_dataset(file_path: str | Path) -> pd.DataFrame:
+    path = Path(file_path)
+
+    if path.suffix.lower() == ".dat":
+        return load_dialog_acts(path)
+
+    if path.suffix.lower() == ".csv":
+        return pd.read_csv(path, index_col="row_id", keep_default_na=False)
+
+    raise ValueError(f"Unsupported dataset format: {path.suffix or '<none>'}. Expected .csv or .dat")
+
+
     

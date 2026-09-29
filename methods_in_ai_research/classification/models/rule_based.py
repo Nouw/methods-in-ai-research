@@ -1,8 +1,8 @@
 import re
 from collections.abc import Iterable
 
-from methods_in_ai_research.models.classifier import Classifier
-from methods_in_ai_research.processing import normalize_utterance
+from methods_in_ai_research.classification.models.classifier import Classifier
+from methods_in_ai_research.classification.processing import normalize_utterance
 
 def contains_phrase(
     utterance: str,
