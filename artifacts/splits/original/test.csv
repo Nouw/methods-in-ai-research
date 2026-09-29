@@ -1,0 +1,3601 @@
+row_id,label,utterance
+8016,request,and whats the price range
+22705,thankyou,thank you good bye
+3814,null,noise
+4819,inform,asian oriental
+10408,thankyou,thank you good bye
+17809,request,telephone number
+2651,reqalts,is there a restaurant serving italian food
+6306,thankyou,thank you good bye
+6104,null,noise
+10124,request,what is the phone number
+11705,inform,cheap restaurant barbecue food
+6043,inform,im looking for a restaurant in the north part town and it should serve australian food
+23078,hello,hello welcome
+22231,confirm,does it serve fusion food
+3391,request,may i get the phone number
+18150,bye,see you good bye
+9711,request,whats their address
+2028,request,what type of food do they serve
+10816,inform,turkish food
+664,request,what about the address
+25,inform,expensive
+717,request,phone number
+10736,inform,i want a cheap restaurant
+19063,affirm,yes
+11740,request,phone number
+3196,request,and the address
+6612,reqalts,how about indian food
+5941,request,address
+9849,inform,can i have the european food
+5315,request,okay and can i get the address
+19762,inform,i dont care
+11838,request,price range
+21755,null,sil
+20944,affirm,yes
+14594,request,and the phone number
+18654,inform,i need a moderately priced restaurant that serves bask food
+15010,inform,world food
+3970,request,what is the address
+12466,null,noise
+22514,request,phone number
+18243,thankyou,okay thank you good bye
+13858,inform,i dont care
+14050,reqalts,how about indian food
+9934,confirm,does it serve cheap turkish food
+23562,inform,i would like afghan food
+9346,null,unintelligible
+10472,affirm,yes
+9694,thankyou,thank you good bye
+10752,inform,doesnt matter
+16912,request,what is the phone number and post code
+9294,inform,moderately priced
+12524,inform,i dont care
+8520,inform,next restaurant
+15609,inform,i dont care
+17942,thankyou,thank you good bye
+18475,inform,indian food
+7484,inform,north
+12235,inform,chinese food
+17006,thankyou,thank you good bye
+400,thankyou,thank you good bye
+6283,inform,south
+17880,request,can i have the phone number
+2126,inform,im looking for a cheap restaurant in the east part of town
+20388,thankyou,thank you goodbye
+20315,request,phone number
+7724,request,phone number
+17696,request,whats the address
+5470,inform,korean food
+230,inform,asian oriental
+22417,request,type of food do they serve
+10098,null,noise
+1390,thankyou,thank you good bye
+20469,inform,i dont care
+5642,reqalts,how about a castro pub type of food
+21410,inform,indian
+12844,affirm,yes
+1047,inform,can i have the venusian food
+7554,reqalts,how about chinese food
+1681,request,what is the phone number
+8540,request,phone number
+17176,request,what is their address
+23012,thankyou,thank you good bye
+12088,inform,im looking for a restaurant serving venetian food
+10940,thankyou,thank you good bye
+4534,reqalts,anything else
+1623,thankyou,thank you good bye
+16589,negate,no
+212,inform,im looking for a japanese restaurant in the east part
+9295,inform,any
+21552,request,phone number
+208,request,and the phone number
+4062,request,and whats the price range
+10022,reqalts,next one please
+9799,inform,im looking for a chinese restaurant
+11531,thankyou,thank you goodbye
+20257,thankyou,thank you good bye
+11484,request,okay and can i get the address
+15212,inform,west
+20946,null,okay just regular ecuadorean food
+23980,request,address
+5120,request,address
+23699,request,whats the phone number
+19719,inform,i need a cheap restaurant in the south part of town
+4892,deny,wrong
+851,request,whats their phone number
+8007,negate,uh no oh
+2887,inform,i dont care
+23432,request,and whats the postcode
+10336,inform,south
+19240,inform,i want a moderately priced restaurant in the west part of town
+13648,reqalts,how about chinese food
+9112,reqalts,anything else
+6501,inform,i dont care
+2431,inform,vietnamese anywhere
+13408,affirm,yes
+17607,request,and the address
+3650,inform,gastropub
+15373,request,what is the phone number
+4279,inform,i want to find a restaurant in the east part of town that serves canapes foo
+925,reqalts,is there anything else
+13103,negate,no
+23301,thankyou,thank you good bye
+17245,inform,cheap
+12655,thankyou,thank you good bye
+11339,inform,any price range
+21913,request,could i have the address and phone number
+22336,thankyou,thank you good bye
+5692,inform,im looking for restaurant in the south part of town that serves english food
+2310,request,phone number
+14058,reqalts,how about ah one that serves asian oriental
+11274,null,unintelligible
+240,null,noise
+1744,reqalts,what about chinese food
+439,thankyou,thank you good bye
+15892,request,address
+10446,inform,im looking for a restaurant in the west
+12752,null,noise
+22367,reqalts,how about one that serves british food
+12377,ack,im good
+13886,affirm,yes i am currently in the north part of town and im looking to see if theres any restaurant that serves brazilian food
+8859,request,okay whats its address
+13550,inform,any
+693,inform,i dont care
+7783,negate,no
+21627,thankyou,thank you good bye
+3484,request,whats the address
+47,inform,cheap price range
+3729,thankyou,thank you good bye
+18,bye,goodbye
+23099,request,what is the address
+7350,inform,north
+797,thankyou,thank you good bye
+18271,thankyou,thank you goodbye noise
+331,thankyou,thank you goodbye
+11451,inform,kosher food
+4752,inform,italian food
+956,inform,german food
+1983,thankyou,thank you good bye
+14076,inform,looking for a restaurant in any area
+23631,thankyou,thank you goodbye
+12032,inform,north
+15652,request,can i get the phone number
+8783,request,and what is unintelligible telephone number
+9053,request,what is the address and phone number
+8023,reqalts,and what is the other restaurant
+17207,request,what is the whats the phone number
+7967,inform,im looking for a restaurant serving asian oriental food
+8067,inform,any
+13710,request,post code
+22139,thankyou,thank you good bye
+13489,inform,im looking for eritrean food
+3240,inform,dont care
+9731,request,post code
+13448,affirm,correct
+8010,inform,uh the centre
+14678,request,telephone number
+16498,ack,fine
+488,affirm,yes
+10052,thankyou,thank you good bye
+1877,inform,okay um well how bout portuguese
+18985,affirm,yes
+330,request,may i have the postcode
+17258,inform,food type
+7905,affirm,yes
+22821,inform,it doesnt matter
+4710,negate,no african
+11530,request,alright whats its phone number
+17278,request,whats the address
+3825,thankyou,thank you good bye
+5305,null,uh
+4294,inform,lebanese
+3424,null,im looking
+16,request,address
+3996,request,what type of food does it serve
+4438,affirm,yes
+6420,thankyou,thank you good bye
+5182,inform,russian food
+21790,inform,gastropub
+16435,thankyou,thank you good bye
+2425,inform,afghan
+12347,negate,no
+13719,request,what area is that
+15606,thankyou,thank you good bye
+18886,repeat,back
+22333,reqalts,is there anything else
+8093,request,whats the post code
+10261,request,what is the post code
+21091,thankyou,breath thank you very much goodbye
+4180,request,whats the phone number
+18385,request,whats their phone number
+16929,inform,uh dont care
+1490,inform,italian
+19980,inform,it doesnt matter
+16210,bye,goodbye
+19527,inform,gastropub
+10788,request,what is the phone number
+1620,inform,are there any that serves portuguese food
+18497,inform,cheap restaurant north part of town
+28,request,type of food
+12025,request,address
+12048,inform,eartrain
+11173,inform,i dont care what price range
+19625,inform,spanish
+22000,inform,is there mediterranean food
+10576,request,and the area
+15650,confirm,is it moderately priced
+22129,request,phone number
+13513,inform,cheap restaurant in the south part of town
+16294,inform,is there an expensive restaurant that serves korean food
+15390,inform,kosher food
+4004,thankyou,thank you goodbye
+2283,inform,restaurant north part of town
+16839,request,area
+11574,inform,uh is there a steak house
+22938,inform,id like to find japanese food
+13764,inform,cheap price range
+4379,inform,i dont care
+3462,affirm,yes im looking for an expensive restaurant and it should serve
+4320,request,uh can i have the phone number
+14769,request,what is the address
+5931,thankyou,thank you good bye
+17387,inform,canapes
+14432,inform,north part of town
+6499,thankyou,thank you good bye
+11657,request,address price range
+2977,inform,cheap restaurant mediterranean food
+22444,null,unintelligible
+3013,thankyou,thank you good bye
+10285,request,address and phone number
+16891,inform,if there is no such venue how about french type of food
+18645,request,what is the address
+14749,inform,im looking for a cheap restaurant in the west part of town
+23623,request,what is the address
+14434,affirm,yes
+10779,request,phone number
+4816,inform,moroccan food
+6133,request,what is the phone number
+8523,thankyou,thank you good bye
+1677,negate,no the north
+21854,inform,im looking for a restaurant in the west part of town that serves canapes food
+15722,request,okay whats the phone number
+4651,thankyou,thank you good bye
+18313,thankyou,thank you good bye
+23757,request,phone number
+2266,inform,north
+17881,thankyou,thank you goodbye
+1483,inform,any
+12175,request,what type of food do they serve
+14802,confirm,is it in the north part of town
+9191,request,type of food
+21529,request,address
+6359,inform,i dont care
+16539,request,phone number
+23951,inform,thai
+4952,inform,catalan
+17411,inform,south
+19769,inform,indian type of food
+17343,request,phone number
+5192,request,whats the address
+5506,inform,i dont care
+16755,request,address
+21160,request,phone number
+8968,inform,uh african food
+23788,thankyou,thank you good bye
+185,request,address
+6724,request,can i get the address
+7165,request,phone number
+12978,inform,im looking for a place that serves mexican food
+6230,null,noise
+11487,bye,okay thank you and good bye
+3989,inform,katalian food
+11409,request,and what is the phone number
+5964,inform,uh center
+9946,inform,expensive african food
+9409,request,address
+14120,null,noise
+9263,inform,im looking for a restaurant in any area serving african food
+16854,inform,north american food
+2554,request,what type of food do they serve
+2851,thankyou,thank you good bye
+8308,inform,moderately
+8210,thankyou,thank you good bye
+19277,inform,italian food
+14850,null,unintelligible
+16661,request,could i get the address please
+2596,negate,no
+8767,request,and their phone number
+18878,inform,unintelligible expensive
+11337,thankyou,thank you good bye
+11675,inform,moderate
+5361,request,and what type of food do they serve
+22580,thankyou,thank you good bye
+2991,inform,modern european food
+8155,thankyou,thank you goodbye
+17273,inform,im looking for a restaurant that serves african food
+10220,request,whats the address
+8265,inform,any area
+5520,inform,south part of town
+11601,inform,portuguese
+22090,request,what is the address
+13624,inform,chinese food
+735,request,what is the phone number
+21282,inform,british expensive
+23799,inform,north american
+7593,request,okay and can i get their address
+10504,request,address
+14572,inform,moroccan food
+4246,inform,thai food
+16051,request,what food do they serve
+13756,deny,wrong
+13088,inform,i dont care
+21523,inform,west
+14499,request,whats the address
+5129,request,and the phone number
+19091,request,what type of food
+8554,inform,looking for a restaurant noise in the east part of town
+10672,request,phone number
+3321,inform,expensive restaurant
+11630,inform,indian
+8002,request,address
+19993,inform,south part of town
+23977,inform,moderately
+6246,thankyou,thank you
+11141,request,okay whats the phone number
+16482,thankyou,thank you goodbye
+21626,inform,cheap restaurant
+12935,thankyou,thank you good bye
+5824,request,type of food
+20374,request,could i have the phone number please
+12523,affirm,right that serves italian food
+23022,null,any thing else
+11075,affirm,uh yes
+9641,inform,any part of town
+20970,inform,okay then any
+1870,inform,i dont care
+21890,request,area
+3153,inform,west
+17431,inform,international food in the east part of town
+13964,request,phone number
+10720,reqalts,how about vietnamese
+1630,inform,im looking for a cheap restaurant that serves cuban food
+13987,bye,very good thank you good bye
+20609,request,price range
+21553,request,telephone number
+3382,inform,any area
+351,request,what is the phone number and address
+12624,thankyou,thank you good bye
+21670,negate,no thank you good bye
+1420,inform,find restaurant in north part of town
+9493,inform,catalan food
+19117,thankyou,thank you goodbye
+18721,thankyou,thank you good bye
+984,thankyou,thank you good bye
+14298,inform,restaurant serving spanish food
+1507,inform,im looking for a restaurant that serves african food
+5754,negate,no
+18893,inform,caribbean food
+23030,inform,bistro food
+10056,reqalts,anything else
+11853,thankyou,thank you good bye
+1471,request,can i have the address and phone number please
+1644,inform,mexican
+6403,request,area of the food of the venue
+408,inform,i want a polynesian restaurant in the north part of town
+2289,thankyou,thank you good bye
+9784,request,phone number
+16253,thankyou,thank you good bye
+21856,request,can i get a phone number please
+15439,thankyou,thank you
+21575,request,what is the phone number
+15746,inform,doesnt matter
+18668,inform,restaurant in the north part of town that serves hungarian food
+4273,thankyou,thank you good bye
+7959,inform,pan asian food
+6346,affirm,yes
+893,inform,dont care
+4691,request,phone number
+31,inform,north
+19573,thankyou,thank you good bye
+6805,request,and the post code
+20920,inform,any
+6852,request,phone number
+22092,thankyou,thank you good bye
+1326,request,type of food
+16259,request,phone
+11708,request,phone number
+4989,inform,portuguese
+4641,inform,i dont care
+12829,inform,i want to find a moderately priced restaurant in the west part town
+5530,inform,im looking for a restaurant in the west part of town
+16678,inform,looking for a cheap restaurant and it should be in the west part of town
+9505,request,phone number
+20498,request,can i get the address
+1355,affirm,yes
+342,inform,cheap restaurant north part of town
+15518,inform,west
+19455,affirm,yes
+22798,inform,mexican
+1670,thankyou,thank you good bye
+5036,hello,hello
+6476,affirm,yes
+11800,request,may i have the address
+1874,inform,um it doesnt matter
+5159,inform,vietnamese
+14857,reqalts,is there anything else
+5783,reqalts,next
+4135,affirm,yes id like an expensive restaurant in the east part of town
+20507,affirm,yes
+4898,inform,i dont care
+4571,inform,north american
+90,inform,in the east part of town
+11644,inform,im looking for a cheap restaurant
+10045,inform,find gastro pub type food
+5339,inform,i dont care
+13027,inform,korean
+14877,request,phone number
+3579,request,whats the address
+18731,request,whats the phone number
+14138,request,can i get the address
+21672,inform,italian food
+22502,inform,doesnt matter
+1621,inform,are there any that serves portuguese food
+6643,inform,any
+10864,inform,any
+14840,thankyou,thank you goodbye
+15161,affirm,yes
+8901,thankyou,thank you good bye
+9220,request,type of food
+3882,inform,any
+10309,request,uh can i get the post code and phone number
+22078,request,whats the address
+18090,thankyou,thank you good bye
+12570,affirm,right
+8243,thankyou,thank you good bye
+16791,reqalts,how about vietnamese food
+5878,inform,id like a european food
+18820,request,phone number
+22631,inform,venue
+21681,reqalts,anything else
+17699,inform,west
+4256,request,post code
+21440,thankyou,thank you good bye
+4877,inform,doesnt matter
+10903,thankyou,thank you good bye
+21394,thankyou,thank you good bye
+11663,request,the address
+736,thankyou,thank you good bye
+19820,request,phone number
+6402,null,of the venue
+17496,request,what is the address phone number and post code
+1577,inform,moderately priced restaurant
+18174,inform,price over food west part of town
+6926,request,phone number
+13568,null,noise
+21347,null,sil
+20187,affirm,yes
+11385,request,phone number
+19487,request,what type of food
+11344,thankyou,thank you good bye
+16765,inform,uh italian
+1098,inform,brazilian
+4055,request,phone number
+20132,inform,i want a restaurant in the center that serves seafood
+19293,inform,food
+4712,request,does it serve
+13706,inform,moderately
+16254,inform,south part of town
+14316,reqalts,what about indian food
+12943,reqalts,another type of food
+9551,null,sil
+14272,negate,no eritrean
+15455,request,phone number
+14863,reqalts,how about gastropub food
+16404,inform,find spanish restaurant
+20,inform,any
+21566,inform,im looking for a restaurant that serves japanese food in the north part of town
+19707,inform,moroccan food
+12254,inform,im looking for a moderately priced restaurant serving spanish food
+4843,inform,im looking for a cheap restaurant in the south part of town
+13571,thankyou,thank you good bye
+21896,request,whats the phone number
+5656,request,phone number
+15729,negate,no
+8054,request,address
+22494,request,what is the price range
+22911,thankyou,thank you good bye
+12585,inform,kosher
+22561,request,price range
+14299,inform,spanish food
+9013,request,what is the phone number
+17003,inform,i dont care
+21368,hello,hello
+1392,reqalts,anything else
+3253,inform,any
+12792,request,what the phone number
+11785,reqalts,is there anything else
+11383,inform,moderately
+5762,inform,turkish food
+22895,thankyou,thank you good bye
+4375,thankyou,thank you good bye
+19074,inform,cantonese food
+17309,inform,any
+11643,thankyou,thank you good bye
+7739,inform,if there is no such venue how about european type of food
+23229,thankyou,thank you good bye
+3150,inform,west
+14618,affirm,yes
+977,request,may i have the address phone number and post code
+6058,inform,dont matter
+5607,request,whats its post code
+22070,inform,it doesnt matter
+23353,request,phone number
+21438,affirm,yes
+758,thankyou,thank you
+18100,inform,indian
+7047,thankyou,thank you good bye
+6553,inform,north part of town
+22084,request,whats the address
+4520,request,what is the phone number
+20502,negate,no danish food
+20988,inform,vietnamese
+13754,inform,vietnamese
+16697,thankyou,thank you good bye
+5557,inform,spanish
+3653,request,phone number
+2579,thankyou,thank you good bye
+21800,reqalts,what about indian
+16591,negate,no
+18021,inform,moderately priced
+16659,inform,i dont care
+12867,inform,restaurant in the west part of town
+8215,inform,im looking for a restaurant in the center of town
+16804,inform,caribbean food
+6579,thankyou,thank you good bye
+22653,inform,moderately priced
+23758,request,post code
+3656,null,noise
+10585,request,what is the phone number
+15495,request,what is the address
+11418,request,whats the address
+21332,affirm,yes
+15500,inform,can i have a british restaurant
+8278,inform,thai
+4234,thankyou,thank you good bye
+14741,request,what type of food
+21015,inform,japanese
+7629,inform,south part
+23704,request,can i get their phone number please
+4918,request,area
+22754,request,address
+13523,request,whats their phone number
+9829,request,what is the phone number
+14747,request,whats the address and phone number
+16373,inform,world
+8329,request,what is the phone number
+3304,affirm,yes
+2456,inform,indian food
+20626,inform,south
+19622,inform,danish food
+898,inform,any
+14192,inform,i dont care
+7699,thankyou,thank you good bye
+7722,request,address
+221,reqalts,how about italian food
+7782,inform,spanish
+14567,request,address
+11762,negate,uh no thank you and good bye
+20485,request,may i have the address and phone number
+9978,inform,i dont care
+238,request,can i get the phone number
+12149,inform,korean
+10560,inform,i dont care
+19917,inform,doesnt matter
+14910,inform,singapore
+19120,reqalts,how about asian oriental food
+8321,inform,south part of town
+16110,thankyou,thank you goodbye
+23458,inform,chinese food
+12464,affirm,yes
+22453,inform,cheap
+1134,thankyou,thank you good bye
+20936,affirm,yes
+13543,reqalts,kay how about indian food
+8145,inform,indian
+16018,inform,moderate
+12169,thankyou,thank you good bye
+11626,thankyou,thank you good bye
+16913,thankyou,thank you good bye
+16192,inform,asian food
+20985,request,what is the address
+23628,reqalts,is there anything else
+13154,affirm,yes
+22730,request,what is the phone number and price range
+6480,thankyou,thank you good bye
+8743,request,whats the phone number
+1148,thankyou,thank you
+9624,null,i want
+7235,inform,cheap restaurant in the south part of town
+13962,request,address
+21024,affirm,yes
+6079,request,address and price range
+15009,inform,im looking for a cheap restaurant
+1443,thankyou,thank you good bye
+5780,inform,expensive restaurant
+15841,inform,the south part of town
+9085,inform,restaurant any area kosher food
+4844,inform,dont care
+20030,inform,looking for an expensive restaurant that serves indonesian food
+4872,reqalts,what about italian food
+10060,inform,looking for a cheap restaurant in the south part of town
+13642,null,noise
+11453,request,what is the price range
+12250,inform,korean type food
+10272,request,uh whats the price range
+21109,request,could you repeat the restaurant name
+13491,reqalts,how about italian food
+5322,reqalts,what about gastropub
+6616,inform,any price range
+23874,request,phone number
+19180,thankyou,thank you good bye
+18130,request,what is the address
+4446,inform,spanish food
+23786,inform,im looking for a moderately priced restaurant in the east part of town
+14491,inform,vietnamese
+9584,request,phone number
+23170,request,what is the address
+6248,inform,moderately priced restaurant
+10827,request,can i have the phone number address and price range
+8631,reqalts,is there anything else
+3723,request,and the post code
+23174,request,whats the address
+6344,inform,i want a restaurant in the center of town that serves vinesha
+13499,null,how about one that serves
+20687,inform,corsica food
+3921,thankyou,thank you good bye
+13509,reqalts,is there anything else
+23510,inform,portuguese food
+20794,negate,no
+9927,inform,i want a moderately priced restaurant in the north part of town
+16655,request,and what kind of food
+21794,request,what is the address
+9902,thankyou,thank you good bye
+22949,request,whats the address
+18778,thankyou,thank you good bye
+18751,inform,barbecue food
+1647,request,post code
+5439,inform,indian food noise
+169,inform,the south
+13559,inform,asian oriental
+13545,inform,any part of town
+9789,inform,im looking for a restaurant serving lebanese food
+8613,thankyou,thank you good bye
+3919,inform,i dont care
+11183,affirm,yes
+17464,null,sil
+17625,request,phone number
+16131,inform,christmas food
+14478,request,address
+3522,inform,south
+21175,inform,noise looking for an expensive restaurant
+10042,request,and whats the post code
+2948,request,can i have the phone number
+21770,hello,hi i want to find a moderately priced restaurant in the north part of town
+15728,negate,thank you good bye no thank you good bye
+21888,inform,french food
+4524,inform,italian food
+3503,thankyou,thank you good bye
+14942,request,phone number
+22800,request,price range address phone number
+11225,request,what is the address
+18215,inform,i dont care
+20878,inform,i dont care
+14637,request,whats the price range
+18997,inform,north
+1664,request,whats the phone number
+22955,request,what is the address and phone number
+23185,inform,british food
+1597,inform,dont care
+19217,thankyou,thank you goodbye
+20128,inform,any part of town
+20834,inform,im looking for a cheap restaurant in the west part of town
+18422,inform,im looking for a restaurant in the cheap price range that serves asian oriental food
+17418,inform,im looking for a restaurant in the west part of town that serves canape food
+11607,thankyou,thank you good bye
+15354,request,whats the address
+13223,request,what are the price ranges available
+12658,reqalts,how about vietnamese food
+8623,inform,im looking for a cheap restaurant in the south
+20151,inform,north
+10382,inform,cheap restaurant
+17710,inform,cheap
+2265,inform,north
+20158,null,noise
+23250,inform,japanese
+10438,thankyou,thank you good bye
+2229,inform,gastropub
+22102,null,okay
+3544,inform,indonesian
+12473,null,noise
+1731,inform,doesnt matter
+15100,request,phone number
+16662,request,and the phone number
+10568,thankyou,thank you goodbye
+13502,request,can i have the address and the phone number
+244,reqalts,is there another restaurant in the west of town
+12738,reqalts,how about the south part of town
+21101,inform,serving jamaican food
+6080,request,price range
+22889,thankyou,thank you good bye
+21120,thankyou,thank you good bye
+3997,inform,i am looking for catalin food
+3309,inform,scandinavian food
+14096,inform,any
+4745,inform,i dont care
+3031,request,and the phone number
+8888,request,whats the post code
+20857,affirm,yes
+23435,inform,thai
+16126,inform,medium priced
+19470,inform,i want a british restaurant in the east part of town
+5890,thankyou,okay thank you good bye
+22317,inform,christmas food west of town
+3453,request,price range
+22594,request,what is the address
+15375,inform,moderately priced restaurant in the east part of town
+15690,inform,uh i dont care
+14621,inform,i dont care
+5854,reqalts,how about singaporean food
+7176,inform,im looking for italian food though
+1152,inform,gastropub
+17081,thankyou,thank you good bye
+23442,reqalts,what about thai
+21651,null,noise
+16930,inform,um dont care
+7392,request,whats the phone number and address
+2112,thankyou,thank you good bye
+18099,inform,food
+23592,inform,um im looking for a moderately priced restaurant in the south part of town
+3944,thankyou,thank you goodbye
+12220,null,noise
+23773,reqalts,is there anything else
+8509,affirm,yes
+14796,thankyou,thank you goodbye
+13469,request,phone number
+20881,request,and the address
+8432,inform,i dont care
+8411,request,what is the phone number and post code
+19896,inform,doesnt matter
+742,inform,can i find a restaurant in the south that is moderately priced
+18197,inform,food
+20932,inform,creative food
+1399,inform,venetian
+8039,request,what area is it in
+13305,inform,italian food in the center
+2828,thankyou,thank you good bye
+13181,reqalts,are there any restaurants serving indian food
+19531,negate,no
+416,inform,restaurant serving english food
+6973,inform,restaurant in the east side of town
+13940,affirm,oh god uh yes mediterranean food
+12531,null,unintelligible
+18618,inform,i dont care
+4187,thankyou,thank you good bye
+8109,request,okay whats the phone number
+11207,confirm,is it expensive
+15870,affirm,yes in the north part of town
+19111,affirm,yes
+16505,inform,dont care
+19393,request,and the post code
+21300,request,phone number
+18815,inform,can i find a restaurant that serves international food
+8719,request,what is the phone number
+23064,reqalts,how about a restaurant that serves thai food
+15214,request,phone number
+23006,null,what is the uh
+8326,null,noise
+12703,inform,italian
+4241,request,phone number
+15066,request,what is the address
+22295,inform,south
+5188,thankyou,thank you good bye
+15843,inform,i dont care
+1329,inform,chinese
+20394,request,what is the phone number
+15187,thankyou,thank you good bye
+5140,inform,i dont care
+6872,request,whats the address
+15370,affirm,correct
+3695,inform,dont care
+14626,inform,im looking for a restaurant in the south part of town that serves creative food
+13838,thankyou,thank you good bye
+9546,inform,expensive restaurant in the south of town
+10523,inform,mediterranean food
+11967,thankyou,thank you goodbye
+21915,inform,expensive restaurant in the south part of town
+17596,null,noise
+18414,null,bout
+20577,inform,any
+17497,request,post code
+21919,thankyou,thank you
+12274,inform,i dont care
+21040,inform,swedish
+8908,reqalts,okay and what about spanish
+9350,request,can i get the phone number
+22560,request,price
+18098,reqalts,how about indian food
+6321,request,phone number
+8748,request,may i have the phone number and post code
+15472,request,whats the address
+4226,affirm,yes
+18058,request,address
+18554,inform,west part of town
+10633,request,can i have the phone number and post code of the venue
+10264,null,sil
+16547,thankyou,thank you good bye
+1432,null,sil
+16617,request,what type of food do they serve
+5726,inform,any price range
+16494,thankyou,thank you good bye
+6780,thankyou,thank you good bye
+18015,inform,im looking for a moderately priced restaurant in the west part of town
+10235,request,and the post code
+2755,inform,moderately priced restaurant in the west part of town
+2492,inform,i dont care
+13592,request,address
+536,inform,south
+7201,reqalts,how about british type of food
+7376,inform,is there one in the cheap price range
+1969,inform,malaysian
+6337,inform,i want a restaurant in any area that serves
+13417,inform,expensive
+14482,null,dress
+20489,null,sil
+21792,inform,gastropub food
+20088,inform,north american food
+14643,inform,cheap
+3866,inform,it doesnt matter
+18468,null,cough
+14251,inform,it does not matter
+15321,inform,spanish food in west area
+4009,request,what type of food
+5731,request,and the post code
+1197,request,whats the phone number
+4331,request,phone number
+21453,request,phone number
+16738,thankyou,thank you good bye
+8550,null,noise
+2572,thankyou,thank you good bye
+5308,affirm,yes
+4605,inform,south part of town
+1,inform,any part of town
+3824,request,whats the phone number
+2281,request,type of food
+9843,thankyou,thank you good bye
+18016,inform,i dont care
+1233,thankyou,thank you good bye
+16431,inform,i want to find a cheap restaurant and it should serve portuguese food
+13599,null,noise
+22482,thankyou,okay thank you good bye
+13164,inform,british
+19539,inform,i want a restaurant serving greek food
+14012,null,noise
+9948,request,area
+98,inform,i need a restaurant serving crossover food in the west part of town
+21231,inform,im looking for an expensive restaurant in the south part of town
+3699,request,address
+16688,inform,polynesian
+21423,thankyou,thank you goodbye
+13158,null,noise
+15231,thankyou,thank you goodbye
+2726,request,post code
+7002,thankyou,thank you good bye
+21462,inform,korean food
+9838,thankyou,thank you good bye
+7495,inform,spanish
+9184,inform,cheap food in the east part of town
+496,null,noise
+7051,inform,south
+22224,inform,any noise
+23961,thankyou,thank you good bye
+16026,thankyou,thank you goodbye
+2071,inform,dont care
+15332,confirm,is it moderately priced
+2647,thankyou,thank you good bye
+17114,thankyou,thank you good bye
+9171,thankyou,thank you good bye
+8334,inform,indian
+22355,request,whats the phone number
+4336,inform,south
+22103,null,i dont want pizza
+4211,inform,chinese food
+23434,inform,i want to find a restaurant in the centre that serves thai food
+15151,thankyou,thank you good bye
+23196,inform,is there one in the west area
+19629,thankyou,thank you good bye
+23056,inform,i want a cheap restaurant that serves european food
+12567,thankyou,thank you good bye
+23455,thankyou,thank you good bye
+2632,inform,what about turkish
+15774,thankyou,thank you good bye
+14654,null,noise
+20284,request,do you have the address
+23178,inform,british food
+9660,thankyou,thank you good bye
+9712,request,and the phone number
+15857,request,whats the phone number
+11975,reqalts,how about modern european food
+13636,affirm,yes
+20287,thankyou,okay thank you good bye
+6538,request,may i have the address and phone number
+5785,inform,um anything else please
+1914,reqalts,how about somewhere serving modern european
+6204,inform,irish food
+20133,affirm,yes
+13314,inform,asian oriental
+21522,null,unintelligible
+22900,request,phone number
+16814,negate,no
+16133,inform,chinese food
+4017,inform,asian oriental
+5045,inform,dont care
+1626,affirm,yes
+18495,inform,cheap
+4497,request,whats the phone number
+1615,null,unintelligible
+8993,inform,west
+4628,request,whats the phone number
+5358,request,ah thank you phone number
+13849,reqalts,how about chinese type of food
+13907,inform,looking in the west of town moderately priced
+1488,request,type of food
+4852,request,address
+19146,request,what type of food
+17308,inform,west
+15726,null,oh my god
+17654,null,sil
+16027,request,expensive price range
+14415,inform,i dont care
+6114,inform,moderately priced any food
+16699,thankyou,thank you good bye
+3023,inform,i want a restaurant in the south part of town that serves moroccan food
+17332,affirm,yes
+9066,inform,it doesnt matter
+10809,reqalts,anything else
+5602,request,can i have the address and phone number of the venue
+23702,inform,im looking for a cheap restaurant in the west part of town
+11251,request,type of food
+4098,reqalts,okay what about turkish foo
+7989,request,what part of town
+14405,inform,indian
+21693,inform,west
+5195,inform,im looking for a cheap restaurant in the west part of town
+16512,inform,russian food
+19034,affirm,yes
+5141,request,address
+16150,inform,any asian oriental
+1772,inform,dont care
+15662,reqalts,anything else
+10386,negate,no ah
+8172,request,what is the address
+20592,inform,theres no such venue how about gastropub type of food
+4475,thankyou,thank you
+9432,inform,i want to find an expensive restaurant in the south part of town
+8065,inform,im looking for an expensive restaurant that serves thai food
+23438,request,what type of food is it
+23539,request,may i have its phone number
+20562,inform,expensive restaurant
+5885,inform,i dont care
+10441,request,phone number
+10039,thankyou,thank you
+4701,request,post code
+17679,request,phone number
+11549,thankyou,thank you good bye
+18658,thankyou,thank you good bye
+7041,affirm,yes
+4413,reqalts,how about lebanese food
+20467,inform,russian food
+12730,inform,i want to find a cheap
+9246,thankyou,thank you good bye
+17154,negate,no i want american food
+15505,inform,north
+23557,inform,about portuguese
+9182,request,what is the phone number
+17107,request,what type of food
+1811,inform,im looking for an expensive restaurant in the east part of town
+13935,affirm,yes
+8301,negate,no
+19954,inform,dont care
+19398,request,whats the phone number
+16540,thankyou,thank you good bye
+16220,null,sil
+20850,request,address
+5980,request,address
+62,thankyou,thank you good bye
+15681,negate,no thai food
+10390,inform,eritrean food
+13726,inform,canape
+7136,inform,danish
+12210,inform,any
+13329,request,can i have the address phone number and postal code
+19195,request,um whats the phone number
+16383,inform,vietnamese
+5208,null,unintelligible
+2922,inform,i do not care
+9558,inform,south part of town
+13282,negate,no
+15547,request,phone number
+4762,affirm,yes
+13337,inform,moderately priced restaurant in the south part of town
+4396,request,and the post code
+21362,request,phone number
+23021,inform,im looking for turkish food in the center
+15725,thankyou,thank you good bye
+16837,request,address
+16284,inform,russian
+23738,inform,im sorry im looking for a moderate priced restaurant
+15640,affirm,yes
+11654,thankyou,thank you good bye
+15981,inform,doesnt matter
+10836,inform,any
+1738,reqalts,how about italian
+122,thankyou,thank you good bye
+13891,request,great could you tell me the address and phone number to that place
+1645,request,phone number
+17855,hello,hi im looking for a cheap restaurant in the south part of town
+19297,thankyou,thank you good bye
+23464,request,can i get the phone number
+13744,request,the phone number
+574,inform,i dont care
+248,null,unintelligible
+18578,null,sil
+11306,inform,im looking for asian food
+23394,request,can i get the phone number and address
+5646,inform,malaysian food malaysian
+13895,thankyou,thank you good bye
+10534,request,what type of food do they serve
+3225,request,whats the phone number
+18759,inform,indian food
+20313,request,address
+1571,inform,i want a modern european restaurant
+22908,hello,hi im looking for a moderately priced restaurant in the south part of town
+6682,null,unintelligible
+2359,thankyou,thank you good bye
+3622,request,okay address phone number and post code please
+16108,affirm,yes
+7886,inform,dont care
+11107,thankyou,thank you good bye
+16719,inform,any type of food
+13325,inform,spanish
+13251,thankyou,thank you good bye
+20955,inform,venetian
+7838,inform,is their korean food
+1365,inform,spanish food
+12988,thankyou,thank you good bye
+10684,inform,gastropub
+7147,request,what is the phone number
+19290,thankyou,thank you good bye
+20395,request,what is the area
+17037,request,and the phone number
+4545,inform,doesnt matter
+16361,affirm,right
+16604,inform,dont care
+14803,confirm,is it in the north part of town
+16166,inform,chinese food
+17452,inform,korean food
+17268,thankyou,thank you good bye
+23002,inform,i want a restaurant that serves welsh food
+5922,request,what area is it located
+7958,inform,im looking for a cheap restaurant serving pan as
+15987,request,what is the phone number
+3220,inform,the north
+16968,inform,uh medium
+15442,inform,thai
+19291,inform,i would like to find an expensive restaurant that serves corsica food
+16709,inform,gastropub
+22380,request,what is the address
+9290,reqalts,how about european food
+16609,thankyou,thank you good bye
+6123,inform,south part
+21409,reqalts,how about indian food
+12234,inform,christmas
+9034,request,phone number
+16239,affirm,yes
+3159,thankyou,okay thank you good bye
+22786,inform,tuscan food
+3897,inform,british
+13098,inform,vietnamese food
+16399,inform,indian indian food in the east part of town
+19346,bye,okay thank you and good bye
+18610,affirm,yes
+21206,null,sil
+6336,thankyou,thank you good bye
+22941,request,how about the phone number
+21498,null,the addre
+19686,inform,british food
+12883,inform,indian
+467,thankyou,thank you good bye
+3297,reqalts,is there anything else
+1467,thankyou,thank you thank you goodbye
+12421,inform,moderately priced
+12820,inform,gastropub food
+22793,inform,im looking for an expensive restaurant serving turkish food
+23890,null,type
+16364,affirm,right
+16727,inform,yea im looking for a moderately priced restaurant in the south of town
+12315,request,phone number
+17163,thankyou,thank you good bye
+4750,inform,cheap restaurant welsh food
+11431,request,area of the venue
+564,request,what is the address
+23478,inform,korean food
+4394,inform,im looking for african food
+17998,request,what kind of food do they serve
+7840,request,what is the address
+8138,inform,im looking for a restaurant in the east part of town and it should serve
+22581,inform,moderately priced
+5992,reqalts,how about italian food
+20616,thankyou,thank you good bye
+4532,affirm,ye
+23859,thankyou,thank you goodbye
+7489,null,um
+9322,inform,halal
+22474,request,address
+18805,thankyou,thank you goodbye
+13324,inform,spanish food
+2626,thankyou,okay thank you
+9354,inform,expensive restaurant
+3929,request,i want to know the address and the
+1867,request,can i have the phone number
+9275,inform,modern european
+2426,inform,afghan
+18481,inform,im looking for a moderately priced restaurant in the south part of town
+4300,inform,im looking for a moderately priced restaurant in the east part of town
+9457,inform,italian food
+12993,negate,no british food
+9006,null,unintelligible
+16068,thankyou,thank you good bye
+16649,null,noise
+10319,reqalts,how about chinese food
+18503,null,sil
+10318,inform,australian food
+20905,inform,im looking for a restaurant in the east part that serves creative food
+11265,null,sil
+8205,reqalts,how about chinese food
+2565,inform,i dont care
+765,thankyou,thank you
+19697,thankyou,thank you good bye
+9245,request,address
+1617,request,what is their address
+6765,inform,im looking for a restaurant in the center of town that serves
+12610,request,what is the post code
+1271,inform,expensive restaurant east part of town
+13207,negate,no
+19700,request,can i get the address and phone number please
+22124,request,well whats the phone number
+19024,request,whats the address
+18315,request,whats the address
+21483,reqalts,how about italian food
+19230,inform,gastropub
+1768,request,whats the phone number
+20358,request,may i have the address phone number and price range
+21843,inform,thai
+9351,null,unintelligible
+14890,null,give me the least
+4371,affirm,right
+7625,inform,south
+2302,request,phone number
+15579,null,sil
+16497,inform,singaporean food
+6135,inform,looking for a restaurant in the center that serves
+16454,null,uh unintelligible
+10824,thankyou,thank you goodbye
+7444,inform,food
+13247,affirm,yes
+4951,thankyou,thank you good bye
+23507,inform,expensive
+2970,request,what is their post code
+844,thankyou,thank you good bye
+17965,request,address
+11994,request,whats the price range
+10163,reqalts,anything else
+2819,thankyou,thank you good bye
+15047,inform,im looking for a restaurant in the east part of town that serves indonesian food
+176,inform,dont care
+16094,request,what is the address and area
+8820,reqalts,i dont care is there anything else
+9556,request,what part of town are they in
+15400,null,medium
+9770,null,noise
+9907,request,the address
+2723,inform,south
+15305,request,the area of the venue
+10156,inform,im looking for a moderately priced restaurant in the east part of town
+11064,request,whats the area
+15350,inform,um portuguese food
+6557,inform,north part of town
+11044,inform,spanish
+13818,thankyou,thank you goodbye
+17992,request,the phone number
+18575,negate,no
+22605,thankyou,thank you good bye
+9881,inform,looking for a restaurant in the west part of town that serves bistro food
+8849,inform,west
+5198,request,may i have the phone number please
+18172,request,whats the post code
+15801,thankyou,thank you goodbye
+2154,inform,french
+14928,inform,north part of town
+16798,affirm,yes
+20282,inform,it doesnt matter
+14031,null,cough
+22005,inform,venetian
+14720,inform,food
+10328,request,and post code
+17835,thankyou,thank you good bye
+3276,inform,thai food
+10076,inform,any
+11862,inform,expensive restaurant
+20587,request,what is the address and phone number
+790,request,address
+11321,thankyou,thank you good bye
+18152,reqalts,what about chinese food
+4130,null,noise
+7418,inform,moderate
+23750,inform,i dont care
+3565,request,what is the price range
+8774,reqalts,how about korean food
+19864,null,noise
+17493,request,what was the phone number for chiquito
+1712,inform,i dont care
+2041,request,price range
+18757,negate,no
+7173,affirm,yes
+17381,null,noise
+5883,thankyou,thank you good bye
+10951,request,the address
+6006,inform,scottish food
+11815,request,phone number
+18065,inform,turkish food
+14920,thankyou,thank you good bye
+14477,request,address
+16116,request,address
+4416,request,what type of food is it
+5963,inform,uh west
+5712,request,and the phone number
+15889,request,can i have the phone number
+19963,request,can i get the address and phone number
+15280,affirm,ye
+11061,inform,i want sea food
+11186,request,can i get the area
+16012,inform,moderate
+11533,null,in appleton wiscon
+6999,affirm,yes
+3483,inform,i dont care
+364,reqalts,how about in the center
+22520,request,address
+20691,request,whats the phone number
+14853,request,whats the phone number
+21965,inform,moderately
+5918,inform,alright gastropub food
+1522,inform,any price range
+4414,request,what kind of food
+12450,request,phone number
+13296,thankyou,thank you good bye
+14235,reqalts,what about international food
+8985,inform,vietnamese food
+6398,reqalts,how about korean food
+4949,request,give me the address
+15483,thankyou,thank you good bye
+19979,inform,im looking for an expensive restaurant
+9120,request,can i have the address please
+2762,reqalts,is there anything else
+889,request,and whats the phone number
+5413,thankyou,thank you good bye
+19749,request,what is the phone number
+15447,request,address
+9321,inform,im looking for a restaurant in the west part of town that serves
+19258,request,could i have the address
+15636,thankyou,thank you good bye
+6210,thankyou,thank you good bye
+13071,repeat,back
+404,inform,moderate
+21949,inform,center
+9713,thankyou,thank you good bye
+12494,request,phone number
+6811,request,whats the address
+16118,thankyou,thank you good bye
+23486,inform,im looking for a moderately priced restaurant in the north part of town
+11299,request,phone number
+19314,inform,i want to find a moderately priced restaurant in the east part town
+16794,confirm,is there a vietnamese restaurant
+15808,inform,barbecue food
+13908,inform,west
+18922,inform,cheap
+14620,inform,id like a moderately priced restaurant in the west part of town
+4185,reqalts,anything else
+1278,request,phone number
+12682,inform,unusual food
+11449,inform,i am looking for a restaurant in the south part of town
+1354,inform,north american
+7092,request,address
+12640,reqalts,what about indian food
+21342,thankyou,thank you good bye
+12107,request,what is the address
+13521,affirm,yes
+18454,thankyou,thank you goodbye
+5242,thankyou,thank you good bye
+6799,inform,i want a cheap restaurant in the north part of town
+21705,null,and can
+5367,inform,cheap restaurant in the west part of town
+22785,thankyou,thank you
+1473,inform,restaurant
+13837,negate,no
+4684,inform,cheap restaurant
+12056,inform,what about asian food
+17623,inform,expensive
+6084,request,phone number
+21978,request,can i get the address and type of food
+14041,inform,i want thai food
+4704,null,unintelligible
+20921,inform,thai food
+334,inform,i dont care
+7871,inform,okay im looking for a restaurant serving fre
+21532,null,noise
+9936,bye,okay thank you and good bye
+4779,thankyou,thank you good bye
+19436,affirm,yes
+5660,inform,yes i dont care about the price range
+10053,affirm,yes a moderately priced restaurant
+10471,inform,looking for vietnamese food
+14529,request,may i have the address and phone number and post code
+23231,reqalts,how about chinese food
+13953,request,uh i want the address of the or the address of the mediterranean food part
+21484,inform,a restaurant in the south part of town serving italian food
+20063,inform,doesnt matter
+18046,request,the address
+8610,inform,iam looking for a restaurant that serves portuguese food
+9466,request,whats the address
+5798,inform,korean
+9644,request,whats their address
+13024,request,can i have the address and phone number
+8710,inform,is there is no such venue that have asian oriental type of food
+15039,inform,moderate
+16954,request,what is the phone number
+15055,request,can i get their address and phone number
+2867,request,whats the address
+6149,request,whats the phone number
+11661,inform,any
+23270,inform,im looking for a moderately priced restaurant in the west part of town
+9489,request,what part of town is it
+15810,inform,turkish food
+14239,inform,im looking for a restaurant that serves traditional food
+18118,reqalts,how about british food
+17373,inform,i dont care
+15277,thankyou,thank you goodbye
+23918,thankyou,thank you good bye
+7952,thankyou,thank you good bye
+4567,affirm,yes
+13552,null,unintelligible
+23876,null,sil
+11376,request,okay address
+20541,thankyou,thank you good bye
+20674,request,address
+10583,thankyou,thank you good bye
+3333,thankyou,thank you goodbye
+1991,inform,i want to find a cheap restaurant in the south part of town
+22437,inform,um im looking for a cheap restaurant
+6319,inform,any
+21189,null,noise
+2419,affirm,yes
+11303,inform,catalan
+6146,inform,vietnamese food
+7772,request,whats the address
+3848,inform,im looking for a restaurant in the east part of town
+8134,affirm,yes
+21722,inform,british food
+18176,inform,class over
+13092,reqalts,anything else
+6203,inform,im looking for a expensive restaurant serving irish food
+15441,inform,cantonese
+20551,affirm,yea
+7542,inform,im looking for a moderately priced restaurant in the east part of town
+11632,request,and what about the phone number
+6141,inform,i dont care
+15169,request,what is the phone number
+5363,inform,expensive restaurant south part of town
+10892,reqalts,another
+5858,inform,indian food
+901,request,address and phone number
+4531,inform,doesnt matter
+7313,reqalts,how about italian food
+16233,null,sil
+10388,reqalts,what about vietnamese food
+14173,thankyou,thank you good bye
+17732,null,unintelligible
+11364,reqalts,what about italian
+21950,inform,swedish
+17447,inform,korean
+1906,thankyou,thank you good bye
+21352,thankyou,thank you good bye
+20155,null,sil
+17092,reqalts,how about asian food
+22043,request,what is the price range
+1555,thankyou,thank you good bye
+1557,reqalts,how about korean food
+10701,request,can i have the address phone number and
+1213,request,whats the phone number and price range
+3133,inform,cheap
+6057,inform,expensive restaurant
+11706,inform,barbecue
+12481,inform,italian food
+20635,inform,restaurant in the center
+17117,inform,any
+3857,thankyou,thank you
+4922,request,area
+3028,request,does it what kind of food does it serve
+613,inform,uh the south
+5475,inform,in the south part
+7069,request,what is the phone number
+10772,inform,i would like to find a cheap restaurant
+4781,request,could i have the address and phone number
+2813,thankyou,thank you good bye
+12500,inform,im looking for a british restaurant
+22648,inform,polynesian
+6847,inform,traditional food
+21073,request,may i have the phone number and address
+11647,request,address
+20728,thankyou,thank you goodbye
+6066,negate,no
+20325,inform,any
+9037,inform,im looking for a restaurant in the west part of town
+14085,request,whats its number
+12636,request,uh okay how about the address
+21143,affirm,yes
+11146,hello,hi im looking for a moderately priced restaurant
+16036,inform,i dont care
+11500,null,okay
+10100,request,whats the address
+21960,inform,moderately
+13944,affirm,uh yes that serves mediterranean food
+10475,request,where is the area
+6479,affirm,yes
+17409,thankyou,thank you good bye
+497,inform,south part of town
+14034,inform,breath do you have danish restaurants
+8092,request,whats the phone number
+12958,inform,halo food
+2942,request,what type of food is that
+23376,inform,just fuck every time i do it and this moron says that its indian sucks
+19422,request,address
+12833,inform,moderate
+5814,inform,i dont care
+17858,request,what is the address
+11854,inform,id like a cheap italian restaurant
+13159,null,noise
+4948,inform,north
+5089,request,phone number
+8448,thankyou,thank you good bye
+4356,request,can i can i have the address the phone number
+4221,inform,dont care
+975,inform,um in north
+19930,inform,west
+11645,inform,uh north
+10540,thankyou,thank you good bye
+9509,inform,that serves takes out food
+14152,inform,italian
+877,reqalts,how about indian
+20943,affirm,right
+3330,reqalts,how bout indian food
+10071,thankyou,thank you good bye
+11222,null,noise
+13240,inform,i want to find a restaurant in the center and it should serve vietnamese food
+5932,inform,im looking for a cheap restaurant in the south part of town
+16767,inform,moderate
+16124,null,uh
+9119,inform,can i have an asian oriental restaurant in the
+23261,request,what is the phone number
+2352,request,whats the phone number
+22559,request,price range
+7303,request,what area is it in
+357,inform,thai food
+16436,inform,i need to find an expensive restaurant in the south park of town
+4318,reqalts,just give me one more
+21786,inform,modern european
+1130,request,what area
+18102,inform,any
+19423,null,noise
+8676,request,what is the address
+16459,inform,im looking for a restaurant in any area that serves cantonese food
+1885,request,address
+394,inform,what about international type food
+11217,inform,south
+6941,request,address
+15317,inform,west
+22985,reqalts,how about indian food
+20637,inform,thai food
+552,reqalts,what about gastropub type of foo
+18901,inform,im looking for an expensive restaurant that serves signaporean food
+14544,null,suggestion
+15249,thankyou,thank you good bye
+23343,reqalts,is there anything else
+18557,inform,vietnamese
+8863,inform,im looking for canapes food in any price range
+15699,affirm,right
+21272,request,and the post code
+23938,inform,thai
+14149,thankyou,thank you good bye
+17953,thankyou,thank you noise
+2188,inform,south
+2240,request,where is one
+18794,thankyou,thank you good bye
+13330,thankyou,thank you
+10716,request,phone number
+14463,inform,any
+12308,affirm,yes
+6712,thankyou,thank you good bye
+21287,null,sil
+5688,inform,expensive
+48,inform,i need one in the cheap price range
+13747,inform,i want a restaurant in the north part of town that serves french food
+6924,thankyou,thank you good bye
+706,request,address
+17833,affirm,yes
+17180,inform,restaurant
+19626,inform,spanish food
+23076,inform,id like thai food
+5142,request,uh phone number
+16583,inform,i need a cheap restaurant that serves romanian food
+6832,request,what is the address phone number and price range
+9043,inform,im looking for a moderately priced restaurant that serves international
+13991,null,noise
+1954,request,may i have the address and phone number
+8563,inform,indian food noise
+23537,inform,im looking for a cheap restaurant
+19586,request,whats the phone number
+21801,inform,in the east of town
+18821,request,and the post code
+22795,request,what is the post code
+23761,null,i would like
+1268,request,whats his addre
+18595,inform,cheap
+3224,request,okay what is the address
+6974,null,unintelligible
+22867,null,just a moment
+1520,reqalts,how about turkish
+15764,null,noise
+3469,request,phone number and area
+9222,inform,gastropub food
+1619,inform,looking for a restaurant in the south part of town that serves persian
+9813,inform,im looking for a cheap restaurant in the north of town
+7571,affirm,yes
+6094,reqalts,how about chinese food
+13561,inform,any area
+247,thankyou,thank you good bye
+14712,request,their address
+20002,null,post
+3753,null,breathing
+19498,inform,tuscan food
+17191,thankyou,thank you
+17925,inform,jamaican food
+5400,request,what is the phone number
+4977,request,what is the phone number
+4759,inform,expensive russian food
+10915,thankyou,thank you good bye
+14158,reqalts,how about in any price range
+8439,request,post the phone number
+20931,inform,creative
+17369,null,sil
+12509,request,what kind of food do they serve
+15913,inform,basque
+12268,request,can i have the address of the venue
+17945,inform,south
+5651,inform,doesnt matter
+19057,request,phone number
+13042,inform,i need a restaurant in the north part of town that serves lebanese food
+9626,confirm,does it serve christmas food
+19836,inform,the restaurant
+13597,null,sil
+3750,reqalts,another place
+5524,thankyou,thank you good bye
+20705,request,address
+21324,request,i need an address
+7023,request,what is the address and phone number
+8500,inform,i dont care
+19450,affirm,yes
+20843,affirm,yes
+15353,request,whats the phone number
+15816,request,whats the address
+12475,affirm,yes
+22171,inform,im looking for an expensive restaurant
+18121,request,whats the phone number
+3263,thankyou,thank you good bye
+20484,inform,i dont care
+19211,null,unintelligible
+7552,thankyou,thank you good bye
+19635,request,what is the address
+18853,request,phone number
+21736,thankyou,thank you good bye
+21021,null,sil
+13173,inform,looking for a cheap restaurant
+4657,inform,im looking for a moderately priced restaurant that serves turkish food
+11933,request,phone number
+20781,request,whats the address
+14660,request,what is the address
+8490,request,can i get the address
+3668,inform,i dont care
+1525,inform,dont care
+402,affirm,yes
+13549,inform,moderately priced restaurant in
+19978,thankyou,thank you goodbye
+8808,thankyou,thank you good bye
+8864,reqalts,how about european
+21145,request,what kind of food is that
+13280,negate,no
+276,inform,korean
+17542,thankyou,thank you good bye
+9994,request,may i get the phone number and post code
+12965,inform,moderately
+1953,affirm,right
+21537,thankyou,thank you good bye
+9778,bye,goodbye
+7987,request,oh where is it
+14049,inform,i want a restaurant in the north part of town that serves swiss food
+21046,request,what area
+23722,inform,i dont care but i want it to be in the east part of town
+1281,thankyou,thank you good bye
+8341,null,unintelligible
+156,null,cough
+18149,request,and the post code
+15021,thankyou,thank you good bye
+6158,inform,modern european food
+20984,request,what is the address
+8726,thankyou,thank you good bye
+1245,inform,mexican food
+15769,null,breathing
+17871,thankyou,thank you good bye
+3066,thankyou,thank you good bye
+14309,thankyou,thank you goodbye
+14354,inform,austrian food in the west part of town
+16061,inform,i need a restaurant that serves
+15700,reqalts,how about chinese food
+10929,inform,can i get a steak house restaurant in any area
+15893,request,phone number
+12528,inform,swedish
+12742,inform,a cheap
+21468,inform,chinese food
+2474,inform,indian food
+17499,null,noise
+9388,inform,looking for a moderately priced restaurant in the west part of town
+20085,inform,can i get swedish food
+7103,inform,dont care
+2002,request,phone number
+18160,null,unintelligible
+12968,request,phone number
+8293,negate,no
+15054,inform,it doesnt matter
+13175,request,whats the address
+6034,request,what is the address
+7429,affirm,yea
+368,request,could i have its phone number
+19956,reqalts,anything else
+21565,inform,i want a restaurant in the north part of town
+9267,inform,steakhouse
+1469,reqalts,is there a restaurant that serves indian food
+2529,inform,i dont care
+18446,request,post code
+3176,inform,expensive east part of town
+16241,inform,any
+21668,request,can i please have their phone number
+15372,inform,i dont care
+17938,reqalts,how about french
+18465,thankyou,thank you good bye
+7632,reqalts,next
+4409,negate,no
+11203,inform,im looking for an expensive restaurant in the east part of town
+3641,reqalts,how about asian oriental
+10142,thankyou,thank you good bye
+6054,inform,noise i am looking for a restaurant
+3468,inform,vietnamese food
+7464,request,price range
+2370,inform,british food
+9705,thankyou,thank you good bye
+4591,request,and the address
+11452,reqalts,what about chinese food
+12396,inform,any price range
+2691,null,unintelligible
+2870,inform,malaysian food in the south part of town
+13356,request,what is the signature dish
+9260,request,what type of food does it serve
+12634,inform,uh i need one in the cheap price range
+23215,affirm,yes
+17850,inform,cheap
+6803,reqalts,another one
+19474,affirm,yes
+3179,request,what is the address and phone number
+4998,thankyou,thank you good bye
+18355,inform,mediterranean
+3193,inform,i want mediterranean food
+11865,request,address
+20556,thankyou,thank you good bye
+7185,inform,thai food
+7468,affirm,yes
+2560,request,what kind of food do they have there
+10813,reqalts,what else
+15425,reqalts,is there anything else
+3924,affirm,yes
+9897,inform,creative food
+18629,request,and the post code
+11038,request,whats the phone number
+21147,null,noise
+3478,inform,portuguese
+11460,null,what about us
+1180,inform,i dont care
+8884,request,okay what is the address
+14891,request,give me the address
+7924,inform,cheap restaurant
+16112,inform,persian
+3627,inform,is there an asian oriental restaurant in the north part of town
+20146,inform,north
+4606,inform,moderate
+20535,request,what is the phone number and address
+2836,thankyou,thank you good bye
+20090,inform,swedish food
+17468,request,type of food does it serve
+15846,inform,im looking for an expensive restaurant in the south part of town
+14924,request,post code
+12602,negate,no corsica food
+20622,request,address
+18987,thankyou,thank you good bye
+3036,request,what is the phone number
+4959,inform,i dont care
+6295,inform,chinese
+5052,inform,im looking for a restaurant in the north part of town thats
+13196,inform,spanish food
+11546,inform,thai food
+23785,thankyou,thank you goodbye
+21093,null,dont
+1974,inform,moderately
+16452,thankyou,thank you good bye
+18909,inform,north american food
+13070,null,okay
+9486,request,may i have its phone number
+15073,thankyou,okay thank you good bye
+20738,inform,im looking for a restaurant that serves gastropub food any price range
+190,thankyou,thank you good bye
+2775,inform,catalan
+2939,inform,i want to find an expensive restaurant on the east part of town
+23846,inform,west
+18364,request,may i have the address
+948,inform,im looking for an expensive restaurant in the east
+9279,null,noise
+19938,null,sil
+21551,request,probably an address
+6627,inform,vietnamese food
+19114,inform,im looking for a cheap restaurant in the south part of town
+3079,inform,sea food
+8732,reqalts,is there anything else
+9410,thankyou,thank you good bye
+18750,inform,barbecue food
+14934,affirm,yea you can give me the address
+2407,thankyou,thank you good bye
+15026,inform,chinese food
+8153,null,whats the other one
+9316,inform,i am looking for asian oriental type food
+12971,inform,south part of town
+19874,inform,indian
+8635,reqalts,is there anything else
+16861,inform,breath malaysian food
+8689,request,phone number
+23561,thankyou,thank you good bye
+7633,reqalts,next
+4595,inform,french
+12631,negate,no id like cheap restaurant in the west part of town
+7174,affirm,correct
+10830,request,whats the price range
+8477,affirm,yes
+18904,inform,any
+17715,inform,i dont care
+5622,affirm,yes
+18088,request,what is the address
+23283,request,area
+6447,request,whats the phone number
+15891,inform,japanese
+16232,inform,moderate
+5590,inform,food
+23226,inform,south
+23654,thankyou,thank you good bye
+7400,thankyou,thank you good bye
+5735,request,whats the address
+22075,inform,italian
+2627,thankyou,thank you good bye
+22087,thankyou,thank you good bye
+1771,inform,european now
+20297,inform,north
+12007,thankyou,thank you good bye
+22922,inform,im looking for a cheap restaurant in the south part of town
+9002,request,their phone number
+13150,thankyou,thank you good bye
+11927,request,whats the phone number
+9805,inform,spanish
+14046,negate,no goodbye thank you
+20796,inform,id like a moderately price
+2797,thankyou,thank you good bye
+15864,inform,moderate
+353,thankyou,thank you good bye
+17184,inform,the turkiesh food
+23672,request,the post code as well please
+20148,inform,north
+96,request,could i have the phone number please
+18196,request,address
+17889,affirm,yes
+15653,request,phone number
+15162,inform,moderate
+2653,inform,doesnt matter
+1852,null,noise
+4174,request,whats the address
+14182,inform,are there any turkish restaurants at all
+22091,request,what is the phone number
+4818,negate,no
+13899,affirm,yeah
+15958,null,sea
+12214,request,can i get the phone number
+12573,affirm,right
+23574,inform,asian
+5298,thankyou,thank you good bye
+5446,request,phone number
+7282,affirm,yes
+20376,inform,polynesian food
+1128,negate,no
+3939,null,um
+13406,inform,south
+475,affirm,yes in the south of town
+11620,reqalts,what about cuban food
+21309,null,system
+19903,inform,catalan
+3398,inform,okay im looking for moderate price range
+8114,inform,moderately priced
+20001,request,post code
+6943,request,price range
+3712,request,whats the address
+12765,inform,expensive restaurant east part of town
+8111,thankyou,thank you good bye
+7055,thankyou,thank you good bye
+12903,inform,gastropub
+17018,inform,vietnamese food
+12802,inform,im looking for a restaurant in the north part of town that serves caribbean food
+16507,affirm,yes
+21249,thankyou,thank you good bye
+1480,request,phone number
+10530,reqalts,is there anything else
+6378,request,can i get the address
+4352,inform,food
+23577,inform,oriental
+13528,null,serving
+16557,affirm,yes
+9678,request,address
+7758,reqalts,how about indian food
+7634,null,unintelligible
+22498,request,can i get the phone number
+19326,thankyou,thank you good bye
+3473,inform,i would like a cheap restaurant in the north part of town
+2223,ack,okay um
+10283,thankyou,thank you good bye
+18091,inform,im looking for a restaurant in the center of town that serves african food
+23477,inform,polynesian food
+7216,affirm,yes
+890,thankyou,thank you good bye
+13224,inform,moderate
+1437,inform,danish
+968,confirm,does it serve steakhouse food
+19030,inform,i need a cheap restaurant
+17683,inform,greek food
+23152,inform,expensive restaurant south part of town
+13752,inform,vietnamese food
+4760,reqalts,how about russian food
+17084,inform,how bout asian oriental
+9164,inform,im looking for a cheap restaurant in the west part of town
+6178,request,what is the phone number
+13271,request,phone number
+3365,inform,dont care
+21223,inform,restaurant south part of town english food
+2143,request,may i have the address
+20451,request,post code
+20723,request,price range
+17705,inform,indian food
+16643,affirm,yes
+11259,thankyou,okay thank you goodbye
+16544,inform,west part of town
+15619,thankyou,thank you good bye
+11686,inform,im looking for an expensive restaurant in the south part of town
+7740,inform,if there is no such venue how about european type of
+23410,inform,uh dont care but can it be vegetarian food
+9435,request,post code
+12159,inform,anything
+13841,affirm,yes
+1882,thankyou,okay uh thank you and goodbye
+10860,inform,can i have a mexican restaurant
+388,affirm,yes
+12650,inform,i dont care
+16375,inform,vietnamese
+5710,inform,any area
+15393,reqalts,how about european type food
+17513,affirm,yes
+17179,request,may i have the phone number to the turkiesh
+16040,reqalts,is there anything else
+16885,request,the phone number
+9365,thankyou,thank you good bye
+1084,inform,any
+738,inform,south
+23858,thankyou,thank you goodbye
+18951,request,phone number
+4329,inform,i dont care
+19746,inform,cheap
+9011,reqalts,how about chinese food
+22826,inform,doesnt matter
+22830,request,whats the phone number
+9653,inform,vietnamese food
+954,thankyou,thank you goodbye
+18295,reqalts,what about french food
+5210,null,unintelligible
+11229,request,can i have the price range of the venue
+10910,request,address
+19204,reqalts,is there any restaurant serving asian oriental food
+7363,null,nt care
+18354,inform,mediterranean
+19454,inform,unintelligible food
+2067,reqalts,anything else
+1225,thankyou,thank you good bye
+9163,thankyou,thank you goodbye
+22510,null,unintelligible
+3045,request,phone number
+17467,request,what type of food
+4220,affirm,yes
+14492,affirm,correct
+373,request,can i have the phone number
+19123,request,what is the address and phone number
+14698,reqalts,is there anything else
+21771,reqalts,i hate golden wok is there anything else
+9439,request,what type of food
+5445,inform,moderate
+12973,inform,i dont care
+9666,inform,restaurant in the north part of town that serves
+7077,inform,french food
+17586,request,address
+8602,inform,i want to find a restaurant in the north part of town and it should serve
+19915,request,address
+1719,inform,korean food moderate price
+5412,request,what is the post code
+14917,inform,i want an italian restaurant in the center
+2737,inform,i dont care
+5438,inform,scandinavian food
+17086,reqalts,thats fine how bout asian food
+4418,request,whats the address
+1468,inform,im looking for a restaurant in the east part of town that serves belgium food
+14727,null,inaudible
+3507,thankyou,thank you good bye
+20384,inform,breath how bout north part of town
+18332,inform,cheap
+4837,inform,the south part
+17460,request,area
+4095,thankyou,thank you good bye
+5915,inform,moderately priced
+2333,inform,it doesnt matter
+15530,thankyou,thank you good bye
+22384,inform,expensive
+9018,reqalts,anything else
+22967,request,phone number
+21621,inform,cheap
+23158,request,price
+6275,request,phone number
+7115,null,id like to find
+14629,inform,i need chinese food
+15128,inform,any area
+1320,thankyou,thank you good bye
+11772,request,can i have the phone number and the price range
+7596,inform,south part of town
+16656,thankyou,thank you good bye
+2435,thankyou,thank you
+7686,inform,i need thai food
+6164,inform,in the south part of town
+16985,inform,im looking for a moderately priced restaurant that serves vietnamese food
+2533,thankyou,thank you good bye
+15267,inform,i want a restaurant in the center part of town that serves traditional food
+15165,inform,i would like a restaurant in the south part of town
+3508,inform,im looking for cheap german food
+21181,null,noise
+22804,inform,moderate
+7697,inform,moderately priced
+9243,thankyou,thank you good bye
+16982,reqalts,anything else
+739,affirm,yes
+2702,request,may i have the phone number and address please
+12340,reqalts,are there any others
+9429,request,address
+19855,request,what is the phone number
+2268,inform,north
+5684,inform,thai food
+6998,inform,south
+12322,reqalts,how about italian food
+18326,inform,i dont care
+20143,inform,north
+16800,request,where is it located
+6581,inform,any
+8840,request,what is the address phone number and the price range
+23359,thankyou,thank you good bye
+14151,inform,north
+11292,inform,german food
+17205,inform,i dont care
+5306,inform,center
+19186,request,how much
+23161,request,address
+3388,thankyou,thank you goodbye
+4161,affirm,yes
+9941,inform,looking for something cheap
+9851,inform,can i have it in any price range
+9710,confirm,is it in the east part of town
+10821,thankyou,thank you good bye
+6792,inform,center
+11844,reqalts,how about spanish
+4131,inform,dont care
+16862,reqalts,how about portuguese food
+8269,thankyou,thank you goodbye
+5796,null,unintelligible
+11969,request,the address phone number and postcode
+3210,request,whats the price range
+11562,inform,asian oriental
+8201,request,whats the address
+18388,null,noise
+3430,thankyou,thank you good bye
+13145,reqalts,how about a restaurant serving vietnamese food
+919,inform,i dont care
+267,request,can i get the address tv_noise
+10698,thankyou,thank you good bye
+17435,null,noise
+9577,inform,need it in north
+13643,inform,moderate
+16750,reqalts,next
+6909,thankyou,thank you good bye
+4281,negate,no
+4513,inform,cheap restaurant serving mediterranean food
+6382,request,and the phone number
+23725,thankyou,awesome thank you good bye
+15996,reqalts,is there anything else
+2001,request,phone number
+8231,request,okay let me have that address
+21603,reqalts,anything else
+7243,thankyou,thank you good bye
+23790,request,could i get the address and post code please
+7229,thankyou,thank you good bye
+8892,request,and whats the phone number
+6759,reqalts,how about portuguese food
+12006,request,and their phone number
+23710,reqalts,how about asian oriental
+16955,thankyou,thank you good bye
+9100,inform,uh i want a cheap restaurant and it should be in the north part of town
+6262,thankyou,okay thank you good bye
+8427,deny,i dont want that
+17917,inform,i dont care
+19814,request,address
+22861,inform,in the east part of town
+8510,request,address
+9251,inform,i want a restaurant in the north part of town
+17634,request,what area
+3258,request,phone number
+323,thankyou,thank you good bye
+13078,request,telephone number
+14146,thankyou,thank you good bye
+15865,inform,any price range
+20270,affirm,yes
+22230,inform,i want to find a restaurant in the center
+14619,thankyou,thank you good bye
+20940,reqalts,how about european food
+21018,null,unintelligible
+23212,thankyou,thank you good bye
+14553,thankyou,thank you goodbye
+12174,request,whats the phone number
+17042,inform,i want a restaurant that serves french food
+22082,inform,any
+3616,inform,that serves traditional food
+18135,inform,christmas food
+23065,reqalts,how about a restaurant that serves thai food
+6995,affirm,yes
+23708,inform,i dont care
+22038,request,whats the price range
+13737,inform,canapes
+14248,request,what is the phone number and address
+4162,inform,i dont care
+17541,request,whats the post code
+2876,request,and can i have the phone number
+3957,null,unintelligible
+7579,request,what area
+23579,inform,oriental
+23150,thankyou,thank you good bye
+17684,inform,indian food
+4772,inform,austral asian
+4297,thankyou,okay thank you good bye
+19410,inform,it doesnt matter
+14911,inform,i want a singaporean food restaurant in the center
+17173,request,address
+20156,request,address
+6487,inform,the type of food is lebanese
+6681,hello,hi im looking for a restaurant that serves
+10231,request,breath may i have the phone number please
+8969,request,okay and uh whats the address
+15089,thankyou,thank you good bye
+1094,null,unintelligible
+19961,inform,im looking for a restaurant in the east part of town serving japanese food
+15215,thankyou,thank you good bye
+1978,inform,moderate
+20775,request,what type of food do they serve
+20071,request,the phone number
+20037,affirm,right
+4489,inform,im looking for a restaurant that serves expensive food or expensive
+10859,request,phone number
+13734,inform,canapes
+7336,request,address
+7635,request,address
+22779,inform,i dont give a fuck if hk fusion serves chinese food im looking for thai food
+8471,request,whats the phone number and post code
+3829,request,type of food
+8934,inform,center part of town
+23071,thankyou,thank you
+5042,thankyou,thank you good bye
+19140,request,phone number
+11646,inform,north
+4061,thankyou,thank you
+13137,null,unintelligible
+3959,affirm,yes
+16034,inform,i want to find a turkish food
+2008,request,phone number
+9916,request,what is the address and phone number
+2160,request,phone number
+16460,reqalts,what about spanish type of food
+5472,reqalts,how about europea
+15392,null,uh
+6222,inform,dont care
+3135,thankyou,thank you good bye
+11462,inform,find a moderately priced restaurant that serves bask food
+18755,inform,barbecue food
+6757,inform,australian food
+15849,inform,im looking for an expensive restaurant
+20144,null,sil
+13713,null,unintelligible
+1796,inform,i dont care
+15357,inform,turkish food
+3466,request,what is the telephone number
+16883,request,do you have the address of the lucky star
+23329,thankyou,thank you good bye
+4072,request,okay can i have the phone number
+2165,reqalts,whats the next one
+18277,inform,im looking for a restaurant that serves polynesian food
+764,inform,dont care
+19844,thankyou,thank you good bye
+20181,thankyou,thank you good bye
+13708,request,can i get the address
+8851,request,phone number
+20896,inform,italian food
+22819,inform,im looking for a moderately priced restaurant that serves scottish food
+8722,inform,west part of town serving barbecue food
+11880,inform,north american food
+6952,null,sil
+20694,null,sil
+17606,request,whats the address
+12718,thankyou,thank you good bye
+13193,request,can i have the address and phone number please
+23186,request,address
+22534,inform,i dont care
+6244,request,phone number
+23800,request,address phone number and post code
+22659,restart,start again
+23805,request,address
+3422,negate,no im looking for pan asian food
+15079,request,the address
+11790,inform,looking for a restaurant in the north part of town
+15924,request,okay what is the address and phone number
+14291,request,may i have the phone number
+15255,null,sil
+3128,request,phone number
+6978,inform,dont care
+2733,reqalts,how about chinese food
+18577,null,sil
+6257,thankyou,thank you good bye
+23356,inform,moderate
+15784,request,what is the address and phone number
+22501,inform,doesnt matter
+2351,request,whats the address and phone number
+6315,thankyou,thank you goodbye
+12026,request,post code
+13411,request,address
+5912,inform,danish food
+7869,reqalts,what about french food
+11371,inform,cheap restaurant
+2656,thankyou,thank you good bye
+12241,request,whats the address
+12017,thankyou,thank you good bye
+14002,request,and the phone number
+13529,negate,no singaporean
+2377,inform,asian
+21619,thankyou,okay thank you bye
+8847,request,and whats the postcode
+18232,null,sil
+7668,request,okay what were the prices for the other restaurant
+2758,request,what is the address and phone number
+4196,inform,gastropub type food
+2493,reqalts,is there anything else
+11872,reqalts,anything else
+18673,reqalts,how about asian oriental type of food
+13759,null,s
+23850,inform,i want to find a cheap restaurant in the south part of town
+11748,null,unintelligible
+23228,request,phone number
+5668,affirm,yes
+17847,inform,north part of town
+20586,reqalts,how about indian food
+7505,inform,cheap restaurant spani
+9481,thankyou,thank you good bye
+11701,thankyou,thank you good bye
+3777,inform,im looking for a cheap restaurant in the east part of town
+18424,inform,dont care
+9593,inform,moderately priced
+11400,request,whats their phone number
+7825,inform,the south part of town
+4306,inform,it doesnt matter
+3293,request,whats your phone number and post code
+2335,request,phone number
+14899,inform,mediterranean
+9237,request,price range
+7425,request,may i have the address phone
+13170,inform,cheap
+21321,thankyou,thank you good bye
+15679,thankyou,thank you good bye
+12439,hello,hello
+18488,inform,north
+23114,reqalts,how about north american type of food
+12086,thankyou,thank you good bye
+12722,bye,very good thank you good bye
+12856,confirm,is there a thai restaurant in the west of town
+9017,request,price range
+23862,inform,tuscan
+20856,inform,i need a cheap restaurant that serves indonesian food
+22085,inform,food
+3370,request,phone number
+7456,thankyou,thank you good bye
+5768,thankyou,thank you good bye
+21969,inform,im looking for a moderately priced restaurant in the south part of town
+22545,thankyou,thank you good bye
+19819,request,phone number
+5802,request,address
+20703,negate,no
+21999,inform,i want english food in the center of town
+18052,inform,chinese
+12225,inform,west part of town
+12083,request,phone number
+21782,thankyou,great thank you good bye
+2175,request,whats the address
+15307,inform,italian food
+17687,inform,dont care
+1023,thankyou,thank you good bye
+9269,inform,thai
+7651,thankyou,thank you good bye
+5704,inform,i dont care
+2546,null,cough
+23473,thankyou,thank you good bye
+9972,request,oh whats the address
+3722,request,whats the address
+6955,inform,dont care
+11980,repeat,can you repeat that
+13062,thankyou,thank you good bye
+19171,inform,i do not care
+16323,inform,any
+17439,reqalts,anything else
+5497,null,unintelligible
+5211,request,can i get the phone number
+1777,inform,corsica food
+14339,inform,any price range
+560,thankyou,thank you good bye
+11914,request,and their phone number
+7030,thankyou,thank you good bye
+22829,confirm,is it the east part of town
+23665,inform,doesnt matter
+11845,request,and the phone number
+12362,negate,no cuban food cuban food
+15440,null,sil
+11877,affirm,yes
+23571,reqalts,another
+14382,request,what type of food is it
+4976,request,what is the address
+7789,thankyou,thank you good bye
+20838,inform,cheap
+12103,inform,italian food
+16174,request,what is the address
+15983,inform,indonesian
+23502,reqalts,are there any other options
+8223,request,whats the address
+18803,inform,in the west
+590,request,what is the phone number
+23583,null,carrier
+2327,null,unintelligible
+7050,affirm,yes
+5632,thankyou,thank you good bye
+8948,inform,i dont care
+15828,inform,italian food
+14632,inform,a chinese restaurant in the south part of town
+14399,reqalts,is there anything else
+19080,inform,chinese food
+81,request,phone number
+19464,reqalts,how about vietnamese food
+22326,request,good whats the address
+14224,thankyou,thank you good bye
+3610,inform,any
+5080,affirm,yes
+5032,inform,lebanese
+251,inform,tv_noise any
+23490,thankyou,thank you good bye
+9755,request,whats the address
+1284,reqalts,is there anything else
+6073,request,phone number
+16536,request,phone number
+9293,thankyou,thank you good bye
+17583,affirm,yes
+13853,inform,i do not care
+22008,inform,asian oriental
+12267,inform,im loooking for a restaurant serving vietnamese type of food
+14517,thankyou,thank you good bye
+23827,reqalts,how about turkish food
+16328,request,price range
+4916,request,area
+6296,inform,chinese
+6755,inform,it does not matter
+15550,inform,oh i dont care
+5434,request,price range
+23538,request,whats its address
+7882,inform,north
+13796,inform,gastropub
+18543,request,what type of food is it
+18390,null,noise
+16491,inform,i dont care
+16760,affirm,yes
+5125,inform,brazilian
+1381,inform,it doesnt matter
+19197,inform,can i have a moderately priced restaurant
+3963,inform,im looking for a cheap restaurant that serves chinese food
+18981,thankyou,thank you good bye
+3998,negate,wrong no
+3995,confirm,does it serve kitalian food
+5639,inform,im looking for a moderately prices restaurant
+18079,thankyou,thank you good bye
+21691,inform,cantonese food
+10890,reqalts,another please
+23052,inform,sea food
+22128,request,address
+23286,thankyou,thank you good bye
+5518,negate,no moderately priced restaurant
+4697,inform,chinese
+10389,null,does do you know anyone who serves um
+4447,inform,spanish
+9933,affirm,yes
+19010,inform,south
+3571,request,may i have the phone number
+17484,inform,i am looking for an expensive restaurant that serves
+810,inform,any
+3797,request,phone number
+11609,inform,gastropub
+9326,thankyou,thank you good bye
+1734,thankyou,thank you good bye
+16009,inform,moderate
+11559,thankyou,thank you good bye
+12095,inform,im looking for a cheap restaurant that serves jamaican food
+4755,request,address
+9862,request,post code
+15915,inform,italian
+7325,request,may i have the phone number
+10637,request,can i have an address and phone number
+14203,affirm,yes
+3749,inform,south
+19597,thankyou,thank you good bye
+9090,hello,hi im looking for a cheap restaurant with lebanese food
+6890,inform,hungarian food
+16461,inform,is there any serving spanish food
+14301,null,sil
+10371,request,phone number
+21966,request,address
+17982,inform,jamaican
+15812,null,i would like
+8328,reqalts,is there anything else
+13779,inform,im looking for an expensive restaurant and it should serve malaysian food
+6756,thankyou,thank you goodbye
+14398,inform,i dont care
+3156,request,address
+1020,inform,the south
+10990,thankyou,thank you good bye
+23194,inform,north part of town
+19188,inform,moderately priced food
+2588,inform,im looking for a cheap restaurant that serves mediterranean food
+7619,negate,no
+8160,request,and phone number
+6375,request,could i have the phone number and address please
+14806,thankyou,thank you good bye
+8137,thankyou,thank you good bye
+21964,inform,south
+19495,reqalts,anything else
+16445,affirm,yes
+12515,inform,what about a restaurant serving chinese food
+15759,request,price range
+22264,request,and their phone number
+2030,reqalts,are there any restaurant serving corsica food
+18092,request,what is the address
+16703,reqalts,what else is there
+16792,reqalts,how about vietnamese food
+2500,inform,i dont care
+9456,inform,italian food
+8253,inform,uh north
+3441,inform,looking for a cheap restaurant in the north part of town
+11066,inform,im looking for an expensive restaurant that serves sea food
+15888,request,can i have the address and phone number
+20190,inform,unusual food
+16716,request,whats the post code
+18950,inform,cheap restaurant east part of town
+22960,inform,restaurant in the east part of town international food
+16801,request,what is the phone number
+3549,request,whats the phone number
+9289,inform,tuscan food
+1767,inform,im looking for a restaurant in the center that serves international
+5587,request,type of food
+21717,request,what is the address and post code
+9552,inform,mexican
+5368,affirm,yes
+10150,request,address
+19763,request,what kind of food is there
+5179,request,whats the phone number
+5609,inform,i dont care
+9198,request,what is the phone number
+3972,thankyou,thank you good bye
+297,inform,portuguese food
+4555,inform,dont care
+4263,request,what is the phone number
+22357,inform,im looking for a sea food restaurant
+13819,null,sil
+4051,request,what is the phone number
+2349,inform,south part of town
+18320,inform,italian food
+4757,thankyou,thank you good bye
+2504,inform,im looking for something in the south part of town that serves creative
+13303,inform,a restaurant in the center
+16103,affirm,correct
+16245,inform,restaurant in the south part of town serving turkish food
+17801,inform,doesnt matter
+5893,inform,doesnt matter
+16151,affirm,yes
+9055,inform,i want a moderately priced restaurant in the west part of town
+11695,inform,does not matter
+11477,request,phone number
+13426,reqalts,anything else
+15510,null,sil
+15895,inform,im looking for a restaurant that serves austral austrian food
+13694,thankyou,thank you good bye
+9690,null,cannabis
+17974,inform,cheap jamaican
+23370,inform,indian
+690,request,okay phone number
+6695,request,whats the phone number
+4398,inform,im looking for a cheap restaurant serving belgain food
+13658,inform,in the east part of town
+14320,inform,any
+5124,inform,looking for a restaurant in the north part of town serving bra
+12187,thankyou,thank you good bye
+3663,inform,im looking for a cheap restaurant on the north side of town
+9543,request,phone number
+23319,request,can i get the address phone number and price of food
+16722,inform,im looking for a moderately priced restaurant in the east part of town
+5476,null,what is available in the ar
+9138,inform,any
+22669,inform,any food
+21402,inform,vegitarian
+22238,request,what is the post code
+1494,thankyou,thank you goodbye
+1613,inform,moderate
+8697,request,what is the post code
+6809,request,phone number
+13332,inform,want a caribbean restaurant thats moderately priced
+4913,affirm,yes
+3387,request,price range
+21542,inform,portuguese food
+17703,inform,pan asian food
+20707,thankyou,thank you goodbye
+14364,affirm,yes indian food
+20060,inform,find moderately priced restaurant in the west part of town
+18169,inform,im looking for a restaurant in the east part of town thats expensive
+2293,request,address
+9603,inform,moderate
+3109,reqalts,how about turkish
+15770,null,breathing
+1668,inform,dont care
+7750,inform,uh east
+4797,inform,mediterranean
+23031,inform,moderate
+17421,thankyou,thank you good bye
+16714,request,can i get the address
+11311,inform,i want to find a restaurant
+12281,request,what is the address and phone number
+11958,inform,im looking for expensive restaurants in the east part of town
+13871,inform,british feed
+19384,inform,moderate
+15113,inform,chinese food
+2782,inform,can i find a restaurant with gastropub food
+1476,inform,italian food
+17758,inform,i dont care
+20272,request,what is the address and phone number
+22632,request,what type of venue
+6689,request,can i have the post code please
+18025,request,the address
+23727,inform,looking for welsh food
+3074,inform,chinese food
+22794,inform,turkish
+14378,request,address
+8307,inform,moderately
+13157,bye,alright thank you good bye
+13981,thankyou,thank you good bye
+22725,thankyou,thank you good bye
+6740,inform,australian
+17885,request,address
+8821,request,what is the address
+21726,request,whats the phone number
+7284,inform,and okay and vietnamese food thank you
+9207,inform,id like a restaurant in the south part of town that serves
+5847,inform,expensive restaurant
+1487,inform,italian
+2624,inform,food
+2354,thankyou,thank you good bye
+8426,inform,i want a restaurant in the north par
+15977,negate,no
+18499,deny,wrong
+21051,inform,indian food
+21988,inform,expensive restaurant
+20253,inform,any kind of food
+23256,inform,in the center
+23952,request,address
+5872,inform,i would like to find a cheap restaurant and it should be in the south
+11399,reqalts,anything else
+13187,thankyou,thank you good bye
+8430,inform,any area
+12436,inform,south
+2478,request,what is the address
+15521,thankyou,thank you good bye
+1865,affirm,yes
+20522,inform,moderately priced serving gastro pub
+20871,request,address
+19831,null,taiwanese
+7709,inform,center
+11085,inform,an expensive restaurant with seafood
+13715,inform,expensive
+15691,affirm,breath yes id like a moderately priced restaurant that serves thai food
+15624,request,can i get the address
+14713,request,phone number
+23037,reqalts,how about british
+7226,affirm,yes
+7449,request,area
+13427,inform,the food
+16821,negate,no
+6895,request,what is the address and price range
+2993,null,the addre
+21921,inform,im looking for a restaurant in the north part of town that serves european food
+22118,inform,im looking for a restaurant in the north part of town that serves french food
+6304,request,address
+23292,affirm,yes
+13827,null,music
+23331,inform,i need an expensive restaurant that serves french food
+12670,thankyou,thank you goodbye
+19060,inform,how european
+6389,inform,could i have a restaurant in the south part of town that serves unusual
+1759,request,phone number
+12933,request,what is the telephone number
+20444,null,noise
+19523,request,whats their address
+2804,inform,im looking for a cheap restaurant in the east part of town
+1749,thankyou,thank you good bye
+15292,request,what part of town
+14317,affirm,yes
+13221,negate,no
+16367,inform,moderate
+5178,inform,dont care
+8035,thankyou,thank you good bye
+14682,thankyou,thank you good bye
+4419,request,whats the phone number
+15274,inform,it doesnt matter
+20007,affirm,yes
+10439,inform,indian food
+1533,inform,any
+19465,reqalts,how about vietnamese food
+14326,thankyou,thank you good bye
+8225,affirm,uh yes can i find a cheap restaurant in the north part of town
+11757,affirm,uh yes im looking for a restaurant in the center that serves lebanese food
+12577,inform,dont care whats the phone number
+19796,request,and whats the phone number
+21511,inform,cheap restaurant in the north part of town
+20914,inform,i dont care
+5220,null,unintelligible
+8259,thankyou,thank you
+3131,inform,im looking for a restaurant in the center serving
+6814,inform,id like to find a moderately priced restaurant
+23306,inform,italian
+10040,inform,can i have a lebanese restaurant
+23762,reqalts,what about international food
+16450,request,phone number
+6592,reqalts,how about korean food
+15410,thankyou,thank you
+22298,inform,south
+14144,request,whats the address
+6414,request,whats their phone number
+18298,bye,cool um thank you good bye
+7986,inform,its in the south
+386,inform,moderately priced
+9141,request,address
+22924,request,what type of food
+23367,inform,british food in north part of town
+4141,inform,cheap
+4153,inform,i do not care
+22902,inform,cheap
+9150,inform,any
+17832,inform,afghan food
+10880,request,address and phone number
+11415,inform,yes uh turkish food in my area
+22146,request,address
+4604,inform,south part of town
+4166,inform,i dont care
+14337,inform,do you have a place that serves turkish food
+6686,reqalts,how about italian food
+15762,request,phone number
+601,reqalts,how about indian food
+15456,thankyou,thank you good bye
+22027,bye,goodbye
+23082,inform,indian
+3485,request,type of food
+2023,inform,anything
+15092,thankyou,thank you good bye
+3009,request,prices
+13131,affirm,yes
+14256,reqalts,is there anything else
+1057,reqalts,what about indian food
+22698,request,whats the post code
+7837,inform,i would like an expensive restaurant that serves
+15052,inform,im looking for an indian restaurant
+677,inform,i want to find an expensive restaurant that
+5115,request,what is the address
+10650,request,whats the phone number
+8144,null,noise
+22086,request,what type of food
+21599,thankyou,thank you good bye
+9281,request,address
+11252,thankyou,thank you good bye
+11580,null,noise
+18613,thankyou,thank you good bye
+3628,reqalts,how about asian food
+17200,reqalts,what about vietnamese type of food
+4252,inform,moderately priced
+14742,request,whats the address and phone number
+23447,thankyou,thank you goodbye
+15219,reqalts,what about thai food
+10619,reqalts,how about french
+17690,thankyou,thank you good bye
+1720,inform,any price range
+8979,bye,goodbye
+5928,inform,cheap restaurant
+14852,request,whats the address
+14196,request,what type of food does it serve
+1992,inform,south
+11499,reqalts,how about indian type of food
+19953,null,sil
+2570,reqalts,what about chinese food
+21499,request,what is the addre
+2690,null,who is it by
+11122,inform,kosher food
+17629,request,where
+22816,inform,im looking for a moderately priced restaurant
+8486,inform,the west part
+23626,inform,moderate
+4128,request,what is its phone number
+8045,request,whats the address
+10526,request,and their post code
+15901,inform,um moderate
+16510,thankyou,thank you good bye
+9826,inform,im looking for a restaurant that serves english food
+10110,reqalts,okay how about an expensive
+3050,request,what is the address
+358,inform,i dont care
+2300,reqalts,what about persian food
+21408,reqalts,how about an indian restaurant in the north part of town
+3504,inform,im looking for a cheap restaurant that serves international
+2878,inform,west
+22981,inform,i want to find a restaurant that serves french food
+538,affirm,yes
+737,inform,moderately priced
+22673,thankyou,thank you goodbye
+563,request,what type of food
+21707,thankyou,thank you good bye
+11521,confirm,is that mexican food
+7009,inform,any
+17904,request,phone number
+14926,null,sil
+20734,negate,no
+5957,request,whats the address
+9252,inform,i want a restaurant in the north
+15993,null,not sure
+22109,inform,any
+11939,null,unintelligible
+3444,request,address phone number and type of food
+12995,affirm,yes
+17686,inform,any
+15666,null,and
+15228,inform,i want thai food
+8975,null,noise
+12724,inform,i want to find a cheap restaurant in the south part of town
+17764,inform,food
+6370,null,unintelligible
+6928,request,address
+21371,reqalts,ok if there is no restaurant serving indonesian food how about a restaurant serving chinese food
+11797,inform,south part of town
+13471,request,what is the phone number
+7105,request,whats the phone number
+12766,inform,any any type
+18662,request,phone number
+14526,affirm,right
+10648,inform,im looking for a moderately priced restaurant that serves sea food
+5747,inform,what asian oriental food
+4845,request,whats the address
+17419,reqalts,how about indian food
+9363,inform,korean
+9331,request,phone number
+22685,request,address
+10773,inform,in the east part of town
+12578,thankyou,thank you good bye
+3686,inform,im looking for a moderate priced restaurant in the north part of town
+11297,inform,any
+2408,inform,center
+22362,reqalts,how about north american type of food
+13610,inform,cheap price range
+11978,repeat,can you repeat that
+13773,inform,im looking for a moderately priced restaurant in the east part of town
+5965,request,okay can i have the address
+22966,request,phone number
+14633,inform,i dont care
+3933,reqalts,how about one that serves portuguese food
+5301,request,uh address and price range
+12555,thankyou,thank you good bye
+3345,thankyou,thank you and price range
+15049,affirm,yes id like a restaurant in the east part of town that serves indian food
+6570,thankyou,thank you good bye
+12229,request,what is the address
+3168,request,noise may i have its address
+17893,thankyou,thank you good bye
+5619,thankyou,thank you good bye
+11059,inform,im looking for an expensive restaurant that serves
+21271,request,what is the address
+17088,inform,fine i want restaurant in the north part of town
+396,reqalts,anything else
+10379,request,phone number
+10794,null,noise
+20801,request,in what part of town
+18936,request,phone number
+2111,inform,chinese food
+16280,inform,russian
+6097,affirm,yes
+7297,request,phone number
+21277,reqalts,is there anything else
+16088,request,what is the phone number
+7796,thankyou,thank you good bye
+19371,null,type
+20167,request,type of food do they serve
+831,inform,north
+17594,inform,any
+12380,request,the phone number
+19149,thankyou,thank you good bye
+23585,request,what area
+8789,thankyou,thank you good bye
+4719,inform,portuguese food
+15594,affirm,yes
+10113,ack,okay um
+19250,request,phone number
+7382,affirm,yes
+21241,inform,moderately priced restaurant
+5464,request,price range
+411,request,can i have their address please
+19007,thankyou,thank you good bye
+22905,request,phone number
+21245,reqalts,how about european food
+17828,request,whats the phone number
+12379,request,how about the phone number
+10566,null,sil
+8950,reqalts,is there anything else
+19833,inform,thai restaurant
+6393,request,what is the phone number
+7496,inform,spanish
+13233,reqalts,how about vietnamese food
+13171,request,whats the address
+14728,null,noise
+5481,inform,im looking for a moderately priced restaurant
+17644,inform,i need a restaurant serving chinese food
+4540,inform,any
+1985,inform,south
+1832,null,unintelligible
+11957,thankyou,thank you
+23608,null,sil
+16010,inform,moderate
+11228,request,can i have the address and the price range
+11086,inform,seafood
+11745,inform,south part of town
+13410,reqalts,anything else
+9014,thankyou,thank you good bye
+17087,null,noise okay
+3516,negate,uh no preference
+23089,request,and the phone number
+7097,inform,gastropub
+13941,inform,uh mediterranean food
+22322,request,price range
+17386,inform,id like a restaurant in any area that it serves canapes
+14685,inform,in the west
+8529,request,what is the phone number
+10554,request,can you give me the address please
+2544,inform,lebanese food
+6920,inform,chinese food in the north part of town
+16670,inform,asian oriental food
+17100,thankyou,thank you goodbye
+4350,reqalts,what about british
+22504,null,cough
+16069,inform,moderate priced in the north part of town
+8835,negate,no what about thai food
+13729,reqalts,how about canapes
+10192,reqalts,is there anything else
+799,inform,greek
+15088,inform,australia asian food
+19340,thankyou,thank you good bye
+13757,inform,turkish
+23372,null,sil
+18551,inform,i dont care
+14986,request,whats their address
+14697,inform,it doesnt matter
+20963,null,sil
+23273,request,whats the address
+14162,thankyou,thank you good bye
+5971,request,whats the phone number
+19075,inform,food
+22290,inform,south
+14143,inform,in the north part of town
+12527,inform,im looking for a cheap restaurant
+6940,request,address
+8342,inform,any
+16663,thankyou,thank you good bye
+4465,reqalts,how about international food
+19361,request,whats the type of food
+19868,reqalts,how about indian type of food
+8507,inform,malaysian
+19116,request,whats the phone number
+3752,null,breathing
+14233,inform,can i have irish food
+11395,reqalts,is there anything else
+12477,thankyou,thank you good bye
+22623,request,the post code
+20855,thankyou,thank you
+21661,request,address
+22852,thankyou,thank you good bye
+23202,null,sil
+15288,inform,moderate
+22479,request,okay and whats the price range
+14141,inform,i need a restaurant in the moderate price range
+14582,inform,expensive
+5190,inform,i dont care
+9382,inform,i want to find a restaurant in the east part of town
+5158,null,how about
+10744,request,address
+469,inform,mexican food
+18367,request,what is the phone number
+4030,inform,cuban
+14683,null,sil
+12023,inform,any part
+6933,thankyou,thank you good bye
+8479,affirm,yes
+1037,request,and their address
+21050,reqalts,how about indian food
+4229,thankyou,thank you good bye
+14220,thankyou,thank you good bye
+18698,inform,french food
+16154,request,could you give me the number
+3725,inform,i am looking for an expensive restaurant in the east
+15791,inform,south
+2751,null,modern europene
+21012,null,sil
+10397,inform,uh vietnamese
+1346,inform,moderate
+13874,inform,i am looking for hungarian food
+15146,thankyou,thank you good bye
+4855,request,whats the postcode
+1189,inform,any
+12163,thankyou,thank you good bye
+16961,request,post code
+23070,thankyou,thank you
+1967,inform,expensive
+11174,request,can i get the address
+2326,null,unintelligible
+1821,request,phone number
+18305,null,sil
+18029,inform,jamaican food
+3339,thankyou,thank you good bye
+13606,negate,no
+7734,inform,south
+9736,request,and the price range
+4197,inform,gastropub
+21894,inform,a cheap restaurant in the south part of town
+20555,request,phone number and post code
+5048,confirm,does it serve fusion food
+8052,inform,dont care
+5895,inform,i dont care
+18443,inform,gastropub
+18733,inform,expensive restaurant in the south part of town
+10169,inform,hungarian
+14579,inform,expensive
+20805,inform,can i find a moderately priced
+4181,thankyou,thank you good bye
+16584,reqalts,how about chinese food
+13678,inform,cheap price range
+21904,request,post code
+12420,inform,british food
+21660,inform,west
+17415,request,may i have the address and the type of food
+56,negate,no im sorry it should be expensive
+17964,inform,uh restaurant
+10497,request,and what type of food do they serve
+18927,request,can i have the phone number
+17565,inform,i want malaysian food in any area
+10831,request,alright whats the address
+16335,inform,vietnamese
+3088,negate,no
+20872,request,price range
+9929,request,whats the address phone number and post code
+11007,thankyou,thank you good bye
+6861,inform,im looking for an expensive restaurant that serves korean
+7349,inform,any
+22988,thankyou,thank you good bye
+12845,thankyou,thank you good bye
+13026,inform,looking for a restaurant in the north part of town and it should serve korean food
+13246,null,noise
+18328,request,what type of food
+21713,thankyou,thank you good bye
+22859,request,price range
+22470,thankyou,thank you good bye
+13809,reqalts,how about gastropub type food
+21494,hello,music hello
+2442,inform,swiss food
+7602,inform,south
+15863,inform,any
+14330,null,uh
+2842,inform,dont care
+7212,request,and whats their post code
+3460,request,what type of food do they serve
+17336,thankyou,thank you good bye
+7823,inform,dont care
+9172,inform,cheap restaurant
+8795,inform,id like a restaurant in the west part of town that serves danish
+6154,null,i want
+22488,null,that serves
+2850,request,okay and whats the post code
+11752,request,price range
+14349,request,what kind of food
+19448,null,sil
+3247,inform,im looking for an expensive restaurant that serves
+1382,thankyou,thank you good bye
+16899,inform,chinese
+16059,inform,i need a restaurant that serves asian oriental food
+12153,inform,im looking for a cheap restaurant in the east part of town
+15045,thankyou,thank you good bye
+19661,reqalts,what about italian
+14866,affirm,yes
+13297,inform,i am looking for a restaurant in the center
+15683,negate,no
+18105,request,address
+22916,thankyou,thank you good bye
+4946,inform,american
+6206,inform,british food
+8831,request,and the phone number
+5853,inform,im looking for singaporean food
+23217,request,okay do you have the address for da vinci pizzeria
+13834,inform,im looking for a turkish food restaurant
+8797,thankyou,thank you good bye
+9520,thankyou,thank you good bye
+15714,inform,vietnamese
+3274,bye,k you goodbye
+1737,inform,bistro
+21103,inform,uh chinese food
+16687,inform,polynesian food
+6454,inform,im looking for
+10888,inform,dont care
+14646,request,phone number
+18324,thankyou,thank you good bye
+18042,inform,can i have greek food
+3545,reqalts,how about chinese food
+544,inform,dont care
+20196,affirm,yes
+6785,request,phone number
+13473,thankyou,thank you goodbye
+6768,reqalts,how about spanish food
+2765,thankyou,thank you good bye
+13470,request,what is the phone number
+5863,inform,id like an expensive italian restaurant
+12114,inform,expensive
+17631,inform,north
+2843,inform,mexican food
+18491,null,blow
+37,inform,restaurant in the north part of town serv
+2468,inform,corsica food
+16653,request,whats the address
+9569,request,phone number
+1895,affirm,yes
+4064,inform,im looking for a restaurant in the
+2436,thankyou,thank you bye
+1361,inform,i want a basque food restaurant
+15243,request,phone number
+23718,request,what type of food do they serve
+4547,reqalts,is there anything else
+14027,inform,i dont know
+18228,negate,no
+23590,thankyou,thank you
+15718,thankyou,thank you good bye
+6064,inform,swiss
+16786,null,um i want
+2950,inform,im looking for a cheap restaurant in the south part of town
+1157,request,address
+15436,null,noise
+6601,affirm,uh yes i am looking for an expensive restaurant in the south part of
+16188,reqalts,how about asian food
+16974,affirm,yes
+4936,reqalts,what about european food
+9335,inform,any
+1008,thankyou,thank you goodbye
+7302,inform,i dont care
+17745,inform,in the west
+14947,reqalts,okay how about a venue with italian food
+20572,inform,expensive
+5088,inform,dont care
+12435,null,sorry
+1722,inform,korean food expensive
+902,request,type of food
+11605,request,whats the phone number
+21335,null,unintelligible
+5904,bye,alright thank you good bye
+3688,reqalts,is there anything else
+21832,inform,you know thai thai food
+10140,reqalts,how about italian food
+2679,request,phone number
+4024,request,and the phone number
+18945,reqalts,what about indian
+14015,null,cough
+7209,request,and whats their price range
+5262,inform,vietnamese
+3072,request,phone number
+42,request,phone number
+19650,inform,i dont care
+5209,reqalts,is there anything else
+4308,request,phone number
+20782,thankyou,thank you
+6472,inform,russian
+23244,affirm,uh yes iam looking for a british type of food restaurant
+13788,inform,noise any area
+7984,request,what part of town
+3390,request,may i get the address and phone number
+9101,request,can i have the phone number please
+8284,thankyou,thank you good bye
+17785,request,whats the phone number
+2657,inform,restaurant in west part of town
+9089,thankyou,thank you good bye
+27,request,could i have their phone number and the type of food
+10691,request,what area is it in
+17171,inform,moderate
+23462,inform,im looking for a restaurant in the west part of town that serves christmas food
+10617,inform,greek
+23534,inform,moderate
+14523,thankyou,thank you good bye
+634,request,and the post code
+6448,thankyou,thank you good bye
+10688,request,whats the address
+6839,request,what is the post code
+23184,null,noise
+16590,reqalts,how about chinese food
+17940,inform,french
+10681,inform,im looking for a modreately
+7375,inform,moderate
+18614,inform,im looking for an expensive restaurant that serves greek food
+8764,confirm,does it serve gastropub
+13717,request,please let me have the address
+15898,affirm,yeah
+16526,inform,north american food
+9730,request,address
+7421,request,post code
+4516,request,and the phone number
+691,request,can i get the address
+22892,inform,i dont care
+19440,inform,thai
+8340,inform,any
+11440,request,what is the addre
+6773,thankyou,thank you good bye
+21609,request,address
+3637,thankyou,thank you good bye
+4088,inform,thai food
+15833,request,address
+21030,affirm,yes
+4559,affirm,yes
+9469,inform,im looking for a restaurant that serves
+8746,inform,that serves cuban food
+22971,thankyou,thank you good bye
+21365,request,phone number
+17302,thankyou,thank you good bye
+15503,inform,moderate
+2724,affirm,yeah
+19164,request,phone number
+16878,inform,im looking for restaurant that serves chinese food
+20199,null,unintelligible
+10525,request,whats their address
+2571,request,whats the phone number
+19947,null,sil
+784,repeat,again
+10943,reqalts,is there anything else
+5667,inform,indian food
+15527,inform,any price range
+9021,reqalts,anything else
+17862,inform,portuguese
+22497,inform,chinese
+20425,inform,corsica
+15294,inform,the north part of tow
+15836,inform,um im looking for an expensive restaurant
+19147,reqalts,how about chinese food
+13269,inform,west
+20919,inform,thai food
+4726,inform,anything
+5463,request,can i have the address and price range
+8120,inform,moderately priced
+20104,reqalts,how about gastropub food
+21892,thankyou,thank you
+14656,inform,im looking for a cheap restaurant in the south part of town
+22593,reqalts,what about indian food
+7081,request,can i have the phone number
+23808,request,may i have the phone number
+10559,inform,cheap
+12920,reqalts,how about a turkish restaurant
+5272,null,can i get a
+11139,null,noise
+3099,inform,portuguese
+5672,null,sil
+20345,inform,i dont care
+9374,thankyou,thank you good bye
+13776,request,what is the phone number
+10440,request,address
+23425,thankyou,thank you good bye
+20283,reqalts,anything else
+19996,inform,moderately
+2661,null,viet
+2619,thankyou,thank you goodbye
+2955,inform,south
+11667,inform,i would like to find a restaurant in the west part of town
+15946,inform,unintelligible restaurant
+20692,request,whats the address
+16838,request,phone number and area
+9422,request,post code
+21225,inform,english food
+1428,inform,find restaurant
+4230,inform,expensive restaurant in the east part of town
+12240,inform,peking restaurant
+20419,request,type of food does it serve
+4070,inform,i dont care
+18719,request,post code
+9299,request,phone number
+840,thankyou,thank you good bye
+17717,thankyou,thank you good bye
+13921,reqalts,how about vietnamese
+19757,affirm,yes
+699,reqalts,how about european
+19655,inform,i dont care
+13892,thankyou,uh thank you
+2212,inform,prezzo
+16586,reqalts,how about chinese food
+11137,request,the price range
+11238,request,address
+6758,affirm,yes cheap restaurant
+14949,inform,okay uh forget that then can i get a restaurant serving italian food
+6388,thankyou,thank you good bye
+16528,thankyou,thank you good bye
+5261,inform,vietnamese
+12487,thankyou,thank you good bye
+12879,inform,west
+11117,request,what is the address
+13632,request,i would like the address and phone number
+22287,inform,south part of town
+21421,request,whats the type of food
+14303,inform,any type of food
+22691,request,type of food
+18773,request,whats the address
+963,thankyou,thank you good bye
+15627,null,sil
+5881,request,what is the phone number
+11986,confirm,is it an expensive restaurant
+17826,request,what kind of food do they serve
+7321,inform,in the center
+12557,affirm,correct
+13990,inform,i dont care
+12939,inform,south
+3956,null,unintelligible
+2292,inform,korean
+21547,inform,thai
+1477,inform,doesnt matter
+20709,inform,chinese
+13496,null,im looking
+8552,null,noise
+708,request,phone number
+5909,null,sil
+15261,request,phone number
+5570,request,and the post code
+1188,inform,south part of town south
+7343,affirm,right
+4919,request,area
+3401,request,and can i have the post code
+15198,inform,dont care
+15297,request,what is the post code
+798,inform,im looking for a restaurant in the north part of town that serves
+20402,inform,i dont care
+23878,inform,south part of town
+2049,request,what is the phone number
+9944,request,could you get me the phone number
+2705,inform,i dont care
+13,inform,mediterranean
+10362,affirm,yes
+6270,inform,expensive
+1860,thankyou,thank you good bye
+14625,thankyou,thank you good bye
+4412,request,what kind of food is it
+20689,inform,it doesnt matter
+1262,request,ah whats the price ran
+12238,inform,i dont care
+16384,affirm,yes
+8919,inform,any price range
+15710,request,can i have their address
+11918,request,expensive price range
+14807,null,sil
+3282,inform,spanish
+6122,inform,in the south
+23055,thankyou,thank you good bye
+19113,thankyou,thank you good bye
+13109,null,noise
+17349,inform,im looking for a cheap restaurant in the west part of town
+8333,negate,no
+5076,request,whats the phone number
+18691,request,what is the phone number
+13079,thankyou,thank you good bye
+11634,thankyou,thank you goodbye
+3409,thankyou,thank you good bye
+12686,request,address
+19399,inform,im looking for a moderately priced restaurant
+13829,request,address
+8639,reqalts,is there anything else
+2420,inform,doesnt matter
+15221,negate,no i want thai food
+2636,request,can i have the address phone number and post code
+3005,request,address
+19534,reqalts,what about vietnamese food
+20768,request,phone number
+21594,inform,north part of town
+900,reqalts,is there anything else
+22241,thankyou,thank you goodbye
+10402,inform,im looking for cross over food
+8142,request,whats the address
+17085,reqalts,how bout asian oriental type of food
+16089,request,what is the price range
+9041,request,whats the price range
+15572,inform,uh i dont care
+990,thankyou,thank you good bye
+19871,reqalts,how about indian food
+21035,affirm,yes and in french please
+5071,inform,for a cheap restaurant in the east part of town
+398,request,the phone number for bloomsbury
+3418,inform,for a restaurant
+22756,request,whats the address
+8872,request,and whats the address
+16523,inform,im looking for a restaurant in the center that serves bistro food
+15167,reqalts,how about portuguese food
+9869,request,whats the price range
+18968,inform,any price range
+12908,null,inaudible
+15874,thankyou,thank you good bye
+21150,null,unintelligible
+1667,inform,west part of town
+13050,reqalts,how about italian food
+5719,inform,i dont care
+11864,inform,mediterranean food
+5993,inform,italian food
+12334,null,noise
+5395,thankyou,thank you
+14960,inform,okay international food
+4862,reqalts,anything else
+13462,reqalts,is there anything else
+20217,reqmore,more
+19610,request,phone number
+4575,thankyou,thank you goodbye
+20019,null,noise
+2498,inform,im looking for thai food
+14930,inform,asian oriental
+2568,inform,im looking for
+21045,request,may i have the address and area
+11602,request,address
+305,thankyou,thank you good bye
+14552,request,whats the phone number
+11848,inform,restaurant in any area thats
+21847,request,and their phone number
+23817,request,post code
+21706,request,can i get their post code
+10763,null,noise
+6595,inform,of this restaurant
+18133,inform,i want a restaurant in the moderate price range
+7631,reqalts,next
+17067,inform,doesnt matter
+11450,inform,i dont care
+7887,reqalts,is there anything else
+19087,null,sil
+19515,null,unintelligible
+161,inform,cheap
+23402,inform,im looking for a moderately priced restaurant
+14666,reqalts,is there anything else
+9704,reqalts,how about north american food
+9370,thankyou,thank you good bye
+11099,affirm,yes
+9687,thankyou,thank you good bye
+5788,request,phone number
+14961,inform,dont care
+2116,negate,no
+23955,inform,i would like some danish food
+21485,inform,i dont care
+12069,request,and the phone number
+20820,confirm,is it moderate priced
+15986,confirm,is it expensive
+16432,affirm,yes
+2392,thankyou,thank you good bye
+20171,request,whats the phone number
+22472,inform,cheap
+16855,inform,north american food
+11246,thankyou,thank you good bye
+6906,request,phone number
+4428,null,unintelligible
+22110,request,what is the address
+11901,thankyou,thank you goodbye
+14676,reqalts,anything else
+2672,inform,it doesnt matter
+5631,request,what is the address and phone number
+11161,request,can you give me the phone number
+10333,reqalts,how about modern europone
+22414,reqalts,is there anything else
+9431,thankyou,thank you goodbye
+16409,inform,any
+2171,inform,im looking for a restaurant in any area that
+2687,request,phone number
+15586,null,background_speech
+2003,request,address
+16140,inform,moderately priced
+20243,affirm,right
+17551,request,okay and can i get the phone number
+4147,inform,im looking for a moderately priced restaurant that serves
+19175,inform,moderate
+9608,request,phone number
+20139,request,how about the phone number
+354,inform,im looking for a restaurant that serves world food
+17445,inform,i dont care
+15731,inform,looking for a cheap restaurant in the north part of town
+10869,inform,cheap restaurant in the west part of town
+19617,thankyou,thank you good bye
+22340,reqalts,how about asian oriental food
+9170,request,whats the phone number
+12861,inform,west
+10487,request,and whats the phone number there
+10981,request,price range
+4830,inform,moderately
+3643,inform,asian oriental
+4143,request,telephone number
+12105,request,phone number
+8903,confirm,does it serve endonesian
+12549,thankyou,thank you good bye
+1048,inform,italian food in the south part of town
+725,thankyou,thank you goodbye
+14631,inform,im looking for
+11917,inform,south part of town
+679,request,what is the pri what is the telephone number
+20408,reqalts,okay how about modern european food
+10312,inform,id like a restaurant in any area that serves japanese food
+21943,reqalts,um is there anything else
+9979,request,what kind of food is it
+4903,inform,moderate
+21238,request,okay whats the phone number
+12579,inform,im looking for an expensive restaurant in the south part of town
+1868,thankyou,thank you good bye
+10298,thankyou,thank you good bye
+649,request,phone number
+5540,affirm,yes
+18688,inform,west
+14627,reqalts,what about chinese food
+21682,request,what is the address
+23433,thankyou,thank you goodbye
+10621,inform,restaurant in the north part of town
+15672,thankyou,thank you good bye
+14566,inform,dont care
+23111,request,what is the telephone number
+18031,inform,jamaican food
+21457,request,and the phone number
+3214,null,modern europene
+5751,request,and the phone number
+16346,request,whats the post code
+17111,inform,polish
+12769,request,phone number
+10579,inform,polish food
+15571,inform,how bout european
+1702,request,phone number
+6134,thankyou,thank you goodbye
+10974,request,whats the price range
+5940,inform,lebanese food in the center of town
+10214,request,and the phone number
+22120,inform,french food
+22823,request,what is the phone number
+17138,affirm,right
+5302,request,uh price range
+22481,request,and whats their address
+18117,reqalts,how about british type food
+23276,request,wha what type of food
+4693,request,type of food
+1290,request,may i have the phone number and post code
+22832,thankyou,thank you good bye
+7870,inform,french
+21182,request,whats the area
+17164,inform,im looking for a restaurant in the west part of town that serves moroccan food
+23374,inform,indian food
+6784,reqalts,anything else
+10881,request,phone number
+1166,inform,traditional food
+727,inform,any
+4163,request,what is the address and phone number
+5247,inform,i dont care
+22840,reqalts,how about indian food
+12511,inform,i am looking for a restaurant in the east part of town
+6179,thankyou,thank you good bye
+19359,reqalts,is there anything else
+16826,request,what is the address
+16317,thankyou,thank you good bye
+23652,inform,spanish food
+15394,inform,european type food
+9460,thankyou,thank you good bye
+2556,request,what is the post code
+7059,inform,spanish food
+16672,inform,doesnt matter
+12517,request,whats the address
+5416,negate,no
+4357,inform,of the restaurant please
+12604,reqalts,how about mediterranean
+15238,inform,expensive australian restaurant
+10574,request,what is the address of the
+11523,inform,i need a place in the centre of town that serves mexican food
+3192,inform,is there mediterranean food
+12324,reqalts,is there anything else
+11285,inform,traditional food
+4151,inform,uh any
+12328,inform,welsh food
+21397,request,phone number
+2187,inform,south
+17752,inform,im looking for a cheap restaurant in the east part of town
+1226,inform,im looking for a restaurant in any area that serves austrian food
+2482,request,what is the phone number
+9833,thankyou,thank you good bye
+1820,inform,any
+22145,null,sil
+5951,negate,wait no i wanted portuguese food
+20113,affirm,yes
+20438,affirm,yes
+22721,thankyou,thank you good bye
+7580,thankyou,thank you good bye
+14758,inform,indian food
+12848,inform,thai food
+2532,request,phone number
+17805,request,address
+18330,null,static
+525,inform,british food
+15708,inform,it doesnt matter
+23494,confirm,is that in the north part of town
+15712,thankyou,thank you good bye
+22014,inform,im looking for a restaurant in the west part of town that should serve english food
+5373,inform,moderately priced restaurant
+12757,null,noise
+18797,null,unintelligible
+10846,hello,hi im looking for a restaurant in the west part of town that serves baskaye food
+6825,inform,italian food please
+17472,thankyou,thank you good bye
+11738,inform,vietnamese food
+21003,thankyou,thank you good bye
+14776,thankyou,thank you good bye
+1899,request,whats the address phone number and area
+6293,inform,moderately priced
+14340,inform,turkish food any price range
+5691,bye,okay thank you and good bye
+20018,null,noise
+6638,request,and the post code
+13385,inform,australian food
+12735,null,cough
+7408,request,whats the address
+15124,inform,any price range
+10595,request,what food is in the west part of town
+17,request,phone number
+22982,inform,i dont care about the price range what is the address
+19929,inform,italian food
+7390,inform,looking for a restaurant in any area
+4970,thankyou,thank you good bye
+20494,thankyou,thank you good bye
+18249,request,phone number
+10886,request,type of food
+7340,reqalts,how about british food
+18293,thankyou,thank you goodbye
+4407,inform,i need lebanese food in the east
+9311,inform,italian food
+12727,inform,i want to find a cheap restaurant
+16766,inform,west
+8686,inform,im looking for a restaurant in the center park of town that serves
+7142,request,what is the phone number
+17189,thankyou,thank you good bye
+23960,request,what is the phone number
+14319,null,sil
+21778,inform,i would like to find a restaurant in the north part of town that serves kosher food
+7289,affirm,yes
+7650,request,what is the post code
+4972,inform,i dont care
+23193,confirm,is it in the north part of town
+14211,request,address
+4821,inform,any
+705,inform,indian
+22556,inform,italian
+13573,inform,anything cheap
+10992,request,address
+17969,inform,im looking for a moderately priced restaurant in the north part of town
+3873,inform,south bart
+2982,inform,i dont care
+10361,reqalts,is there anything else
+12330,inform,asian oriental
+9356,affirm,yes italian food
+1859,request,can i have the address of the phone number of the venue
+17399,inform,chinese
+19429,null,noise
+3500,inform,it doesnt matter
+11801,thankyou,thank you good bye
+5282,inform,it doesnt matter
+9745,inform,i want a restaurant in the center that serves french food
+18508,request,what is the address
+19131,inform,moderately priced
+3341,inform,international
+10995,inform,mexican
+17014,inform,ok i want vietnamese
+16877,thankyou,thank you goodbye
+15493,hello,hi im looking for a restaurant with japanese food
+20164,request,phone number
+21567,request,what is the address
+19843,request,phone number
+17027,inform,im looking for a moderately priced restaurant in the south part of town
+7570,inform,west
+20658,thankyou,thank you good bye
+747,inform,mediterranean
+11447,request,what is the type of food
+1045,null,okay
+5969,inform,im looking for seafood
+1646,request,phone number
+626,affirm,correct
+8300,negate,no
+14963,request,whats the address
+9398,reqalts,how about the south part of town
+21338,inform,south
+14036,inform,breath can you find me danish restaurant
+21826,request,can i get the address and phone number
+18682,inform,i dont care
+6069,affirm,yes
+11152,inform,i dont care
+1576,thankyou,thank you good bye
+22806,inform,cuban
+23138,inform,expensive
+10170,inform,hungarian
+7530,inform,turkish food

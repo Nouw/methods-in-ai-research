@@ -9,7 +9,7 @@ from methods_in_ai_research.classification.registry import classifier_names, cre
 from transformers.utils import logging as hf_logging
 
 from methods_in_ai_research.classification.splitting import create_splits
-from methods_in_ai_research.classification.workflows import run_pipeline
+from methods_in_ai_research.classification.workflows import run_pipeline, print_summary, save_summary
 
 logger = logging.getLogger(__name__)
 
@@ -64,8 +64,11 @@ def run_experiment(*, data_path: str | Path, classifier_name: str, split_strateg
         save_splits=save_splits,
     )
 
+    grouped_summaries = []
+    original_summaries = []
+
     for split_name, (train_data, test_data) in datasets.items():
-        run_pipeline(
+        summaries = run_pipeline(
             classifier_name=classifier_name,
             split_name=split_name,
             train_data=train_data,
@@ -74,6 +77,21 @@ def run_experiment(*, data_path: str | Path, classifier_name: str, split_strateg
             evaluate_enabled=True,
             results_directory=results_directory,
         )
+
+        if split_name == "original":
+            original_summaries = summaries
+        elif split_name == "grouped":
+            grouped_summaries = summaries
+
+    original_path = Path(results_directory) / "original.csv"
+    print_summary(original_summaries)
+    save_summary(original_summaries, original_path)
+    logger.info(f"Saved original summary to {original_path}")
+
+    grouped_path = Path(results_directory) / "grouped.csv"
+    print_summary(grouped_summaries)
+    save_summary(grouped_summaries, grouped_path)
+    logger.info(f"Saved grouped summary to {grouped_path}")
 
 
 def train_models(*, data_path: str | Path, classifier_name: str, models_directory: str | Path) -> None:
@@ -94,7 +112,7 @@ def train_models(*, data_path: str | Path, classifier_name: str, models_director
 def evaluate_models(*, data_path: str | Path, classifier_name: str, models_directory: str | Path, results_directory: str | Path) -> None:
     test_data = load_dataset(data_path)
 
-    run_pipeline(
+    summaries = run_pipeline(
         classifier_name=classifier_name,
         split_name="provided",
         train_data=None,
@@ -104,6 +122,13 @@ def evaluate_models(*, data_path: str | Path, classifier_name: str, models_direc
         results_directory=results_directory,
         models_directory=models_directory,
     )
+
+    output_path = Path(results_directory) / "evaluate_results.csv"
+
+    print_summary(summaries)
+    save_summary(summaries, output_path)
+
+    logger.info(f"Saved summary to {output_path}")
 
 def run_dialog(*, classifier_name: str) -> None:
     pass
@@ -150,6 +175,16 @@ def main():
 
     
 if __name__ == "__main__":
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter("%(message)s"))
+
+    file_handler = logging.FileHandler("app.log", encoding="utf-8")
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(
+        logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s")
+    )
+
     # Disable huggingface logs
     hf_logging.set_verbosity_error()
     hf_logging.disable_default_handler()
@@ -159,10 +194,9 @@ if __name__ == "__main__":
 
     logging.basicConfig(
             level=logging.INFO,
-            format="%(asctime)s %(levelname)s: %(message)s",
             handlers=[
-                logging.FileHandler("app.log"),
-                logging.StreamHandler()
+                console_handler,
+                file_handler,
             ],
         )
 

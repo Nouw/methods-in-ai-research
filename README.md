@@ -63,6 +63,19 @@ uv run python main.py experiment
 
 Splits are created in memory. Add `--save-splits` to also write them under `artifacts/splits/`. Results are saved under `results/<classifier>/<split>/`.
 
+A comparison table is printed in the console. Results are also saved as
+CSV files, with one row per evaluated classifier:
+
+- `results/original_results.csv`: results for the original split.
+- `results/grouped_results.csv`: results for the grouped split.
+
+The files include accuracy, balanced accuracy, and macro and weighted
+precision, recall, and F1 scores. Macro averages give each class equal
+weight; weighted averages weight classes by their number of test examples.
+
+Open these files in Excel using **Data → From Text/CSV**, selecting comma
+as the delimiter.
+
 ## Training final models
 
 Train every classifier on the complete provided dataset and save them under `artifacts/models/`:
@@ -86,7 +99,9 @@ Evaluate every saved model without retraining:
 uv run python main.py evaluate /path/to/dialog_acts_test.dat
 ```
 
-The command prints accuracy, balanced accuracy, and macro F1. Detailed metrics, the confusion matrix, and individual predictions are saved under `results/<classifier>/provided/`.
+A comparison table is printed in the console and saved to
+`results/evaluate_results.csv`. Detailed metrics, confusion matrices,
+and individual predictions are saved under `results/<classifier>/provided/`.
 
 ## Interactive classification
 
