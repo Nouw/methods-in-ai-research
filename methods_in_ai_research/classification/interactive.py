@@ -1,3 +1,5 @@
+"""Provide an interactive prompt for comparing classifier predictions."""
+
 from collections.abc import Callable, Mapping
 
 from methods_in_ai_research.classification.models.classifier import Classifier
@@ -9,6 +11,14 @@ def run_interactive(
     input_function: Callable[[str], str] = input,
     output_function: Callable[[str], None] = print,
 ) -> None:
+    """Read utterances and display a prediction from each supplied classifier.
+
+    Normalize input, ignore blank utterances, and stop on '/exit' or end of input. Input and output functions can be replaced
+    for testing.
+
+    Raises:
+         ValueError: if no classifiers are supplied
+    """
     if not classifiers:
         raise ValueError("At least one classifier is required")
 

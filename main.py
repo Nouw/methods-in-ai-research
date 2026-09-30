@@ -1,3 +1,5 @@
+"""Provide command-line commands for classifier experiments, training, dialog, and evaluation."""
+
 import argparse
 import logging
 from pathlib import Path
@@ -20,9 +22,11 @@ DEFAULT_RESULTS_DIRECTORY = "results"
 DEFAULT_SPLITS_DIRECTORY = "artifacts/splits"
 
 def add_classifier_argument(parser: argparse.ArgumentParser) -> None:
+    """Add a command-line option for selecting one classifier or all classifiers."""
     parser.add_argument("--classifier", choices=(*classifier_names, "all"), default="all")
 
 def parse_arguments() -> argparse.Namespace:
+    """Parse command-line arguments."""
     parser = argparse.ArgumentParser(description="Methods in AI Research dialog-act classification pipeline.")
     commands = parser.add_subparsers(dest="command", required=True)
 
@@ -55,6 +59,7 @@ def parse_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 def run_experiment(*, data_path: str | Path, classifier_name: str, split_strategy: str, results_directory: str | Path, save_splits: bool = False, splits_directory: str | Path = "artifacts/splits") -> None:
+    """Train and evaluate the selected classifiers on generated splits, then print and save comparison tables."""
     source_data = load_dataset(data_path)
 
     datasets = create_splits(
@@ -95,6 +100,7 @@ def run_experiment(*, data_path: str | Path, classifier_name: str, split_strateg
 
 
 def train_models(*, data_path: str | Path, classifier_name: str, models_directory: str | Path) -> None:
+    """Fit the selected classifiers on the complete dataset and save their state."""
     train_data = load_dataset(data_path)
 
     run_pipeline(
@@ -110,6 +116,7 @@ def train_models(*, data_path: str | Path, classifier_name: str, models_director
 
 
 def evaluate_models(*, data_path: str | Path, classifier_name: str, models_directory: str | Path, results_directory: str | Path) -> None:
+    """Evaluate saved classifiers on a labeled dataset without retraining, then print and save the results."""
     test_data = load_dataset(data_path)
 
     summaries = run_pipeline(
@@ -135,6 +142,7 @@ def run_dialog(*, classifier_name: str) -> None:
 
 
 def main():
+    """Parse commandline args and run the selected workflow."""
     args = parse_arguments()
 
     if args.command == "experiment":

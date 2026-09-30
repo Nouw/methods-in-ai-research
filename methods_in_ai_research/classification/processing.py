@@ -1,3 +1,5 @@
+"""Load dialog-act datasets and normalize utterances for classification."""
+
 from pathlib import Path
 
 import pandas as pd
@@ -21,7 +23,14 @@ VALID_LABELS = set({
 })
 
 def load_dialog_acts(file_path: str | Path) -> pd.DataFrame:
-    """Load and validate a dialog-act dataset"""
+    """Read and validate a dataset containing one label and utterance per line.
+
+    Skip blank lines and normalize utterances. Return a DataFrame with 'label' and 'utterance' columns.
+
+    Raises:
+        FileNotFoundError: If the dataset file does not exist.
+        ValueError: If the dataset contains no valid records.
+    """
     path = Path(file_path)
 
     if not path.is_file():
@@ -70,9 +79,12 @@ def load_dialog_acts(file_path: str | Path) -> pd.DataFrame:
     return pd.DataFrame(records, columns=["label", "utterance"])
 
 def normalize_utterance(utterance: str) -> str:
+    """Remove leading and trailing whitespace and convert utterance to lowercase."""
     return utterance.strip().lower()
 
 def preprocess(file_path: str) -> pd.DataFrame:
+    """Read and print a single-column table, then add label and sentence columns by splitting at the first
+    space."""
     df = pd.read_table(file_path, header=None, names=["Column"])
     print(df)
     df[["label", "sentence"]] = df["Column"].str.split(" ", n=1, expand=True)
@@ -80,6 +92,14 @@ def preprocess(file_path: str) -> pd.DataFrame:
     return df
 
 def load_dataset(file_path: str | Path) -> pd.DataFrame:
+    """Load a labeled .dat file or a split CSV file.
+
+    Validate and normalize .dat records through load_dialog_acts.
+    Read CSV files using 'row_id' as the index without normalizing their contents.
+
+    Raises:
+         ValueError: If the file type is not supported.
+    """
     path = Path(file_path)
 
     if path.suffix.lower() == ".dat":

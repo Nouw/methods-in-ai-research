@@ -1,3 +1,5 @@
+"""Define supported classifier names and construct their implementations."""
+
 from methods_in_ai_research.classification.models.classifier import Classifier
 from methods_in_ai_research.classification.models.decision_tree import DecisionTreeBagOfWordsClassifier
 from methods_in_ai_research.classification.models.linear_svm import LinearSVMBagOfWordsClassifier, \
@@ -11,6 +13,11 @@ classifier_names = ("rule-based", "bow-logistic-regression", "bow-linear-svm", "
 
 
 def create_classifier(name: str) -> Classifier:
+    """Create an unfitted classifier for the given registered name.
+
+    Raises:
+         ValueError: if the classifier name is unknown.
+    """
     if name == "rule-based":
         return RuleBasedClassifier()
 

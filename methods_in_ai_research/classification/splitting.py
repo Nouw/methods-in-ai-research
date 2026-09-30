@@ -1,3 +1,5 @@
+"""Create, validate, describe, and save splits."""
+
 import pandas as pd
 import time
 import logging
@@ -17,11 +19,23 @@ logger = logging.getLogger(__name__)
 
 
 def create_original_split(data: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Return copies of shuffled, stratified train/test split using the configured test fraction and random seed."""
     train_data, test_data = train_test_split(data, test_size=TEST_SIZE, random_state=RANDOM_STATE, shuffle=True, stratify=data["label"])
 
     return train_data.copy(), test_data.copy()
 
 def create_grouped_split(data: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Select a train/test split that keeps identical utterances together.
+
+    Examine five stratified group folds and select the valid candidate with the smallest combined test-size and
+    label-distribution error.
+
+    Require every label in training and every label with multiple distinct utterances in testing. Utterances should
+    already be normalized.
+
+    Raises:
+        ValueError: If no candidate statisfies the label coverage requirements.
+    """
     splitter = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=RANDOM_STATE)
 
     full_disctribution = data["label"].value_counts(normalize=True)
@@ -75,6 +89,7 @@ def create_grouped_split(data: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame
 
 
 def validate_split(source: pd.DataFrame, train_data: pd.DataFrame, test_data: pd.DataFrame) -> None:
+    """Raise ValueError if train/test row indices overlap or their union differs from the source indices."""
     train_indices = set(train_data.index)
     test_indices = set(test_data.index)
     source_indices = set(source.index)
@@ -87,6 +102,7 @@ def validate_split(source: pd.DataFrame, train_data: pd.DataFrame, test_data: pd
         raise ValueError("Train and test do not cover every source row")
 
 def save_split(train_data: pd.DataFrame, test_data: pd.DataFrame, output_directory: str | Path):
+    """Save train.csv and test.csv in the output directory."""
     output_path = Path(output_directory)
     output_path.mkdir(parents=True, exist_ok=True)
     
@@ -99,6 +115,7 @@ def log_split_summary(
     train_data: pd.DataFrame,
     test_data: pd.DataFrame,
 ) -> None:
+    """Log the record counts, percentages, and number of labels in each partition."""
     total = len(source)
     train_percentage = 100 * len(train_data) / total
     test_percentage = 100 * len(test_data) / total
@@ -113,6 +130,7 @@ def log_split_summary(
 
 def create_splits(data: pd.DataFrame, strategy: str, output_directory: str | Path, *, save_splits: bool = False) -> \
 dict[str, tuple[pd.DataFrame, pd.DataFrame]]:
+    """Create and validate the requested splits, log their sizes, and optionally save them as CSV files."""
     splits = {}
 
     if strategy in {"original", "both"}:

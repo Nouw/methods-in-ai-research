@@ -1,3 +1,5 @@
+"""Coordinate classifier training, evaluation, persistence, and result comparisons."""
+
 import logging
 import pandas as pd
 from pathlib import Path
@@ -12,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass(frozen=True)
 class EvaluationSummary:
+    """Associate evaluation results with a classifier name and dataset split."""
     classifier: str
     split: str
     result: EvaluationResult
@@ -21,6 +24,11 @@ def resolve_model_path(
     split_name: str,
     models_directory: str | Path | None,
 ) -> Path | None:
+    """Return the model artifact path or None when no model directory is provided.
+
+    Store models for generated splits in separate subdirectories.
+    Use the model directory directly for the 'provided' split.
+    """
     if not models_directory:
         return None
 
@@ -32,6 +40,16 @@ def resolve_model_path(
     return directory / f"{classifier_name}.pkl"
 
 def run_pipeline(classifier_name: str, split_name: str, train_data: pd.DataFrame | None, test_data: pd.DataFrame | None, *, train_enabled: bool, evaluate_enabled: bool, results_directory: str | Path, models_directory: str | Path | None = None) -> list[EvaluationSummary]:
+    """Run the requested training and evaluation steps for one or all classifiers.
+
+    Load a saved model when a model directory is supplied and training is disabled. Otherwise, create a classifier.
+    Save trained models when a model directory is supplied and save detailed results when evaluating.
+
+    Return one summary per evaluated classifier or an empty list when evaluation is disabled.
+
+    Raises:
+         ValueError: if training or evaluation is requested without its dataset.
+    """
     if classifier_name == "all":
         summaries = []
 

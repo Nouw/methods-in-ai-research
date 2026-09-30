@@ -1,3 +1,5 @@
+"""Classify dialog acts using ordered prhase-matching rules."""
+
 import re
 from collections.abc import Iterable
 
@@ -8,6 +10,11 @@ def contains_phrase(
     utterance: str,
     phrases: str | Iterable[str],
 ) -> bool:
+    """Return whether any supplied phrase appears without adjacent word characters.
+
+    Treat a single string as one phrase. Matching is case-sensitive and phrases are interpreted literally rather than as
+    regular expressions.
+    """
     if isinstance(phrases, str):
         phrases = (phrases,)
 
@@ -19,8 +26,11 @@ def contains_phrase(
 
     return False
 
-class RuleBasedClassifier(Classifier): 
+class RuleBasedClassifier(Classifier):
+    """Predict dialog acts using the first matching rule, defaulting to 'inform'."""
+
     def predict_one(self, utterance: str) -> str:
+        """Normalize the utterance and return the first matching rule's label or 'inform'."""
         text = normalize_utterance(utterance)
 
         if contains_phrase(text, ("kay", "okay")):

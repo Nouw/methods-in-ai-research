@@ -1,3 +1,5 @@
+"""Save classifier state and restore classifiers from model artifacts."""
+
 import logging
 import pickle
 from pathlib import Path
@@ -11,6 +13,11 @@ from methods_in_ai_research.classification.registry import create_classifier, cl
 logger = logging.getLogger(__name__)
 
 def save_classifier(classifier_name: str, classifier: Classifier, file_path: str | Path) -> None:
+    """Save a versioned pickle artifact containing the classifier name and state.
+
+    Store the full TF-IDF pipeline for bag-of-words classifiers, only the estimator for embedding classifiers, and
+    no learned state for rule-based classifiers. Create parent directories if necessary.
+    """
     path = Path(file_path)
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -33,6 +40,16 @@ def save_classifier(classifier_name: str, classifier: Classifier, file_path: str
         pickle.dump(artifact, model_file)
 
 def load_classifier(classifier_name: str, file_path: str | Path) -> Classifier:
+    """Restore a classifier from a pickled artifact.
+
+    Check the artifact version, classifier name, and state structure before restoring the model.
+    Embedding classifiers recreate their encoder.
+
+    Raises:
+        FileNotFoundError: If the artifact does not exist.
+        ValueError: If the artifact format, name, or state structure is invalid.
+    """
+
     path = Path(file_path)
 
     if not path.is_file():
@@ -67,6 +84,7 @@ def load_classifier(classifier_name: str, file_path: str | Path) -> Classifier:
     return classifier
 
 def load_interactive_models(classifier_name: str, models_directory: str | Path) -> dict[str, Classifier]:
+    """Load one or all registered classifiers and return them keyed by name."""
     classifiers = {}
     names = classifier_names if classifier_name == "all" else (classifier_name,)
 

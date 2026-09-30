@@ -1,3 +1,5 @@
+"""Calculate classification metrics and save detailed evaluation results."""
+
 from pathlib import Path
 import json
 from methods_in_ai_research.classification.processing import VALID_LABELS
@@ -18,12 +20,20 @@ from sklearn.metrics import (
 
 @dataclass(frozen=True)
 class EvaluationResult:
+    """Store aggregate metrics, per-class scores, a confusion matrix, and predictions."""
     summary: dict[str, float | int]
     report: dict[str, Any]
     confusion_matrix: pd.DataFrame
     predictions: pd.DataFrame
 
 def evaluate_classifier(classifier: Classifier, data: pd.DataFrame):
+    """Evaluate a classifier against a  DataFrame containing labels and utterances.
+
+    Return aggregate metrics, a per-class report, a confusion matrix, and individual predictions.
+
+    Raises:
+         ValueError: If required columns are missing, the prediction count is incorrect, or predictions contain unknown labels.
+    """
     required_columns = { "label", "utterance" }
     missing_columns = required_columns - set(data.columns)
 
@@ -83,6 +93,9 @@ def evaluate_classifier(classifier: Classifier, data: pd.DataFrame):
     )
 
 def save_evaluation(result: EvaluationResult, output_directory: str | Path) -> None:
+    """Save metrics.json, confusion_matrix.csv, and predictions.csv.
+    Creates the output directory if it doesn't exist and overwrites existing result files.
+    """
     output_path = Path(output_directory)
     output_path.mkdir(parents=True, exist_ok=True)
 
