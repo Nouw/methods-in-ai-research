@@ -8,3 +8,12 @@ TODO:
 - Support showing or hiding reasoning without changing recommendation logic.
 - Keep state transitions, lookup, and inference outside this module.
 """
+from typing import Protocol
+
+from methods_in_ai_research.dialog.state import SystemAction, DialogState
+
+
+class ResponseRenderer(Protocol):
+    def render(self, action: SystemAction, state: DialogState) -> str:
+        """Render an abstract action as text using templates and the current state."""
+        pass
