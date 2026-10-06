@@ -1,10 +1,9 @@
-"""Config-driven slot extractor with staged matching and detailed attempt logs.
+"""Config-driven slot extractor with patterns-first matching and detailed logs.
 
 API: SlotExtractor(config, base_dir).extract_slots(user_utterance)
-Pattern candidates are canonicalized exact -> alias -> Levenshtein -> DistilBERT.
-Only if no pattern/attribute match succeeds are individual tokens scanned against
-ontology slots. Pattern matching can skip configured leading determiners such as
-'a', 'an' and 'the' before the slot value.
+Patterns and explicit aliases are tried first. Only if none resolve are individual
+tokens scanned against ontology slots. Candidate methods run exact -> ontology alias
+-> Levenshtein -> DistilBERT, stopping on the first accepted result.
 """
 from __future__ import annotations
 import json
@@ -50,7 +49,6 @@ def _similarity(a: str, b: str) -> float:
 
 def _match_pattern(pattern: str, tokens: list[str], max_value_tokens: int,
                    leading_stopwords: set[str], max_leading_stopwords: int):
-    """Yield slot-value spans, optionally skipping configured words after the prefix."""
     parts = [m.group().casefold().replace("’", "'") for m in PATTERN_TOKEN_RE.finditer(pattern)]
     placeholders = [i for i, part in enumerate(parts) if part.startswith("{") and part.endswith("}")]
     if len(placeholders) != 1:
@@ -63,20 +61,19 @@ def _match_pattern(pattern: str, tokens: list[str], max_value_tokens: int,
         prefix_end = start + len(prefix)
         for skipped in range(max_leading_stopwords + 1):
             if skipped and (prefix_end + skipped > len(tokens)
-                            or any(token not in leading_stopwords
-                                   for token in tokens[prefix_end:prefix_end + skipped])):
+                            or any(t not in leading_stopwords
+                                   for t in tokens[prefix_end:prefix_end + skipped])):
                 break
             value_start = prefix_end + skipped
             for length in range(1, max_value_tokens + 1):
                 end = value_start + length
                 suffix_end = end + len(suffix)
-                if end <= len(tokens) and suffix_end <= len(tokens):
-                    if tokens[end:suffix_end] == suffix:
-                        yield value_start, end
+                if end <= len(tokens) and suffix_end <= len(tokens) and tokens[end:suffix_end] == suffix:
+                    yield value_start, end
 
 
 class SlotExtractor:
-    """Instantiate with loaded config, then call extract_slots(user_utterance)."""
+    """Instantiate with config, then call extract_slots(user_utterance)."""
     def __init__(self, config: dict[str, Any], base_dir: Path | None = None):
         self.config = config
         self.base_dir = (base_dir or Path.cwd()).resolve()
@@ -135,8 +132,7 @@ class SlotExtractor:
                         found.append({"slot": "attr", "value": canonical, "surface": match.group(),
                                       "start": ids[0], "end": ids[-1] + 1, "pattern": None,
                                       "source": "attribute_alias", "method": "explicit_attribute_alias",
-                                      "similarity": 1.0, "char_start": match.start(),
-                                      "allow_special": False})
+                                      "similarity": 1.0, "char_start": match.start(), "allow_special": False})
         found.sort(key=lambda x: (x["char_start"], -(x["end"] - x["start"])))
         unique, seen = [], set()
         for item in found:
@@ -144,6 +140,50 @@ class SlotExtractor:
                 seen.add(item["value"])
                 unique.append(item)
         return unique if self.attr_config.get("multi_value", False) else unique[:1]
+
+    def _special_alias_candidates(self, tokens: list[str]):
+        """Bind a special value like 'any' to a nearby explicit slot label, e.g. food."""
+        if not self.matching["use_ontology_alias"]:
+            return []
+        slot_phrases = {}
+        for slot in self.allowed_slots:
+            slot_phrases[tuple(_words(slot))] = slot
+        for alias, canonical_slot in self.slot_name_map.items():
+            slot_phrases[tuple(_words(alias))] = canonical_slot
+        slot_phrases = {phrase: slot for phrase, slot in slot_phrases.items() if phrase and slot in self.allowed_slots}
+        candidates = []
+        for value, aliases in self.slots_config.get("special_aliases", {}).items():
+            for alias in aliases:
+                alias_tokens = _words(alias)
+                if not alias_tokens:
+                    continue
+                for start in range(len(tokens) - len(alias_tokens) + 1):
+                    end = start + len(alias_tokens)
+                    if tokens[start:end] != alias_tokens:
+                        continue
+                    # Slot cue may immediately follow or precede the special value phrase.
+                    for phrase, slot in slot_phrases.items():
+                        size = len(phrase)
+                        if tokens[end:end + size] == list(phrase):
+                            candidates.append({"slot": slot, "value": _norm(value),
+                                "surface": " ".join(tokens[start:end]), "start": start, "end": end,
+                                "pattern": None, "source": "special_alias_context",
+                                "method": "configured_special_alias", "similarity": 1.0,
+                                "allow_special": False})
+                        before = start - size
+                        if before >= 0 and tokens[before:start] == list(phrase):
+                            candidates.append({"slot": slot, "value": _norm(value),
+                                "surface": " ".join(tokens[start:end]), "start": start, "end": end,
+                                "pattern": None, "source": "special_alias_context",
+                                "method": "configured_special_alias", "similarity": 1.0,
+                                "allow_special": False})
+        unique, seen = [], set()
+        for item in candidates:
+            key = (item["slot"], item["value"], item["start"], item["end"])
+            if key not in seen:
+                seen.add(key)
+                unique.append(item)
+        return unique
 
     def _alias_forms(self, canonical: str, slot: str) -> list[str]:
         entry = self.aliases.get(canonical, []) if isinstance(self.aliases, dict) else []
@@ -205,32 +245,24 @@ class SlotExtractor:
         surface = _norm(surface)
         forms = self._forms_for_slot(slot, allow_special)
         canonicals = self.values_by_slot.get(slot, set())
-
         def attempt(score, candidate=None, compared_form=None, threshold=None,
                     enabled=True, accepted=False, error=None):
             return {"stage": stage, "slot": slot, "surface": surface,
                     "candidate_canonical": candidate, "compared_form": compared_form,
                     "score": score, "threshold": threshold, "enabled": enabled,
                     "accepted": accepted, "error": error}
-
         if stage == "exact":
-            candidate = next((canonical for _, canonical in forms
-                              if surface == canonical and canonical in canonicals), None)
+            candidate = next((c for _, c in forms if surface == c and c in canonicals), None)
             result = (candidate, "exact", 1.0) if candidate else None
             return result, attempt(1.0 if candidate else 0.0, candidate, candidate,
                                   threshold=1.0, accepted=bool(candidate))
-
         if stage == "ontology_alias":
             if not self.matching["use_ontology_alias"]:
                 return None, attempt(None, enabled=False, error="disabled in config")
-            found = next(((canonical, form) for form, canonical in forms
-                          if surface == form and surface != canonical), None)
+            found = next(((c, f) for f, c in forms if surface == f and surface != c), None)
             result = (found[0], "ontology_alias", 1.0) if found else None
-            return result, attempt(1.0 if found else 0.0,
-                                  found[0] if found else None,
-                                  found[1] if found else None,
-                                  threshold=1.0, accepted=bool(found))
-
+            return result, attempt(1.0 if found else 0.0, found[0] if found else None,
+                                  found[1] if found else None, threshold=1.0, accepted=bool(found))
         if stage == "levenshtein":
             enabled = bool(self.matching["use_levenshtein"])
             threshold = float(self.matching["levenshtein_threshold"])
@@ -251,7 +283,6 @@ class SlotExtractor:
             accepted = best[2] >= threshold
             result = (best[0], "levenshtein", best[2]) if accepted else None
             return result, attempt(best[2], best[0], best[1], threshold, accepted=accepted)
-
         if stage == "distilbert":
             enabled = bool(self.matching["use_semantic"])
             threshold = float(self.matching["semantic_threshold"])
@@ -269,7 +300,6 @@ class SlotExtractor:
             accepted = score >= threshold
             result = (canonical, "distilbert", score) if accepted else None
             return result, attempt(score, canonical, form, threshold, accepted=accepted)
-
         return None, attempt(None, error="unknown stage")
 
     def _pattern_candidates(self, utterance: str, tokens: list[str]):
@@ -287,6 +317,7 @@ class SlotExtractor:
                                        "start": start, "end": end, "pattern": str(pattern),
                                        "source": "pattern", "allow_special": True})
         candidates.extend(self._attribute_candidates(utterance))
+        candidates.extend(self._special_alias_candidates(tokens))
         unique = {}
         for item in candidates:
             key = (item["slot"], item["start"], item["end"], item.get("value"))
@@ -301,15 +332,16 @@ class SlotExtractor:
             for item in unresolved:
                 if any(i in occupied for i in range(item["start"], item["end"])):
                     continue
-                if item["source"] == "attribute_alias":
-                    result = (item["value"], item["method"], item["similarity"]) if stage == "exact" else None
-                    attempt = {"stage": "explicit_attribute_alias" if stage == "exact" else stage,
+                if item["source"] in {"attribute_alias", "special_alias_context"}:
+                    label = "explicit_attribute_alias" if item["source"] == "attribute_alias" else "configured_special_alias"
+                    result = (item["value"], label, item["similarity"]) if stage == "exact" else None
+                    attempt = {"stage": label if stage == "exact" else stage,
                                "slot": item["slot"], "surface": item["surface"],
                                "candidate_canonical": item["value"], "compared_form": item["surface"],
                                "score": 1.0 if stage == "exact" else None,
                                "threshold": None, "enabled": stage == "exact",
                                "accepted": stage == "exact",
-                               "error": None if stage == "exact" else "not needed: explicit alias matched"}
+                               "error": None if stage == "exact" else "not needed: configured alias matched"}
                 else:
                     result, attempt = self._match_stage(item["surface"], item["slot"], stage,
                                                         item.get("allow_special", False))
@@ -361,7 +393,6 @@ class SlotExtractor:
         unresolved = self._apply_stages(selected, matches, occupied, attempts_log)
         if not matches:
             self._token_fallback(tokens, matches, occupied, attempts_log)
-
         slot_values = {slot: [] for slot in self.allowed_slots}
         for item in sorted(matches, key=lambda m: (m["start"], m["end"])):
             if item["value"] not in slot_values[item["slot"]]:
@@ -373,8 +404,7 @@ class SlotExtractor:
                          "unresolved_pattern_candidates": [
                              {k: v for k, v in item.items() if k not in {"allow_special", "attempts"}}
                              for item in unresolved
-                         ],
-                         "matcher_errors": self._errors, "returned": returned})
+                         ], "matcher_errors": self._errors, "returned": returned})
         return returned
 
     def _write_log(self, record: dict[str, Any]) -> None:
