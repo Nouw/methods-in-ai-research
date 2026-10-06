@@ -5,20 +5,22 @@ import pytest
 from methods_in_ai_research.dialog.engine import FlowEngine
 from methods_in_ai_research.dialog.flow import Flow, Node, Transition
 from methods_in_ai_research.dialog.manager import DialogManager
-from methods_in_ai_research.dialog.state import DialogState, SystemAction, Slot, ClassifiedInput, SlotProposal
+from methods_in_ai_research.dialog.responses import ResponseRenderer
+from methods_in_ai_research.dialog.state import DialogState, SystemAction, Slot, ClassifiedInput, SlotProposal, \
+    SystemActionType
 
 
 def welcome(state: DialogState) -> tuple[DialogState, SystemAction]:
-    return state, SystemAction("welcome")
+    return state, SystemAction(SystemActionType.WELCOME)
 
 def ask_food(state: DialogState) -> tuple[DialogState, SystemAction]:
-    return replace(state, last_requested_slot=Slot.FOOD), SystemAction("ask_food")
+    return replace(state, last_requested_slot=Slot.FOOD), SystemAction(SystemActionType.ASK_FOOD)
 
 def ask_area(state: DialogState) -> tuple[DialogState, SystemAction]:
-    return replace(state, last_requested_slot=Slot.AREA), SystemAction("ask_area")
+    return replace(state, last_requested_slot=Slot.AREA), SystemAction(SystemActionType.ASK_AREA)
 
 def complete(state: DialogState) -> tuple[DialogState, SystemAction]:
-    return replace(state, last_requested_slot=None), SystemAction("complete")
+    return replace(state, last_requested_slot=None), SystemAction(SystemActionType.BYE)
 
 # Example from assignment description
 flow = Flow(
@@ -78,7 +80,7 @@ def manager() -> DialogManager:
         }
     )
 
-    return DialogManager(engine, FakeExtractor(), ExampleRenderer())
+    return DialogManager(engine, FakeExtractor(), ResponseRenderer())
 
 def test_supplied_food_skips_food_question(manager: DialogManager):
     initial_state, _ = manager.start()

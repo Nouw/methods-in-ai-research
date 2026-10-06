@@ -36,10 +36,30 @@ class SlotProposal:
     value: str | AnyValue
     needs_confirmation: bool = False
 
+class SystemActionType(str, Enum):
+    WELCOME = "welcome"
+    ASK_AREA = "ask_area"
+    ASK_PRICE_RANGE = "ask_price_range"
+    ASK_FOOD = "ask_food"
+    CONFIRM_VALUE = "confirm_value"
+    ASK_REQUIREMENT = "ask_requirement"
+    RECOMMEND = "recommend"
+    RECOMMEND_REASON = "recommend_reason"
+    NO_MATCH = "no_match"
+    NO_ALTERNATIVE = "no_alternative"
+    DETAIL = "detail"
+    DETAIL_UNKNOWN = "detail_unknown"
+    REPEAT = "repeat"
+    CLARIFY = "clarify"
+    ANYTHING_ELSE = "anything_else"
+    BYE = "bye"
+
 @dataclass(frozen=True)
 class SystemAction:
-    name: str
+    type: SystemActionType
     parameters: tuple[tuple[str, str], ...] = ()
+
+
 
 @dataclass(frozen=True)
 class DialogState:

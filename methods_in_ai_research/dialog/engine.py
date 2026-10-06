@@ -2,7 +2,7 @@ from typing import Protocol, Mapping
 from dataclasses import replace
 
 from methods_in_ai_research.dialog.flow import Flow
-from methods_in_ai_research.dialog.state import DialogState, SystemAction
+from methods_in_ai_research.dialog.state import DialogState, SystemAction, SystemActionType
 
 
 class Guard(Protocol):
@@ -57,7 +57,7 @@ class FlowEngine:
         target = self._target(state, event)
 
         if target is None:
-            return replace(state), SystemAction("clarify")
+            return replace(state), SystemAction(SystemActionType.CLARIFY)
 
         return self._enter(replace(state, node=target))
 
