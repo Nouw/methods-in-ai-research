@@ -4,8 +4,8 @@ files:
   ontology_path: "ontology.json"
 
 matching:
-  use_levenshtein: false
-  use_semantic: true
+  use_levenshtein: true
+  use_semantic: false
   use_ontology_alias: true
   levenshtein_threshold: 0.55
   semantic_threshold: 0.84
