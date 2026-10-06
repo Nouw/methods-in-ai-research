@@ -1,0 +1,178 @@
+{
+  "moderate": [
+    "moderately",
+    "medium",
+    "priced",
+    "moderat",
+    "a",
+    "moderatley",
+    "modereate"
+  ],
+  "dontcare": [
+    "dont care",
+    "canapes"
+  ],
+  "cheap": [
+    "inexpensive",
+    "price"
+  ],
+  "expensive": [
+    "priced",
+    "expnsive"
+  ],
+  "centre": [
+    "center",
+    "central",
+    "middle",
+    "town",
+    "downtown"
+  ],
+  "gastropub": [
+    "gastro pub",
+    "castro pub"
+  ],
+  "asian oriental": [
+    "asian",
+    "pan asian",
+    "oriental"
+  ],
+  "north american": [
+    "american"
+  ],
+  "italian": [
+    "kitalian",
+    "itailian"
+  ],
+  "indian": [
+    "india",
+    "indians"
+  ],
+  "scandinavian": [
+    "scandanavian"
+  ],
+  "belgian": [
+    "belgium"
+  ],
+  "canapes": [
+    "canape",
+    "canopy",
+    "canope",
+    "canap",
+    "canopus"
+  ],
+  "chinese": [
+    "chineese"
+  ],
+  "barbeque": [
+    "barbecue"
+  ],
+  "seafood": [
+    "sea food",
+    "a"
+  ],
+  "venetian": [
+    "venesian",
+    "priced",
+    "serves"
+  ],
+  "mediterranean": [
+    "medterranean",
+    "mediteranian"
+  ],
+  "catalan": [
+    "food",
+    "catalin",
+    "catalanian"
+  ],
+  "modern european": [
+    "modern euorpean",
+    "modern europene",
+    "modern europone"
+  ],
+  "basque": [
+    "food",
+    "priced",
+    "the",
+    "serves"
+  ],
+  "portuguese": [
+    "portugeuse",
+    "portugese"
+  ],
+  "australasian": [
+    "austria asian",
+    "austral asian",
+    "australian",
+    "australia asian"
+  ],
+  "brazilian": [
+    "brazillian"
+  ],
+  "european": [
+    "europea"
+  ],
+  "steakhouse": [
+    "steak house",
+    "steak"
+  ],
+  "crossover": [
+    "cross over",
+    "price",
+    "class"
+  ],
+  "unusual": [
+    "unusal"
+  ],
+  "jamaican": [
+    "food",
+    "jamaica"
+  ],
+  "indonesian": [
+    "endonesian"
+  ],
+  "cantonese": [
+    "food"
+  ],
+  "swedish": [
+    "sweedish"
+  ],
+  "lebanese": [
+    "lebanse",
+    "serves"
+  ],
+  "vegetarian": [
+    "vegitarian"
+  ],
+  "turkish": [
+    "turkiesh",
+    "turkey"
+  ],
+  "african": [
+    "africa"
+  ],
+  "english": [
+    "enlish"
+  ],
+  "singaporean": [
+    "singapore"
+  ],
+  "vietnamese": [
+    "vietnam",
+    "veitnamese"
+  ],
+  "polynesian": [
+    "pollynasian"
+  ],
+  "moroccan": [
+    "moroccon"
+  ],
+  "korean": [
+    "korea"
+  ],
+  "caribbean": [
+    "food"
+  ],
+  "british": [
+    "bristish"
+  ]
+}

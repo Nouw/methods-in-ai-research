@@ -71,3 +71,4 @@ profile.json.gz
 profile_default/
 ipython_config.py
 .python-version
+/logs

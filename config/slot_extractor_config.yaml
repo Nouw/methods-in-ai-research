@@ -1,0 +1,65 @@
+files:
+  patterns_path: "slot_patterns.json"
+  aliases_path: "alias_suggestions.json"
+  ontology_path: "ontology.json"
+
+matching:
+  use_levenshtein: false
+  use_semantic: true
+  use_ontology_alias: true
+  levenshtein_threshold: 0.55
+  semantic_threshold: 0.84
+  min_fuzzy_chars: 4
+  max_candidate_tokens: 5
+  max_pattern_value_tokens: 5
+  pattern_leading_stopwords: ["a", "an", "the"]
+  max_leading_stopwords: 2
+  semantic_model_name: "distilbert-base-uncased"
+
+slots:
+  allowed_slots: ["attr", "pricerange", "area", "food", "quality", "crowd", "stay"]
+  slot_name_map:
+    "price range": "pricerange"
+    "food quality": "quality"
+    "crowdedness": "crowd"
+    "length of stay": "stay"
+  attr_values: ["name", "phone", "addr", "postcode"]
+  attr:
+    multi_value: true
+    aliases:
+      name:
+        - "restaurant name"
+        - "name of the restaurant"
+        - "name of restaurant"
+        - "name"
+      phone:
+        - "phone number"
+        - "phonenumber"
+        - "phone no"
+        - "telephone number"
+        - "telephone"
+        - "phone"
+        - "mobile"
+        - "tel"
+      addr:
+        - "restaurant address"
+        - "address"
+        - "addr"
+        - "restaurant location"
+        - "location"
+      postcode:
+        - "postal code"
+        - "post code"
+        - "postcode"
+        - "zip code"
+        - "zipcode"
+        - "pin code"
+        - "pincode"
+  special_aliases:
+    dontcare: ["any", "anything", "whatever"]
+
+interaction:
+  prompt: "user: "
+  system_prefix: "system: "
+  exit_commands: ["exit", "quit", ":q"]
+  log_path: "../logs/slot_extractor_log.jsonl"

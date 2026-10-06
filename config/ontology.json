@@ -1,0 +1,70 @@
+{
+  "pricerange": [
+    "cheap",
+    "expensive",
+    "moderate"
+  ],
+  "area": [
+    "centre",
+    "east",
+    "north",
+    "south",
+    "west"
+  ],
+  "food": [
+    "african",
+    "asian oriental",
+    "australasian",
+    "bistro",
+    "british",
+    "catalan",
+    "chinese",
+    "cuban",
+    "european",
+    "french",
+    "fusion",
+    "gastropub",
+    "indian",
+    "international",
+    "italian",
+    "jamaican",
+    "japanese",
+    "korean",
+    "lebanese",
+    "mediterranean",
+    "modern european",
+    "moroccan",
+    "north american",
+    "persian",
+    "polynesian",
+    "portuguese",
+    "romanian",
+    "seafood",
+    "spanish",
+    "steakhouse",
+    "swiss",
+    "thai",
+    "traditional",
+    "turkish",
+    "tuscan",
+    "vietnamese"
+  ],
+  "quality": [
+    "good",
+    "mediocre"
+  ],
+  "crowd": [
+    "busy",
+    "not busy"
+  ],
+  "stay": [
+    "long",
+    "short"
+  ],
+  "attr": [
+    "addr",
+    "name",
+    "phone",
+    "postcode"
+  ]
+}
