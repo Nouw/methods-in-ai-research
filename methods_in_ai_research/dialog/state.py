@@ -10,6 +10,8 @@ TODO:
 """
 from dataclasses import dataclass
 from enum import Enum
+from methods_in_ai_research.dialog.reasoning import RestaurantProperty, Inference
+
 
 class Slot(Enum):
     """Define the possible slots for dialog state."""
@@ -36,6 +38,11 @@ class SlotProposal:
     value: str | AnyValue
     needs_confirmation: bool = False
 
+@dataclass(frozen=True)
+class RequirementProposal:
+    property: RestaurantProperty
+    value: bool
+
 class SystemActionType(str, Enum):
     WELCOME = "welcome"
     ASK_AREA = "ask_area"
@@ -44,7 +51,6 @@ class SystemActionType(str, Enum):
     CONFIRM_VALUE = "confirm_value"
     ASK_REQUIREMENT = "ask_requirement"
     RECOMMEND = "recommend"
-    RECOMMEND_REASON = "recommend_reason"
     NO_MATCH = "no_match"
     NO_ALTERNATIVE = "no_alternative"
     DETAIL = "detail"
@@ -58,6 +64,7 @@ class SystemActionType(str, Enum):
 class SystemAction:
     type: SystemActionType
     parameters: tuple[tuple[str, str], ...] = ()
+    explanation: tuple[Inference, ...] = ()
 
 
 
@@ -69,6 +76,8 @@ class DialogState:
     price: Preference = None
     pending: tuple[SlotProposal, ...] = ()
     last_requested_slot: Slot | None = None
+    requirements: tuple[tuple[RestaurantProperty, bool], ...] = ()
+    requirements_asked: bool = False
     last_response: str | None = None
     current_restaurant_id: str | None = None
     alternative_ids: tuple[str, ...] = ()

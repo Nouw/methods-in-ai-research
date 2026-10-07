@@ -1,5 +1,5 @@
 """Turn system actions into sentences, using one template per action."""
-
+from methods_in_ai_research.dialog.reasoning import RestaurantProperty, Inference
 from methods_in_ai_research.dialog.state import SystemAction, DialogState, SystemActionType
 
 
@@ -12,8 +12,7 @@ TEMPLATES = dict({
     SystemActionType.CONFIRM_VALUE: "I did not recognise {given}. Did you mean {corrected}?",
     SystemActionType.ASK_REQUIREMENT: "Do you have any additional requirements, for example romantic or touristic?",
     SystemActionType.RECOMMEND: "{restaurantname} is a nice place in the {area} of town and the prices are {pricerange}.",
-    SystemActionType.RECOMMEND_REASON: "I recommend {restaurantname}. It is {requirement} because it is {reason}.",
-    SystemActionType.NO_MATCH: "I'm sorry but there is no restaurant serving {food} food.",
+    SystemActionType.NO_MATCH: "I'm sorry, but no restaurant matches your preferences.",
     SystemActionType.NO_ALTERNATIVE: "I'm sorry but there are no other restaurants matching your preferences.",
     SystemActionType.DETAIL: "The {detail} of {restaurantname} is {value}.",
     SystemActionType.DETAIL_UNKNOWN: "I'm sorry but I do not have the {detail} of {restaurantname}.",
@@ -23,13 +22,57 @@ TEMPLATES = dict({
     SystemActionType.BYE: "Thank you for using our system. Goodbye!",
 })
 
+PROPERTY_CLAUSES = {
+    RestaurantProperty.TOURISTIC: {
+        True: 'it is touristic',
+        False: 'it is not touristic',
+    },
+    RestaurantProperty.ASSIGNED_SEATS: {
+        True: 'it has assigned seats',
+        False: 'it does not have assigned seats',
+    },
+    RestaurantProperty.CHILDREN: {
+        True: 'It is suitable for children',
+        False: 'It is not suitable for children',
+    },
+    RestaurantProperty.ROMANTIC: {
+        True: 'it is romantic',
+        False: 'it is not romantic',
+    }
+}
+
+RULE_REASONS = {
+    1: 'it is cheap and has good food',
+    2: 'it serves Romanian food',
+    3: 'it is busy',
+    4: 'it allows a long stay',
+    5: 'it is busy',
+    6: 'it allows a long stay',
+}
+
 class ResponseRenderer:
     def render(self, action: SystemAction, state: DialogState) -> str:
-        """Fill in the template of the given action with the given values."""
-        if action not in TEMPLATES:
-           raise ValueError(f"unknown action: {action.type}")
+        if action.type not in TEMPLATES:
+            raise ValueError(f"unknown action: {action.type}")
 
-        return TEMPLATES[action.type].format(**dict(action.parameters))
+        text = TEMPLATES[action.type].format(**dict(action.parameters))
+        explanations = " ".join(self._explain(inference) for inference in action.explanation)
+
+        return f"{text} {explanations}" if explanations else text
+
+    def _explain(self, inference: Inference) -> str:
+        clause = PROPERTY_CLAUSES[inference.property][inference.value].capitalize()
+
+        if inference.rule is None:
+            return f"{clause}, as nothing suggests otherwise."
+
+        sentence = f"{clause} because {RULE_REASONS[inference.rule.id]}"
+
+        if inference.overruled:
+            sentence += f", even though {' and '.join(RULE_REASONS[rule.id] for rule in inference.overruled)}"
+
+        return f"{sentence}."
+
 
 
 if __name__ == "__main__":
