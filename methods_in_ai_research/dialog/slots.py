@@ -9,3 +9,15 @@ TODO:
 - Return uncertain matches for confirmation, without changing dialog state.
 - Reuse the shared DistilBERT encoder and cache ontology embeddings.
 """
+from typing import Protocol
+
+from methods_in_ai_research.dialog.state import ClassifiedInput, DialogState, SlotProposal, RequirementProposal
+
+
+class SlotExtractor(Protocol):
+    def extract(self, user_input: ClassifiedInput, state: DialogState) -> tuple[SlotProposal | RequirementProposal, ...]:
+        """Extract preferences and additional requirements using the utterance and conversation context.
+
+        Flag uncertain matches for confirmation. Do not modify state.
+        """
+        pass
