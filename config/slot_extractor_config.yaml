@@ -10,19 +10,15 @@ matching:
   levenshtein_threshold: 0.55
   semantic_threshold: 0.84
   min_fuzzy_chars: 4
-  max_candidate_tokens: 5
   max_pattern_value_tokens: 5
   pattern_leading_stopwords: ["a", "an", "the"]
   max_leading_stopwords: 2
-  semantic_model_name: "distilbert-base-uncased"
 
 slots:
-  allowed_slots: ["attr", "pricerange", "area", "food", "quality", "crowd", "stay"]
+  allowed_slots: ["attr", "pricerange", "area", "food"]
   slot_name_map:
     "price range": "pricerange"
-    "food quality": "quality"
-    "crowdedness": "crowd"
-    "length of stay": "stay"
+    "price": "pricerange"
   attr_values: ["name", "phone", "addr", "postcode"]
   attr:
     multi_value: true
@@ -56,10 +52,4 @@ slots:
         - "pin code"
         - "pincode"
   special_aliases:
-    dontcare: ["any", "anything", "whatever"]
-
-interaction:
-  prompt: "user: "
-  system_prefix: "system: "
-  exit_commands: ["exit", "quit", ":q"]
-  log_path: "../logs/slot_extractor_log.jsonl"
+    dontcare: ["any", "anything", "whatever", "dont care", "don't care", "doesn't matter", "does not matter", "no preference"]

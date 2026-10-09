@@ -8,7 +8,7 @@ TODO:
 - Track additional requirements and whether they have been collected.
 - Track the current restaurant, remaining alternatives, and previous response.
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 from methods_in_ai_research.dialog.reasoning import RestaurantProperty, Inference
 
@@ -37,6 +37,8 @@ class SlotProposal:
     slot: Slot
     value: str | AnyValue
     needs_confirmation: bool = False
+    # The words the user said, shown when asking to confirm a corrected value.
+    given: str = field(default="", compare=False)
 
 @dataclass(frozen=True)
 class RequirementProposal:

@@ -17,7 +17,11 @@ from methods_in_ai_research.dialog.state import DialogState, Slot, SystemAction,
 
 
 def welcome(state: DialogState) -> tuple[DialogState, SystemAction]:
-    return state, SystemAction(SystemActionType.WELCOME)
+    """Start a fresh conversation, which also makes restarting forget all preferences."""
+    return DialogState(node=state.node), SystemAction(SystemActionType.WELCOME)
+
+def bye(state: DialogState) -> tuple[DialogState, SystemAction]:
+    return state, SystemAction(SystemActionType.BYE)
 
 def ask_food(state: DialogState) -> tuple[DialogState, SystemAction]:
     return replace(state, last_requested_slot=Slot.FOOD), SystemAction(SystemActionType.ASK_FOOD)
