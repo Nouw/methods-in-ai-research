@@ -1,0 +1,141 @@
+kind,utterance,requested,slot,expected
+no value,dont care,,,
+no value,i dont care tv_noise,,,
+no value,so i dont care whats the address,,,
+missed by keywords,was that in the east part of town west part of town,,area,west
+missed by keywords,itailian,,food,italian
+no value,i dont care,,,
+no value,i do not care,,,
+no value,what about other areas,,,
+missed by keywords,is there on serving chineese,,food,chinese
+no value,it doesnt matter,,,
+no value,dont matter,food,,
+no value,any of town,,,
+no value,i do not care,price,,
+no value,i do not care,food,,
+no value,any,,,
+missed by keywords,chinese food im looking for sea food,area,food,seafood
+missed by keywords,sea food,food,food,seafood
+missed by keywords,sea food,,food,seafood
+missed by keywords,sea food,price,food,seafood
+no value,uh i dont mind,food,,
+no value,i dont know,food,,
+missed by keywords,medterranean,,food,mediterranean
+missed by keywords,i am looking for kitalian food,,food,catalan
+missed by keywords,katalian food,,food,catalan
+missed by keywords,im looking for kitalian food in an expensive res,,food,italian
+missed by keywords,i am looking for catalin food,,food,catalan
+no value,uh dont care,,,
+no value,um anything else,,,
+missed by keywords,portugese,price,food,portuguese
+no value,dont know,price,,
+no value,doesnt matter,,,
+missed by keywords,austral asian,,food,australasian
+no value,i dont know,area,,
+no value,uh im not interested in the type,price,,
+no value,um anything else please,,,
+missed by keywords,middle,,area,centre
+no value,dont matter,price,,
+no value,i do not care,area,,
+no value,unintelligible i dont care,,,
+no value,i dont care thank you good bye,,,
+missed by keywords,i want an expensive steak house,price,food,steakhouse
+missed by keywords,inexpensive,price,price,cheap
+missed by keywords,steak house,food,food,steakhouse
+missed by keywords,austria asian restaurant in the center of town,price,food,australasian
+missed by keywords,im looking for a restaurant in the center that serves sea food,price,food,seafood
+missed by keywords,down town,,area,centre
+missed by keywords,north east,,area,east
+no value,anything,,,
+missed by keywords,spensive,price,price,expensive
+missed by keywords,portugeuse,,food,portuguese
+missed by keywords,i would like australian asian food,food,food,australasian
+missed by keywords,portugeuse food,,food,portuguese
+missed by keywords,derately priced,area,price,moderate
+no value,what ever,food,,
+no value,um surprise me,food,,
+missed by keywords,sea food restaurant,price,food,seafood
+missed by keywords,moderat,price,price,moderate
+missed by keywords,im looking for a moderately priced restaurant that serves sea food,price,food,seafood
+missed by keywords,im looking for an expensive restaurant that serves mediteranian,price,food,mediterranean
+missed by keywords,chinses,food,food,chinese
+missed by keywords,im looking for a modreately,price,price,moderate
+missed by keywords,steak house,,food,steakhouse
+missed by keywords,can i get a steak house restaurant in any area,,food,steakhouse
+missed by keywords,i want sea food,price,food,seafood
+missed by keywords,im looking for an expensive restaurant that serves sea food,,food,seafood
+missed by keywords,high priced,,price,expensive
+missed by keywords,yea im wondering if theres a steak house restaurant in the north part of,price,food,steakhouse
+missed by keywords,uh is there a steak house,,food,steakhouse
+no value,again i do not care,price,,
+no value,dont care whats the phone number,,,
+missed by keywords,gastro,,food,gastropub
+no value,ah any,,,
+missed by keywords,lebanse,,food,lebanese
+missed by keywords,uh low price range,price,price,cheap
+missed by keywords,im looking for a moderately priced restaurant that serves labenese food,price,food,lebanese
+missed by keywords,chineese,food,food,chinese
+no value,uh doesnt matter,,,
+no value,um i dont know,area,,
+missed by keywords,jamcian food,price,food,jamaican
+no value,it does not matter,,,
+no value,either one,price,,
+missed by keywords,i would like an africa restaurant in the center,price,food,african
+missed by keywords,inexpensive,food,price,cheap
+missed by keywords,inexpensive,,price,cheap
+no value,thats not important,area,,
+missed by keywords,um medium price range,price,price,moderate
+missed by keywords,chinese oriental,,food,chinese
+missed by keywords,austria asian food,,food,australasian
+missed by keywords,australia asian food,,food,australasian
+missed by keywords,austallison,price,food,australasian
+missed by keywords,austallison,food,food,australasian
+missed by keywords,west part of town moderatley price,price,price,moderate
+missed by keywords,if theres no persian food about about chinese,,food,chinese
+no value,uh i dont care,,,
+missed by keywords,expnsive,price,price,expensive
+no value,breath i dont care,,,
+no value,breath i dont care noise,,,
+missed by keywords,north part of town austral asian food,price,food,australasian
+missed by keywords,steak house food noise steak house food,price,food,steakhouse
+missed by keywords,s e a f o o d,,food,seafood
+missed by keywords,medium priced,,price,moderate
+no value,um doesnt mater,price,,
+missed by keywords,veitnamese,,food,vietnamese
+missed by keywords,vietnam,,food,vietnamese
+no value,do not care,price,,
+missed by keywords,hold on im working hold on gastro pub,price,food,gastropub
+missed by keywords,im looking for pollynasian food,price,food,polynesian
+missed by keywords,cheap portugeuse,price,food,portuguese
+missed by keywords,uh medium,price,price,moderate
+missed by keywords,the turkiesh,,food,turkish
+missed by keywords,the turkiesh food,,food,turkish
+no value,what about other parts of town,price,,
+missed by keywords,portugese,,food,portuguese
+no value,it deosnt matter,price,,
+no value,can you do anything else beside repeat yourself,,,
+missed by keywords,im looking for an expensive restaurant that serves sea food,price,food,seafood
+missed by keywords,portugese,food,food,portuguese
+missed by keywords,im looking chineese food,food,food,chinese
+missed by keywords,moroccon,food,food,moroccan
+missed by keywords,restaurant and it should serve steak house food,price,food,steakhouse
+no value,any address,,,
+missed by keywords,looking for a cheap restaurant that serves steak house food,price,food,steakhouse
+missed by keywords,catalanian,food,food,catalan
+no value,um i dont know,food,,
+missed by keywords,i want an expensive restaurant that serves sea food,price,food,seafood
+missed by keywords,jamcian food,food,food,jamaican
+missed by keywords,im looking for a moderately priced restaurant that serves austria asian food,price,food,australasian
+missed by keywords,india,,food,indian
+missed by keywords,korea,,food,korean
+missed by keywords,looking for a sea food restaurant,price,food,seafood
+missed by keywords,im looking for a sea food restaurant,,food,seafood
+no value,um do not care,price,,
+missed by keywords,steak,food,food,steakhouse
+missed by keywords,steak,,food,steakhouse
+missed by keywords,i dont give a fuck if hk fusion serves chinese food im looking for thai food,,food,thai
+no value,i dont care can i try again,,,
+missed by keywords,steak house,area,food,steakhouse
+missed by keywords,steak house,price,food,steakhouse
+missed by keywords,modereate,price,price,moderate
+missed by keywords,tailand,,food,thai

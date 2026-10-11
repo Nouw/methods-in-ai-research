@@ -1,0 +1,561 @@
+matcher,kind,utterance,expected,found,outcome
+levenshtein,no value,dont care,,{},correct
+levenshtein,no value,i dont care tv_noise,,{},correct
+levenshtein,no value,so i dont care whats the address,,{},correct
+levenshtein,missed by keywords,was that in the east part of town west part of town,west,{'area': 'west'},correct
+levenshtein,missed by keywords,itailian,italian,{},missed
+levenshtein,no value,i dont care,,{},correct
+levenshtein,no value,i do not care,,{},correct
+levenshtein,no value,what about other areas,,{},correct
+levenshtein,missed by keywords,is there on serving chineese,chinese,{'food': 'chinese'},correct
+levenshtein,no value,it doesnt matter,,{},correct
+levenshtein,no value,dont matter,,{},correct
+levenshtein,no value,any of town,,{},correct
+levenshtein,no value,i do not care,,{},correct
+levenshtein,no value,i do not care,,{},correct
+levenshtein,no value,any,,{},correct
+levenshtein,missed by keywords,chinese food im looking for sea food,seafood,{'food': 'chinese'},wrong
+levenshtein,missed by keywords,sea food,seafood,{},missed
+levenshtein,missed by keywords,sea food,seafood,{},missed
+levenshtein,missed by keywords,sea food,seafood,{},missed
+levenshtein,no value,uh i dont mind,,{},correct
+levenshtein,no value,i dont know,,{},correct
+levenshtein,missed by keywords,medterranean,mediterranean,{},missed
+levenshtein,missed by keywords,i am looking for kitalian food,catalan,{'food': 'italian'},wrong
+levenshtein,missed by keywords,katalian food,catalan,{'food': 'catalan'},correct
+levenshtein,missed by keywords,im looking for kitalian food in an expensive res,italian,"{'price': 'expensive', 'food': 'italian'}",correct
+levenshtein,missed by keywords,i am looking for catalin food,catalan,{'food': 'catalan'},correct
+levenshtein,no value,uh dont care,,{},correct
+levenshtein,no value,um anything else,,{},correct
+levenshtein,missed by keywords,portugese,portuguese,{},missed
+levenshtein,no value,dont know,,{},correct
+levenshtein,no value,doesnt matter,,{},correct
+levenshtein,missed by keywords,austral asian,australasian,{'food': 'asian oriental'},wrong
+levenshtein,no value,i dont know,,{},correct
+levenshtein,no value,uh im not interested in the type,,{},correct
+levenshtein,no value,um anything else please,,{},correct
+levenshtein,missed by keywords,middle,centre,{},missed
+levenshtein,no value,dont matter,,{},correct
+levenshtein,no value,i do not care,,{},correct
+levenshtein,no value,unintelligible i dont care,,{},correct
+levenshtein,no value,i dont care thank you good bye,,{},correct
+levenshtein,missed by keywords,i want an expensive steak house,steakhouse,{'price': 'expensive'},missed
+levenshtein,missed by keywords,inexpensive,cheap,{'price': 'expensive'},wrong
+levenshtein,missed by keywords,steak house,steakhouse,{},missed
+levenshtein,missed by keywords,austria asian restaurant in the center of town,australasian,"{'area': 'centre', 'food': 'asian oriental'}",wrong
+levenshtein,missed by keywords,im looking for a restaurant in the center that serves sea food,seafood,{'area': 'centre'},missed
+levenshtein,missed by keywords,down town,centre,{},missed
+levenshtein,missed by keywords,north east,east,{'area': 'north'},wrong
+levenshtein,no value,anything,,{},correct
+levenshtein,missed by keywords,spensive,expensive,{'price': 'expensive'},correct
+levenshtein,missed by keywords,portugeuse,portuguese,{},missed
+levenshtein,missed by keywords,i would like australian asian food,australasian,{'food': 'asian oriental'},wrong
+levenshtein,missed by keywords,portugeuse food,portuguese,{'food': 'portuguese'},correct
+levenshtein,missed by keywords,derately priced,moderate,{},missed
+levenshtein,no value,what ever,,{},correct
+levenshtein,no value,um surprise me,,{},correct
+levenshtein,missed by keywords,sea food restaurant,seafood,{},missed
+levenshtein,missed by keywords,moderat,moderate,{'price': 'moderate'},correct
+levenshtein,missed by keywords,im looking for a moderately priced restaurant that serves sea food,seafood,{'price': 'moderate'},missed
+levenshtein,missed by keywords,im looking for an expensive restaurant that serves mediteranian,mediterranean,"{'price': 'expensive', 'food': 'mediterranean'}",correct
+levenshtein,missed by keywords,chinses,chinese,{'food': 'chinese'},correct
+levenshtein,missed by keywords,im looking for a modreately,moderate,{},missed
+levenshtein,missed by keywords,steak house,steakhouse,{},missed
+levenshtein,missed by keywords,can i get a steak house restaurant in any area,steakhouse,{},missed
+levenshtein,missed by keywords,i want sea food,seafood,{},missed
+levenshtein,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,{'price': 'expensive'},missed
+levenshtein,missed by keywords,high priced,expensive,{},missed
+levenshtein,missed by keywords,yea im wondering if theres a steak house restaurant in the north part of,steakhouse,{'area': 'north'},missed
+levenshtein,missed by keywords,uh is there a steak house,steakhouse,{},missed
+levenshtein,no value,again i do not care,,{},correct
+levenshtein,no value,dont care whats the phone number,,{},correct
+levenshtein,missed by keywords,gastro,gastropub,{},missed
+levenshtein,no value,ah any,,{},correct
+levenshtein,missed by keywords,lebanse,lebanese,{},missed
+levenshtein,missed by keywords,uh low price range,cheap,{},missed
+levenshtein,missed by keywords,im looking for a moderately priced restaurant that serves labenese food,lebanese,"{'price': 'moderate', 'food': 'lebanese'}",correct
+levenshtein,missed by keywords,chineese,chinese,{'food': 'chinese'},correct
+levenshtein,no value,uh doesnt matter,,{},correct
+levenshtein,no value,um i dont know,,{},correct
+levenshtein,missed by keywords,jamcian food,jamaican,{'food': 'jamaican'},correct
+levenshtein,no value,it does not matter,,{},correct
+levenshtein,no value,either one,,{},correct
+levenshtein,missed by keywords,i would like an africa restaurant in the center,african,"{'area': 'centre', 'food': 'african'}",correct
+levenshtein,missed by keywords,inexpensive,cheap,{},missed
+levenshtein,missed by keywords,inexpensive,cheap,{},missed
+levenshtein,no value,thats not important,,{},correct
+levenshtein,missed by keywords,um medium price range,moderate,{},missed
+levenshtein,missed by keywords,chinese oriental,chinese,{'food': 'asian oriental'},wrong
+levenshtein,missed by keywords,austria asian food,australasian,{'food': 'asian oriental'},wrong
+levenshtein,missed by keywords,australia asian food,australasian,{'food': 'asian oriental'},wrong
+levenshtein,missed by keywords,austallison,australasian,{},missed
+levenshtein,missed by keywords,austallison,australasian,{},missed
+levenshtein,missed by keywords,west part of town moderatley price,moderate,"{'area': 'west', 'price': 'moderate'}",correct
+levenshtein,missed by keywords,if theres no persian food about about chinese,chinese,{'food': 'persian'},wrong
+levenshtein,no value,uh i dont care,,{},correct
+levenshtein,missed by keywords,expnsive,expensive,{'price': 'expensive'},correct
+levenshtein,no value,breath i dont care,,{},correct
+levenshtein,no value,breath i dont care noise,,{},correct
+levenshtein,missed by keywords,north part of town austral asian food,australasian,"{'area': 'north', 'food': 'asian oriental'}",wrong
+levenshtein,missed by keywords,steak house food noise steak house food,steakhouse,{},missed
+levenshtein,missed by keywords,s e a f o o d,seafood,{},missed
+levenshtein,missed by keywords,medium priced,moderate,{},missed
+levenshtein,no value,um doesnt mater,,{},correct
+levenshtein,missed by keywords,veitnamese,vietnamese,{},missed
+levenshtein,missed by keywords,vietnam,vietnamese,{},missed
+levenshtein,no value,do not care,,{},correct
+levenshtein,missed by keywords,hold on im working hold on gastro pub,gastropub,{},missed
+levenshtein,missed by keywords,im looking for pollynasian food,polynesian,{'food': 'polynesian'},correct
+levenshtein,missed by keywords,cheap portugeuse,portuguese,{'price': 'cheap'},missed
+levenshtein,missed by keywords,uh medium,moderate,{},missed
+levenshtein,missed by keywords,the turkiesh,turkish,{},missed
+levenshtein,missed by keywords,the turkiesh food,turkish,{'food': 'turkish'},correct
+levenshtein,no value,what about other parts of town,,{},correct
+levenshtein,missed by keywords,portugese,portuguese,{},missed
+levenshtein,no value,it deosnt matter,,{},correct
+levenshtein,no value,can you do anything else beside repeat yourself,,{},correct
+levenshtein,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,{'price': 'expensive'},missed
+levenshtein,missed by keywords,portugese,portuguese,{'food': 'portuguese'},correct
+levenshtein,missed by keywords,im looking chineese food,chinese,{'food': 'chinese'},correct
+levenshtein,missed by keywords,moroccon,moroccan,{'food': 'moroccan'},correct
+levenshtein,missed by keywords,restaurant and it should serve steak house food,steakhouse,{},missed
+levenshtein,no value,any address,,{},correct
+levenshtein,missed by keywords,looking for a cheap restaurant that serves steak house food,steakhouse,{'price': 'cheap'},missed
+levenshtein,missed by keywords,catalanian,catalan,{},missed
+levenshtein,no value,um i dont know,,{},correct
+levenshtein,missed by keywords,i want an expensive restaurant that serves sea food,seafood,{'price': 'expensive'},missed
+levenshtein,missed by keywords,jamcian food,jamaican,{'food': 'jamaican'},correct
+levenshtein,missed by keywords,im looking for a moderately priced restaurant that serves austria asian food,australasian,"{'price': 'moderate', 'food': 'asian oriental'}",wrong
+levenshtein,missed by keywords,india,indian,{},missed
+levenshtein,missed by keywords,korea,korean,{},missed
+levenshtein,missed by keywords,looking for a sea food restaurant,seafood,{},missed
+levenshtein,missed by keywords,im looking for a sea food restaurant,seafood,{},missed
+levenshtein,no value,um do not care,,{},correct
+levenshtein,missed by keywords,steak,steakhouse,{},missed
+levenshtein,missed by keywords,steak,steakhouse,{},missed
+levenshtein,missed by keywords,i dont give a fuck if hk fusion serves chinese food im looking for thai food,thai,{'food': 'chinese'},wrong
+levenshtein,no value,i dont care can i try again,,{},correct
+levenshtein,missed by keywords,steak house,steakhouse,{},missed
+levenshtein,missed by keywords,steak house,steakhouse,{},missed
+levenshtein,missed by keywords,modereate,moderate,{'price': 'moderate'},correct
+levenshtein,missed by keywords,tailand,thai,{},missed
+distilbert@0.85,no value,dont care,,{},correct
+distilbert@0.85,no value,i dont care tv_noise,,{},correct
+distilbert@0.85,no value,so i dont care whats the address,,{},correct
+distilbert@0.85,missed by keywords,was that in the east part of town west part of town,west,{'area': 'west'},correct
+distilbert@0.85,missed by keywords,itailian,italian,{},missed
+distilbert@0.85,no value,i dont care,,{},correct
+distilbert@0.85,no value,i do not care,,{},correct
+distilbert@0.85,no value,what about other areas,,{},correct
+distilbert@0.85,missed by keywords,is there on serving chineese,chinese,{},missed
+distilbert@0.85,no value,it doesnt matter,,{},correct
+distilbert@0.85,no value,dont matter,,{},correct
+distilbert@0.85,no value,any of town,,{},correct
+distilbert@0.85,no value,i do not care,,{},correct
+distilbert@0.85,no value,i do not care,,{},correct
+distilbert@0.85,no value,any,,{},correct
+distilbert@0.85,missed by keywords,chinese food im looking for sea food,seafood,"{'food': 'chinese', 'area': 'south'}",wrong
+distilbert@0.85,missed by keywords,sea food,seafood,{'food': 'seafood'},correct
+distilbert@0.85,missed by keywords,sea food,seafood,{'food': 'seafood'},correct
+distilbert@0.85,missed by keywords,sea food,seafood,{'food': 'seafood'},correct
+distilbert@0.85,no value,uh i dont mind,,{'food': 'indian'},wrong
+distilbert@0.85,no value,i dont know,,{'food': 'indian'},wrong
+distilbert@0.85,missed by keywords,medterranean,mediterranean,{},missed
+distilbert@0.85,missed by keywords,i am looking for kitalian food,catalan,{},missed
+distilbert@0.85,missed by keywords,katalian food,catalan,{},missed
+distilbert@0.85,missed by keywords,im looking for kitalian food in an expensive res,italian,{'price': 'expensive'},missed
+distilbert@0.85,missed by keywords,i am looking for catalin food,catalan,{},missed
+distilbert@0.85,no value,uh dont care,,{},correct
+distilbert@0.85,no value,um anything else,,{},correct
+distilbert@0.85,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.85,no value,dont know,,{'price': 'cheap'},wrong
+distilbert@0.85,no value,doesnt matter,,{},correct
+distilbert@0.85,missed by keywords,austral asian,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.85,no value,i dont know,,{'area': 'north'},wrong
+distilbert@0.85,no value,uh im not interested in the type,,{'price': 'expensive'},wrong
+distilbert@0.85,no value,um anything else please,,{},correct
+distilbert@0.85,missed by keywords,middle,centre,{},missed
+distilbert@0.85,no value,dont matter,,{},correct
+distilbert@0.85,no value,i do not care,,{},correct
+distilbert@0.85,no value,unintelligible i dont care,,{},correct
+distilbert@0.85,no value,i dont care thank you good bye,,{},correct
+distilbert@0.85,missed by keywords,i want an expensive steak house,steakhouse,{'price': 'expensive'},missed
+distilbert@0.85,missed by keywords,inexpensive,cheap,{'price': 'cheap'},correct
+distilbert@0.85,missed by keywords,steak house,steakhouse,{'food': 'seafood'},wrong
+distilbert@0.85,missed by keywords,austria asian restaurant in the center of town,australasian,"{'area': 'centre', 'food': 'asian oriental', 'price': 'cheap'}",wrong
+distilbert@0.85,missed by keywords,im looking for a restaurant in the center that serves sea food,seafood,"{'area': 'centre', 'food': 'seafood', 'price': 'cheap'}",correct
+distilbert@0.85,missed by keywords,down town,centre,{},missed
+distilbert@0.85,missed by keywords,north east,east,{'area': 'north'},wrong
+distilbert@0.85,no value,anything,,{},correct
+distilbert@0.85,missed by keywords,spensive,expensive,{},missed
+distilbert@0.85,missed by keywords,portugeuse,portuguese,{},missed
+distilbert@0.85,missed by keywords,i would like australian asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.85,missed by keywords,portugeuse food,portuguese,{},missed
+distilbert@0.85,missed by keywords,derately priced,moderate,{},missed
+distilbert@0.85,no value,what ever,,{},correct
+distilbert@0.85,no value,um surprise me,,{'food': 'fusion'},wrong
+distilbert@0.85,missed by keywords,sea food restaurant,seafood,{'food': 'seafood'},correct
+distilbert@0.85,missed by keywords,moderat,moderate,{},missed
+distilbert@0.85,missed by keywords,im looking for a moderately priced restaurant that serves sea food,seafood,"{'price': 'moderate', 'food': 'seafood'}",correct
+distilbert@0.85,missed by keywords,im looking for an expensive restaurant that serves mediteranian,mediterranean,{'price': 'expensive'},missed
+distilbert@0.85,missed by keywords,chinses,chinese,{},missed
+distilbert@0.85,missed by keywords,im looking for a modreately,moderate,{'price': 'cheap'},wrong
+distilbert@0.85,missed by keywords,steak house,steakhouse,{},missed
+distilbert@0.85,missed by keywords,can i get a steak house restaurant in any area,steakhouse,{'price': 'expensive'},missed
+distilbert@0.85,missed by keywords,i want sea food,seafood,"{'food': 'seafood', 'price': 'cheap'}",correct
+distilbert@0.85,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,"{'price': 'expensive', 'food': 'seafood'}",correct
+distilbert@0.85,missed by keywords,high priced,expensive,{'price': 'expensive'},correct
+distilbert@0.85,missed by keywords,yea im wondering if theres a steak house restaurant in the north part of,steakhouse,"{'area': 'north', 'price': 'expensive'}",missed
+distilbert@0.85,missed by keywords,uh is there a steak house,steakhouse,{},missed
+distilbert@0.85,no value,again i do not care,,{},correct
+distilbert@0.85,no value,dont care whats the phone number,,{},correct
+distilbert@0.85,missed by keywords,gastro,gastropub,{},missed
+distilbert@0.85,no value,ah any,,{},correct
+distilbert@0.85,missed by keywords,lebanse,lebanese,{},missed
+distilbert@0.85,missed by keywords,uh low price range,cheap,{'price': 'cheap'},correct
+distilbert@0.85,missed by keywords,im looking for a moderately priced restaurant that serves labenese food,lebanese,{'price': 'moderate'},missed
+distilbert@0.85,missed by keywords,chineese,chinese,{},missed
+distilbert@0.85,no value,uh doesnt matter,,{},correct
+distilbert@0.85,no value,um i dont know,,{'area': 'north'},wrong
+distilbert@0.85,missed by keywords,jamcian food,jamaican,{},missed
+distilbert@0.85,no value,it does not matter,,{},correct
+distilbert@0.85,no value,either one,,{'price': 'expensive'},wrong
+distilbert@0.85,missed by keywords,i would like an africa restaurant in the center,african,"{'area': 'centre', 'food': 'african', 'price': 'cheap'}",correct
+distilbert@0.85,missed by keywords,inexpensive,cheap,{'food': 'seafood'},missed
+distilbert@0.85,missed by keywords,inexpensive,cheap,{},missed
+distilbert@0.85,no value,thats not important,,{'area': 'centre'},wrong
+distilbert@0.85,missed by keywords,um medium price range,moderate,{'price': 'moderate'},correct
+distilbert@0.85,missed by keywords,chinese oriental,chinese,{'food': 'asian oriental'},wrong
+distilbert@0.85,missed by keywords,austria asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.85,missed by keywords,australia asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.85,missed by keywords,austallison,australasian,{},missed
+distilbert@0.85,missed by keywords,austallison,australasian,{},missed
+distilbert@0.85,missed by keywords,west part of town moderatley price,moderate,"{'area': 'west', 'price': 'cheap'}",wrong
+distilbert@0.85,missed by keywords,if theres no persian food about about chinese,chinese,{'food': 'persian'},wrong
+distilbert@0.85,no value,uh i dont care,,{},correct
+distilbert@0.85,missed by keywords,expnsive,expensive,{},missed
+distilbert@0.85,no value,breath i dont care,,{},correct
+distilbert@0.85,no value,breath i dont care noise,,{},correct
+distilbert@0.85,missed by keywords,north part of town austral asian food,australasian,"{'area': 'north', 'food': 'asian oriental', 'price': 'cheap'}",wrong
+distilbert@0.85,missed by keywords,steak house food noise steak house food,steakhouse,"{'food': 'indian', 'price': 'cheap'}",wrong
+distilbert@0.85,missed by keywords,s e a f o o d,seafood,{},missed
+distilbert@0.85,missed by keywords,medium priced,moderate,{'price': 'moderate'},correct
+distilbert@0.85,no value,um doesnt mater,,{'price': 'expensive'},wrong
+distilbert@0.85,missed by keywords,veitnamese,vietnamese,{},missed
+distilbert@0.85,missed by keywords,vietnam,vietnamese,{},missed
+distilbert@0.85,no value,do not care,,{},correct
+distilbert@0.85,missed by keywords,hold on im working hold on gastro pub,gastropub,{'price': 'cheap'},missed
+distilbert@0.85,missed by keywords,im looking for pollynasian food,polynesian,{'price': 'cheap'},missed
+distilbert@0.85,missed by keywords,cheap portugeuse,portuguese,{'price': 'cheap'},missed
+distilbert@0.85,missed by keywords,uh medium,moderate,{'price': 'moderate'},correct
+distilbert@0.85,missed by keywords,the turkiesh,turkish,{},missed
+distilbert@0.85,missed by keywords,the turkiesh food,turkish,{},missed
+distilbert@0.85,no value,what about other parts of town,,{'price': 'cheap'},wrong
+distilbert@0.85,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.85,no value,it deosnt matter,,{},correct
+distilbert@0.85,no value,can you do anything else beside repeat yourself,,{},correct
+distilbert@0.85,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,"{'price': 'expensive', 'food': 'seafood'}",correct
+distilbert@0.85,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.85,missed by keywords,im looking chineese food,chinese,{'food': 'seafood'},wrong
+distilbert@0.85,missed by keywords,moroccon,moroccan,{'food': 'moroccan'},correct
+distilbert@0.85,missed by keywords,restaurant and it should serve steak house food,steakhouse,"{'food': 'indian', 'price': 'cheap'}",wrong
+distilbert@0.85,no value,any address,,{},correct
+distilbert@0.85,missed by keywords,looking for a cheap restaurant that serves steak house food,steakhouse,"{'price': 'cheap', 'food': 'indian'}",wrong
+distilbert@0.85,missed by keywords,catalanian,catalan,{'food': 'catalan'},correct
+distilbert@0.85,no value,um i dont know,,{'food': 'indian'},wrong
+distilbert@0.85,missed by keywords,i want an expensive restaurant that serves sea food,seafood,"{'price': 'expensive', 'food': 'seafood'}",correct
+distilbert@0.85,missed by keywords,jamcian food,jamaican,{},missed
+distilbert@0.85,missed by keywords,im looking for a moderately priced restaurant that serves austria asian food,australasian,"{'price': 'moderate', 'food': 'asian oriental'}",wrong
+distilbert@0.85,missed by keywords,india,indian,{},missed
+distilbert@0.85,missed by keywords,korea,korean,{},missed
+distilbert@0.85,missed by keywords,looking for a sea food restaurant,seafood,"{'food': 'seafood', 'price': 'cheap'}",correct
+distilbert@0.85,missed by keywords,im looking for a sea food restaurant,seafood,{'food': 'seafood'},correct
+distilbert@0.85,no value,um do not care,,{},correct
+distilbert@0.85,missed by keywords,steak,steakhouse,{'food': 'seafood'},wrong
+distilbert@0.85,missed by keywords,steak,steakhouse,{},missed
+distilbert@0.85,missed by keywords,i dont give a fuck if hk fusion serves chinese food im looking for thai food,thai,{'food': 'chinese'},wrong
+distilbert@0.85,no value,i dont care can i try again,,{},correct
+distilbert@0.85,missed by keywords,steak house,steakhouse,{'area': 'centre'},missed
+distilbert@0.85,missed by keywords,steak house,steakhouse,{'price': 'cheap'},missed
+distilbert@0.85,missed by keywords,modereate,moderate,{},missed
+distilbert@0.85,missed by keywords,tailand,thai,{},missed
+distilbert@0.9,no value,dont care,,{},correct
+distilbert@0.9,no value,i dont care tv_noise,,{},correct
+distilbert@0.9,no value,so i dont care whats the address,,{},correct
+distilbert@0.9,missed by keywords,was that in the east part of town west part of town,west,{'area': 'west'},correct
+distilbert@0.9,missed by keywords,itailian,italian,{},missed
+distilbert@0.9,no value,i dont care,,{},correct
+distilbert@0.9,no value,i do not care,,{},correct
+distilbert@0.9,no value,what about other areas,,{},correct
+distilbert@0.9,missed by keywords,is there on serving chineese,chinese,{},missed
+distilbert@0.9,no value,it doesnt matter,,{},correct
+distilbert@0.9,no value,dont matter,,{},correct
+distilbert@0.9,no value,any of town,,{},correct
+distilbert@0.9,no value,i do not care,,{},correct
+distilbert@0.9,no value,i do not care,,{},correct
+distilbert@0.9,no value,any,,{},correct
+distilbert@0.9,missed by keywords,chinese food im looking for sea food,seafood,{'food': 'chinese'},wrong
+distilbert@0.9,missed by keywords,sea food,seafood,{'food': 'seafood'},correct
+distilbert@0.9,missed by keywords,sea food,seafood,{'food': 'seafood'},correct
+distilbert@0.9,missed by keywords,sea food,seafood,{'food': 'seafood'},correct
+distilbert@0.9,no value,uh i dont mind,,{},correct
+distilbert@0.9,no value,i dont know,,{},correct
+distilbert@0.9,missed by keywords,medterranean,mediterranean,{},missed
+distilbert@0.9,missed by keywords,i am looking for kitalian food,catalan,{},missed
+distilbert@0.9,missed by keywords,katalian food,catalan,{},missed
+distilbert@0.9,missed by keywords,im looking for kitalian food in an expensive res,italian,{'price': 'expensive'},missed
+distilbert@0.9,missed by keywords,i am looking for catalin food,catalan,{},missed
+distilbert@0.9,no value,uh dont care,,{},correct
+distilbert@0.9,no value,um anything else,,{},correct
+distilbert@0.9,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.9,no value,dont know,,{},correct
+distilbert@0.9,no value,doesnt matter,,{},correct
+distilbert@0.9,missed by keywords,austral asian,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.9,no value,i dont know,,{},correct
+distilbert@0.9,no value,uh im not interested in the type,,{},correct
+distilbert@0.9,no value,um anything else please,,{},correct
+distilbert@0.9,missed by keywords,middle,centre,{},missed
+distilbert@0.9,no value,dont matter,,{},correct
+distilbert@0.9,no value,i do not care,,{},correct
+distilbert@0.9,no value,unintelligible i dont care,,{},correct
+distilbert@0.9,no value,i dont care thank you good bye,,{},correct
+distilbert@0.9,missed by keywords,i want an expensive steak house,steakhouse,{'price': 'expensive'},missed
+distilbert@0.9,missed by keywords,inexpensive,cheap,{'price': 'cheap'},correct
+distilbert@0.9,missed by keywords,steak house,steakhouse,{'food': 'seafood'},wrong
+distilbert@0.9,missed by keywords,austria asian restaurant in the center of town,australasian,"{'area': 'centre', 'food': 'asian oriental'}",wrong
+distilbert@0.9,missed by keywords,im looking for a restaurant in the center that serves sea food,seafood,"{'area': 'centre', 'food': 'seafood'}",correct
+distilbert@0.9,missed by keywords,down town,centre,{},missed
+distilbert@0.9,missed by keywords,north east,east,{'area': 'north'},wrong
+distilbert@0.9,no value,anything,,{},correct
+distilbert@0.9,missed by keywords,spensive,expensive,{},missed
+distilbert@0.9,missed by keywords,portugeuse,portuguese,{},missed
+distilbert@0.9,missed by keywords,i would like australian asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.9,missed by keywords,portugeuse food,portuguese,{},missed
+distilbert@0.9,missed by keywords,derately priced,moderate,{},missed
+distilbert@0.9,no value,what ever,,{},correct
+distilbert@0.9,no value,um surprise me,,{},correct
+distilbert@0.9,missed by keywords,sea food restaurant,seafood,{'food': 'seafood'},correct
+distilbert@0.9,missed by keywords,moderat,moderate,{},missed
+distilbert@0.9,missed by keywords,im looking for a moderately priced restaurant that serves sea food,seafood,"{'price': 'moderate', 'food': 'seafood'}",correct
+distilbert@0.9,missed by keywords,im looking for an expensive restaurant that serves mediteranian,mediterranean,{'price': 'expensive'},missed
+distilbert@0.9,missed by keywords,chinses,chinese,{},missed
+distilbert@0.9,missed by keywords,im looking for a modreately,moderate,{},missed
+distilbert@0.9,missed by keywords,steak house,steakhouse,{},missed
+distilbert@0.9,missed by keywords,can i get a steak house restaurant in any area,steakhouse,{},missed
+distilbert@0.9,missed by keywords,i want sea food,seafood,{'food': 'seafood'},correct
+distilbert@0.9,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,"{'price': 'expensive', 'food': 'seafood'}",correct
+distilbert@0.9,missed by keywords,high priced,expensive,{},missed
+distilbert@0.9,missed by keywords,yea im wondering if theres a steak house restaurant in the north part of,steakhouse,"{'area': 'north', 'price': 'cheap'}",missed
+distilbert@0.9,missed by keywords,uh is there a steak house,steakhouse,{},missed
+distilbert@0.9,no value,again i do not care,,{},correct
+distilbert@0.9,no value,dont care whats the phone number,,{},correct
+distilbert@0.9,missed by keywords,gastro,gastropub,{},missed
+distilbert@0.9,no value,ah any,,{},correct
+distilbert@0.9,missed by keywords,lebanse,lebanese,{},missed
+distilbert@0.9,missed by keywords,uh low price range,cheap,{'price': 'cheap'},correct
+distilbert@0.9,missed by keywords,im looking for a moderately priced restaurant that serves labenese food,lebanese,{'price': 'moderate'},missed
+distilbert@0.9,missed by keywords,chineese,chinese,{},missed
+distilbert@0.9,no value,uh doesnt matter,,{},correct
+distilbert@0.9,no value,um i dont know,,{},correct
+distilbert@0.9,missed by keywords,jamcian food,jamaican,{},missed
+distilbert@0.9,no value,it does not matter,,{},correct
+distilbert@0.9,no value,either one,,{},correct
+distilbert@0.9,missed by keywords,i would like an africa restaurant in the center,african,"{'area': 'centre', 'food': 'african'}",correct
+distilbert@0.9,missed by keywords,inexpensive,cheap,{'food': 'seafood'},missed
+distilbert@0.9,missed by keywords,inexpensive,cheap,{},missed
+distilbert@0.9,no value,thats not important,,{},correct
+distilbert@0.9,missed by keywords,um medium price range,moderate,{},missed
+distilbert@0.9,missed by keywords,chinese oriental,chinese,{'food': 'asian oriental'},wrong
+distilbert@0.9,missed by keywords,austria asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.9,missed by keywords,australia asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.9,missed by keywords,austallison,australasian,{},missed
+distilbert@0.9,missed by keywords,austallison,australasian,{},missed
+distilbert@0.9,missed by keywords,west part of town moderatley price,moderate,{'area': 'west'},missed
+distilbert@0.9,missed by keywords,if theres no persian food about about chinese,chinese,{'food': 'persian'},wrong
+distilbert@0.9,no value,uh i dont care,,{},correct
+distilbert@0.9,missed by keywords,expnsive,expensive,{},missed
+distilbert@0.9,no value,breath i dont care,,{},correct
+distilbert@0.9,no value,breath i dont care noise,,{},correct
+distilbert@0.9,missed by keywords,north part of town austral asian food,australasian,"{'area': 'north', 'food': 'asian oriental'}",wrong
+distilbert@0.9,missed by keywords,steak house food noise steak house food,steakhouse,{'price': 'cheap'},missed
+distilbert@0.9,missed by keywords,s e a f o o d,seafood,{},missed
+distilbert@0.9,missed by keywords,medium priced,moderate,{},missed
+distilbert@0.9,no value,um doesnt mater,,{},correct
+distilbert@0.9,missed by keywords,veitnamese,vietnamese,{},missed
+distilbert@0.9,missed by keywords,vietnam,vietnamese,{},missed
+distilbert@0.9,no value,do not care,,{},correct
+distilbert@0.9,missed by keywords,hold on im working hold on gastro pub,gastropub,{},missed
+distilbert@0.9,missed by keywords,im looking for pollynasian food,polynesian,{},missed
+distilbert@0.9,missed by keywords,cheap portugeuse,portuguese,{'price': 'cheap'},missed
+distilbert@0.9,missed by keywords,uh medium,moderate,{},missed
+distilbert@0.9,missed by keywords,the turkiesh,turkish,{},missed
+distilbert@0.9,missed by keywords,the turkiesh food,turkish,{},missed
+distilbert@0.9,no value,what about other parts of town,,{},correct
+distilbert@0.9,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.9,no value,it deosnt matter,,{},correct
+distilbert@0.9,no value,can you do anything else beside repeat yourself,,{},correct
+distilbert@0.9,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,"{'price': 'expensive', 'food': 'seafood'}",correct
+distilbert@0.9,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.9,missed by keywords,im looking chineese food,chinese,{},missed
+distilbert@0.9,missed by keywords,moroccon,moroccan,{'food': 'moroccan'},correct
+distilbert@0.9,missed by keywords,restaurant and it should serve steak house food,steakhouse,{'price': 'cheap'},missed
+distilbert@0.9,no value,any address,,{},correct
+distilbert@0.9,missed by keywords,looking for a cheap restaurant that serves steak house food,steakhouse,"{'price': 'cheap', 'food': 'seafood'}",wrong
+distilbert@0.9,missed by keywords,catalanian,catalan,{'food': 'catalan'},correct
+distilbert@0.9,no value,um i dont know,,{},correct
+distilbert@0.9,missed by keywords,i want an expensive restaurant that serves sea food,seafood,"{'price': 'expensive', 'food': 'seafood'}",correct
+distilbert@0.9,missed by keywords,jamcian food,jamaican,{},missed
+distilbert@0.9,missed by keywords,im looking for a moderately priced restaurant that serves austria asian food,australasian,"{'price': 'moderate', 'food': 'asian oriental'}",wrong
+distilbert@0.9,missed by keywords,india,indian,{},missed
+distilbert@0.9,missed by keywords,korea,korean,{},missed
+distilbert@0.9,missed by keywords,looking for a sea food restaurant,seafood,{'food': 'seafood'},correct
+distilbert@0.9,missed by keywords,im looking for a sea food restaurant,seafood,{'food': 'seafood'},correct
+distilbert@0.9,no value,um do not care,,{},correct
+distilbert@0.9,missed by keywords,steak,steakhouse,{'food': 'seafood'},wrong
+distilbert@0.9,missed by keywords,steak,steakhouse,{},missed
+distilbert@0.9,missed by keywords,i dont give a fuck if hk fusion serves chinese food im looking for thai food,thai,{'food': 'chinese'},wrong
+distilbert@0.9,no value,i dont care can i try again,,{},correct
+distilbert@0.9,missed by keywords,steak house,steakhouse,{},missed
+distilbert@0.9,missed by keywords,steak house,steakhouse,{'price': 'cheap'},missed
+distilbert@0.9,missed by keywords,modereate,moderate,{},missed
+distilbert@0.9,missed by keywords,tailand,thai,{},missed
+distilbert@0.95,no value,dont care,,{},correct
+distilbert@0.95,no value,i dont care tv_noise,,{},correct
+distilbert@0.95,no value,so i dont care whats the address,,{},correct
+distilbert@0.95,missed by keywords,was that in the east part of town west part of town,west,{'area': 'west'},correct
+distilbert@0.95,missed by keywords,itailian,italian,{},missed
+distilbert@0.95,no value,i dont care,,{},correct
+distilbert@0.95,no value,i do not care,,{},correct
+distilbert@0.95,no value,what about other areas,,{},correct
+distilbert@0.95,missed by keywords,is there on serving chineese,chinese,{},missed
+distilbert@0.95,no value,it doesnt matter,,{},correct
+distilbert@0.95,no value,dont matter,,{},correct
+distilbert@0.95,no value,any of town,,{},correct
+distilbert@0.95,no value,i do not care,,{},correct
+distilbert@0.95,no value,i do not care,,{},correct
+distilbert@0.95,no value,any,,{},correct
+distilbert@0.95,missed by keywords,chinese food im looking for sea food,seafood,{'food': 'chinese'},wrong
+distilbert@0.95,missed by keywords,sea food,seafood,{},missed
+distilbert@0.95,missed by keywords,sea food,seafood,{},missed
+distilbert@0.95,missed by keywords,sea food,seafood,{},missed
+distilbert@0.95,no value,uh i dont mind,,{},correct
+distilbert@0.95,no value,i dont know,,{},correct
+distilbert@0.95,missed by keywords,medterranean,mediterranean,{},missed
+distilbert@0.95,missed by keywords,i am looking for kitalian food,catalan,{},missed
+distilbert@0.95,missed by keywords,katalian food,catalan,{},missed
+distilbert@0.95,missed by keywords,im looking for kitalian food in an expensive res,italian,{'price': 'expensive'},missed
+distilbert@0.95,missed by keywords,i am looking for catalin food,catalan,{},missed
+distilbert@0.95,no value,uh dont care,,{},correct
+distilbert@0.95,no value,um anything else,,{},correct
+distilbert@0.95,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.95,no value,dont know,,{},correct
+distilbert@0.95,no value,doesnt matter,,{},correct
+distilbert@0.95,missed by keywords,austral asian,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.95,no value,i dont know,,{},correct
+distilbert@0.95,no value,uh im not interested in the type,,{},correct
+distilbert@0.95,no value,um anything else please,,{},correct
+distilbert@0.95,missed by keywords,middle,centre,{},missed
+distilbert@0.95,no value,dont matter,,{},correct
+distilbert@0.95,no value,i do not care,,{},correct
+distilbert@0.95,no value,unintelligible i dont care,,{},correct
+distilbert@0.95,no value,i dont care thank you good bye,,{},correct
+distilbert@0.95,missed by keywords,i want an expensive steak house,steakhouse,{'price': 'expensive'},missed
+distilbert@0.95,missed by keywords,inexpensive,cheap,{},missed
+distilbert@0.95,missed by keywords,steak house,steakhouse,{},missed
+distilbert@0.95,missed by keywords,austria asian restaurant in the center of town,australasian,"{'area': 'centre', 'food': 'asian oriental'}",wrong
+distilbert@0.95,missed by keywords,im looking for a restaurant in the center that serves sea food,seafood,{'area': 'centre'},missed
+distilbert@0.95,missed by keywords,down town,centre,{},missed
+distilbert@0.95,missed by keywords,north east,east,{'area': 'north'},wrong
+distilbert@0.95,no value,anything,,{},correct
+distilbert@0.95,missed by keywords,spensive,expensive,{},missed
+distilbert@0.95,missed by keywords,portugeuse,portuguese,{},missed
+distilbert@0.95,missed by keywords,i would like australian asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.95,missed by keywords,portugeuse food,portuguese,{},missed
+distilbert@0.95,missed by keywords,derately priced,moderate,{},missed
+distilbert@0.95,no value,what ever,,{},correct
+distilbert@0.95,no value,um surprise me,,{},correct
+distilbert@0.95,missed by keywords,sea food restaurant,seafood,{},missed
+distilbert@0.95,missed by keywords,moderat,moderate,{},missed
+distilbert@0.95,missed by keywords,im looking for a moderately priced restaurant that serves sea food,seafood,{'price': 'moderate'},missed
+distilbert@0.95,missed by keywords,im looking for an expensive restaurant that serves mediteranian,mediterranean,{'price': 'expensive'},missed
+distilbert@0.95,missed by keywords,chinses,chinese,{},missed
+distilbert@0.95,missed by keywords,im looking for a modreately,moderate,{},missed
+distilbert@0.95,missed by keywords,steak house,steakhouse,{},missed
+distilbert@0.95,missed by keywords,can i get a steak house restaurant in any area,steakhouse,{},missed
+distilbert@0.95,missed by keywords,i want sea food,seafood,{},missed
+distilbert@0.95,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,{'price': 'expensive'},missed
+distilbert@0.95,missed by keywords,high priced,expensive,{},missed
+distilbert@0.95,missed by keywords,yea im wondering if theres a steak house restaurant in the north part of,steakhouse,{'area': 'north'},missed
+distilbert@0.95,missed by keywords,uh is there a steak house,steakhouse,{},missed
+distilbert@0.95,no value,again i do not care,,{},correct
+distilbert@0.95,no value,dont care whats the phone number,,{},correct
+distilbert@0.95,missed by keywords,gastro,gastropub,{},missed
+distilbert@0.95,no value,ah any,,{},correct
+distilbert@0.95,missed by keywords,lebanse,lebanese,{},missed
+distilbert@0.95,missed by keywords,uh low price range,cheap,{},missed
+distilbert@0.95,missed by keywords,im looking for a moderately priced restaurant that serves labenese food,lebanese,{'price': 'moderate'},missed
+distilbert@0.95,missed by keywords,chineese,chinese,{},missed
+distilbert@0.95,no value,uh doesnt matter,,{},correct
+distilbert@0.95,no value,um i dont know,,{},correct
+distilbert@0.95,missed by keywords,jamcian food,jamaican,{},missed
+distilbert@0.95,no value,it does not matter,,{},correct
+distilbert@0.95,no value,either one,,{},correct
+distilbert@0.95,missed by keywords,i would like an africa restaurant in the center,african,"{'area': 'centre', 'food': 'african'}",correct
+distilbert@0.95,missed by keywords,inexpensive,cheap,{},missed
+distilbert@0.95,missed by keywords,inexpensive,cheap,{},missed
+distilbert@0.95,no value,thats not important,,{},correct
+distilbert@0.95,missed by keywords,um medium price range,moderate,{},missed
+distilbert@0.95,missed by keywords,chinese oriental,chinese,{'food': 'asian oriental'},wrong
+distilbert@0.95,missed by keywords,austria asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.95,missed by keywords,australia asian food,australasian,{'food': 'asian oriental'},wrong
+distilbert@0.95,missed by keywords,austallison,australasian,{},missed
+distilbert@0.95,missed by keywords,austallison,australasian,{},missed
+distilbert@0.95,missed by keywords,west part of town moderatley price,moderate,{'area': 'west'},missed
+distilbert@0.95,missed by keywords,if theres no persian food about about chinese,chinese,{'food': 'persian'},wrong
+distilbert@0.95,no value,uh i dont care,,{},correct
+distilbert@0.95,missed by keywords,expnsive,expensive,{},missed
+distilbert@0.95,no value,breath i dont care,,{},correct
+distilbert@0.95,no value,breath i dont care noise,,{},correct
+distilbert@0.95,missed by keywords,north part of town austral asian food,australasian,"{'area': 'north', 'food': 'asian oriental'}",wrong
+distilbert@0.95,missed by keywords,steak house food noise steak house food,steakhouse,{},missed
+distilbert@0.95,missed by keywords,s e a f o o d,seafood,{},missed
+distilbert@0.95,missed by keywords,medium priced,moderate,{},missed
+distilbert@0.95,no value,um doesnt mater,,{},correct
+distilbert@0.95,missed by keywords,veitnamese,vietnamese,{},missed
+distilbert@0.95,missed by keywords,vietnam,vietnamese,{},missed
+distilbert@0.95,no value,do not care,,{},correct
+distilbert@0.95,missed by keywords,hold on im working hold on gastro pub,gastropub,{},missed
+distilbert@0.95,missed by keywords,im looking for pollynasian food,polynesian,{},missed
+distilbert@0.95,missed by keywords,cheap portugeuse,portuguese,{'price': 'cheap'},missed
+distilbert@0.95,missed by keywords,uh medium,moderate,{},missed
+distilbert@0.95,missed by keywords,the turkiesh,turkish,{},missed
+distilbert@0.95,missed by keywords,the turkiesh food,turkish,{},missed
+distilbert@0.95,no value,what about other parts of town,,{},correct
+distilbert@0.95,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.95,no value,it deosnt matter,,{},correct
+distilbert@0.95,no value,can you do anything else beside repeat yourself,,{},correct
+distilbert@0.95,missed by keywords,im looking for an expensive restaurant that serves sea food,seafood,{'price': 'expensive'},missed
+distilbert@0.95,missed by keywords,portugese,portuguese,{},missed
+distilbert@0.95,missed by keywords,im looking chineese food,chinese,{},missed
+distilbert@0.95,missed by keywords,moroccon,moroccan,{},missed
+distilbert@0.95,missed by keywords,restaurant and it should serve steak house food,steakhouse,{},missed
+distilbert@0.95,no value,any address,,{},correct
+distilbert@0.95,missed by keywords,looking for a cheap restaurant that serves steak house food,steakhouse,{'price': 'cheap'},missed
+distilbert@0.95,missed by keywords,catalanian,catalan,{},missed
+distilbert@0.95,no value,um i dont know,,{},correct
+distilbert@0.95,missed by keywords,i want an expensive restaurant that serves sea food,seafood,{'price': 'expensive'},missed
+distilbert@0.95,missed by keywords,jamcian food,jamaican,{},missed
+distilbert@0.95,missed by keywords,im looking for a moderately priced restaurant that serves austria asian food,australasian,"{'price': 'moderate', 'food': 'asian oriental'}",wrong
+distilbert@0.95,missed by keywords,india,indian,{},missed
+distilbert@0.95,missed by keywords,korea,korean,{},missed
+distilbert@0.95,missed by keywords,looking for a sea food restaurant,seafood,{},missed
+distilbert@0.95,missed by keywords,im looking for a sea food restaurant,seafood,{},missed
+distilbert@0.95,no value,um do not care,,{},correct
+distilbert@0.95,missed by keywords,steak,steakhouse,{},missed
+distilbert@0.95,missed by keywords,steak,steakhouse,{},missed
+distilbert@0.95,missed by keywords,i dont give a fuck if hk fusion serves chinese food im looking for thai food,thai,{'food': 'chinese'},wrong
+distilbert@0.95,no value,i dont care can i try again,,{},correct
+distilbert@0.95,missed by keywords,steak house,steakhouse,{},missed
+distilbert@0.95,missed by keywords,steak house,steakhouse,{},missed
+distilbert@0.95,missed by keywords,modereate,moderate,{},missed
+distilbert@0.95,missed by keywords,tailand,thai,{},missed

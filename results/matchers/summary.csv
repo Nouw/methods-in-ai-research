@@ -1,0 +1,9 @@
+matcher,kind,correct,missed,wrong,accuracy
+distilbert@0.85,missed by keywords,22,50,20,0.24
+distilbert@0.85,no value,36,0,12,0.75
+distilbert@0.9,missed by keywords,18,59,15,0.2
+distilbert@0.9,no value,48,0,0,1.0
+distilbert@0.95,missed by keywords,2,78,12,0.02
+distilbert@0.95,no value,48,0,0,1.0
+levenshtein,missed by keywords,23,55,14,0.25
+levenshtein,no value,48,0,0,1.0
