@@ -63,5 +63,5 @@ uv run python scripts/compare_matchers.py
 ```
 
 This prints correct, wrong and missed matches per matcher and kind of case, trying DistilBERT at the
-similarity thresholds 0.85, 0.9 and 0.95 (pass other thresholds as arguments). Per-case results are saved to
+similarity thresholds 0.85, 0.9 and 0.95. Per-case results are saved to
 `results/matchers/predictions.csv` and the summary to `results/matchers/summary.csv`.
