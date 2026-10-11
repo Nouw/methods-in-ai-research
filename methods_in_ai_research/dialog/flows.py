@@ -20,7 +20,8 @@ ASK_PRICE = 5
 ASK_REQUIREMENTS = 6
 RECOMMEND = 7
 ALTERNATIVE = 8
-BYE = 9
+DETAIL = 9
+BYE = 10
 
 NODES = (
     Node(WELCOME, "Welcome", action="welcome"),
@@ -31,6 +32,7 @@ NODES = (
     Node(ASK_REQUIREMENTS, "Ask additional requirements", action="ask_requirements"),
     Node(RECOMMEND, "Recommend restaurant", action="recommend"),
     Node(ALTERNATIVE, "Recommend alternative", action="alternative"),
+    Node(DETAIL, "Provide requested information", action="detail"),
     Node(BYE, "Goodbye", action="bye"),
 )
 
@@ -57,6 +59,9 @@ TRANSITIONS = (
 
     Transition(RECOMMEND, ALTERNATIVE, event="reqalts"),
     Transition(ALTERNATIVE, ALTERNATIVE, event="reqalts"),
+
+    Transition(DETAIL, ALTERNATIVE, event="reqalts"),
+    *(Transition(node, DETAIL, event="request") for node in (RECOMMEND, ALTERNATIVE, DETAIL)),
 )
 
 FLOW = Flow(initial=WELCOME, nodes=NODES, transitions=TRANSITIONS)
@@ -83,6 +88,7 @@ def build_engine(data: pd.DataFrame) -> FlowEngine:
             "ask_requirements": actions.ask_requirements,
             "recommend": lambda state: actions.recommend(state, data),
             "alternative": lambda state: actions.alternative(state, data),
+            "detail": lambda state: actions.detail(state, data),
             "bye": actions.bye,
         },
     )

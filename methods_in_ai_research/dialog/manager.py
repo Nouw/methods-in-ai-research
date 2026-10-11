@@ -16,6 +16,7 @@ from methods_in_ai_research.dialog.responses import ResponseRenderer
 from methods_in_ai_research.dialog.slots import SlotExtractor
 from methods_in_ai_research.dialog.state import DialogState, ClassifiedInput, SystemAction, SlotProposal, RequirementProposal, \
     SystemActionType
+from methods_in_ai_research.dialog.actions import requested_detail
 
 AFFIRM_ACTS = {"affirm"}
 DENY_ACTS = {"negate", "deny"}
@@ -42,6 +43,7 @@ class DialogManager:
         """
         if classified_input.act == "repeat" and state.last_response is not None:
             return replace(state), state.last_response
+        
 
         proposals = self.extractor.extract(classified_input, state)
         slot_proposals = [p for p in proposals if isinstance(p, SlotProposal)]
@@ -80,6 +82,9 @@ class DialogManager:
         if changed:
             next_state = replace(next_state, current_restaurant_id=None, alternative_ids=())
 
+        # Remembering the question does not change the preferences, so it happens after the reset
+        next_state = replace(next_state, requested_detail=requested_detail(classified_input.text))
+        
         if pending:
             return self._respond(replace(next_state, pending=pending), self._confirm(pending[0]))
 

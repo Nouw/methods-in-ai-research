@@ -10,10 +10,20 @@ import random
 from dataclasses import replace
 
 import pandas as pd
-
+import difflib
 from methods_in_ai_research.dialog.reasoning import infer, satisfies
 from methods_in_ai_research.dialog.restaurants import find_restaurants, restaurant_details
 from methods_in_ai_research.dialog.state import DialogState, Slot, SystemAction, SystemActionType
+import re
+
+
+DETAILS = (
+    ("phone", "phone number", ("phone", "telephone", "number")),
+    ("addr", "address", ("address", "street", "located", "where")),
+    ("postcode", "post code", ("post code", "postcode", "postal code", "zip")),
+)
+
+
 
 
 def welcome(state: DialogState) -> tuple[DialogState, SystemAction]:
@@ -74,3 +84,33 @@ def _recommend_next(state: DialogState, data: pd.DataFrame) -> tuple[DialogState
     )
 
     return replace(state, current_restaurant_id=name, alternative_ids=state.alternative_ids[1:]), action
+
+def requested_detail(text: str) -> str | None:
+    """Look for which piece of information the user asked for"""
+    for column, _, phrases in DETAILS:
+        if any(re.search(rf"\b{phrase}\b", text) for phrase in phrases):
+            return column
+
+    # People misspell things like "adress", so also allow close matches on single words.
+    words = re.findall(r"\w+", text)
+    for column, _, phrases in DETAILS:
+        single = [phrase for phrase in phrases if " " not in phrase]
+        if any(difflib.get_close_matches(word, single, n=1, cutoff=0.85) for word in words):
+            return column
+    return None
+
+
+def detail(state: DialogState, data: pd.DataFrame) -> tuple[DialogState, SystemAction]:
+    labels = {column: label for column, label, _ in DETAILS}
+    if state.current_restaurant_id is None or state.requested_detail not in labels:
+        return state, SystemAction(SystemActionType.CLARIFY)
+
+    restaurant = restaurant_details(data, state.current_restaurant_id)
+    parameters = (
+        ("detail", labels[state.requested_detail]),
+        ("restaurantname", restaurant["restaurantname"]),
+    )
+    value = restaurant[state.requested_detail]
+    if not value:
+        return state, SystemAction(SystemActionType.DETAIL_UNKNOWN, parameters=parameters)
+    return state, SystemAction(SystemActionType.DETAIL, parameters=parameters + (("value", value),))

@@ -83,3 +83,4 @@ class DialogState:
     last_response: str | None = None
     current_restaurant_id: str | None = None
     alternative_ids: tuple[str, ...] = ()
+    requested_detail: str | None = None
