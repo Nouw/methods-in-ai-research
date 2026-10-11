@@ -10,6 +10,7 @@ from methods_in_ai_research.dialog.manager import DialogManager
 from methods_in_ai_research.dialog.responses import ResponseRenderer
 from methods_in_ai_research.dialog.restaurants import load_restaurants
 from methods_in_ai_research.dialog.runner import run_conversation
+from methods_in_ai_research.dialog.session_log import SessionLog
 from methods_in_ai_research.dialog.slots import KeywordSlotExtractor, LevenshteinMatcher, Matcher, SemanticMatcher, \
     values_from_restaurants
 
@@ -18,6 +19,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_CLASSIFIER = "bow-linear-svm"
 DEFAULT_MODELS_DIRECTORY = "artifacts/models"
 DEFAULT_RESTAURANTS_PATH = "data/restaurant_info_extended.csv"
+DEFAULT_LOG_DIRECTORY = "logs/dialog"
 
 
 def add_commands(commands: argparse._SubParsersAction) -> None:
@@ -28,11 +30,17 @@ def add_commands(commands: argparse._SubParsersAction) -> None:
     dialog_parser.add_argument("--restaurants", default=DEFAULT_RESTAURANTS_PATH)
     dialog_parser.add_argument("--matcher", choices=("levenshtein", "distilbert"), default="levenshtein",
                                help="Fallback for preferences that keyword matching does not recognise")
+    dialog_parser.add_argument("--log-dir", default=DEFAULT_LOG_DIRECTORY,
+                               help="Directory for the per-session JSON Lines interaction logs")
+    dialog_parser.add_argument("--transparency", choices=("on", "off"), default="on",
+                               help="Show (on) or hide (off) the reasoning behind a recommendation")
     dialog_parser.set_defaults(handler=lambda args: run_dialog(
         classifier_name=args.classifier,
         models_directory=args.models_dir,
         restaurants_path=args.restaurants,
         matcher_name=args.matcher,
+        log_directory=args.log_dir,
+        transparent=args.transparency == "on",
     ))
 
 
@@ -48,7 +56,8 @@ def create_matcher(name: str) -> Matcher:
     raise ValueError(f"Unknown matcher: {name}")
 
 
-def run_dialog(*, classifier_name: str, models_directory: str, restaurants_path: str, matcher_name: str) -> None:
+def run_dialog(*, classifier_name: str, models_directory: str, restaurants_path: str, matcher_name: str,
+               log_directory: str = DEFAULT_LOG_DIRECTORY, transparent: bool = True) -> None:
     """Load the classifier and restaurant data, then hold a conversation in the terminal."""
     logger.debug("Dialog configuration: classifier=%s matcher=%s restaurants=%s",
                  classifier_name, matcher_name, restaurants_path)
@@ -56,6 +65,13 @@ def run_dialog(*, classifier_name: str, models_directory: str, restaurants_path:
     classifier = load_classifier(classifier_name, f"{models_directory}/{classifier_name}.pkl")
     data = load_restaurants(restaurants_path)
     extractor = KeywordSlotExtractor(values_from_restaurants(data), create_matcher(matcher_name))
-    manager = DialogManager(flows.build_engine(data), extractor, ResponseRenderer())
+    manager = DialogManager(flows.build_engine(data), extractor, ResponseRenderer(transparent))
 
-    run_conversation(manager, classifier, is_finished=lambda state: state.node == flows.BYE)
+    # Transparency is the Part 2 condition, so sessions can be grouped by it.
+    config = {"transparency": transparent, "classifier": classifier_name, "matcher": matcher_name,
+              "restaurants": restaurants_path}
+    session_log = SessionLog.create(log_directory)
+    logger.debug("Logging this session to %s", session_log.path)
+
+    run_conversation(manager, classifier, is_finished=lambda state: state.node == flows.BYE,
+                     session_log=session_log, config=config)

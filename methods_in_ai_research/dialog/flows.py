@@ -22,6 +22,7 @@ RECOMMEND = 7
 ALTERNATIVE = 8
 DETAIL = 9
 BYE = 10
+CHECK_FACT = 11
 
 NODES = (
     Node(WELCOME, "Welcome", action="welcome"),
@@ -34,6 +35,7 @@ NODES = (
     Node(ALTERNATIVE, "Recommend alternative", action="alternative"),
     Node(DETAIL, "Provide requested information", action="detail"),
     Node(BYE, "Goodbye", action="bye"),
+    Node(CHECK_FACT, "Answer a yes/no question about the restaurant", action="check_fact"),
 )
 
 # Nodes that wait for the user.
@@ -44,24 +46,30 @@ TRANSITIONS = (
     *(Transition(node, WELCOME, event="restart") for node in WAITING),
     *(Transition(node, BYE, event=event) for node in WAITING for event in ("bye", "thankyou")),
 
+    # A greeting starts the questions.
+    Transition(WELCOME, CHECK_PREFERENCES, event="hello"),
+
     # Preferences can be given at any question, and after a recommendation to change it.
     *(Transition(node, CHECK_PREFERENCES, event="inform")
-      for node in (WELCOME, ASK_FOOD, ASK_AREA, ASK_PRICE, RECOMMEND, ALTERNATIVE)),
+      for node in (WELCOME, ASK_FOOD, ASK_AREA, ASK_PRICE, RECOMMEND, ALTERNATIVE, DETAIL, CHECK_FACT)),
 
     Transition(CHECK_PREFERENCES, ASK_FOOD, guard="food_unknown"),
     Transition(CHECK_PREFERENCES, ASK_AREA, guard="area_unknown"),
     Transition(CHECK_PREFERENCES, ASK_PRICE, guard="price_unknown"),
+    # Report a dead end right away instead of asking for requirements first.
+    Transition(CHECK_PREFERENCES, RECOMMEND, guard="no_matches"),
     Transition(CHECK_PREFERENCES, ASK_REQUIREMENTS, guard="requirements_not_asked"),
     Transition(CHECK_PREFERENCES, RECOMMEND),
 
-    # Any answer to the requirements question moves on to a recommendation.
-    *(Transition(ASK_REQUIREMENTS, RECOMMEND, event=event) for event in ("inform", "affirm", "negate", "deny")),
+    # Any answer to the requirements question moves on to a recommendation. Answers such as
+    # "none" or "nothing else" are classified as null.
+    *(Transition(ASK_REQUIREMENTS, RECOMMEND, event=event) for event in ("inform", "affirm", "negate", "deny", "null")),
 
-    Transition(RECOMMEND, ALTERNATIVE, event="reqalts"),
-    Transition(ALTERNATIVE, ALTERNATIVE, event="reqalts"),
-
-    Transition(DETAIL, ALTERNATIVE, event="reqalts"),
-    *(Transition(node, DETAIL, event="request") for node in (RECOMMEND, ALTERNATIVE, DETAIL)),
+    # "another one" and "more" both ask for the next match.
+    *(Transition(node, ALTERNATIVE, event=event)
+      for node in (RECOMMEND, ALTERNATIVE, DETAIL, CHECK_FACT) for event in ("reqalts", "reqmore")),
+    *(Transition(node, DETAIL, event="request") for node in (RECOMMEND, ALTERNATIVE, DETAIL, CHECK_FACT)),
+    *(Transition(node, CHECK_FACT, event="confirm") for node in (RECOMMEND, ALTERNATIVE, DETAIL, CHECK_FACT)),
 )
 
 FLOW = Flow(initial=WELCOME, nodes=NODES, transitions=TRANSITIONS)
@@ -79,7 +87,7 @@ def build_engine(data: pd.DataFrame) -> FlowEngine:
     """Create the flow engine with actions bound to the restaurant data."""
     return FlowEngine(
         flow=FLOW,
-        guards=GUARDS,
+        guards={**GUARDS, "no_matches": lambda state: not actions.has_matches(state, data)},
         actions={
             "welcome": actions.welcome,
             "ask_food": actions.ask_food,
@@ -90,5 +98,6 @@ def build_engine(data: pd.DataFrame) -> FlowEngine:
             "alternative": lambda state: actions.alternative(state, data),
             "detail": lambda state: actions.detail(state, data),
             "bye": actions.bye,
+            "check_fact": lambda state: actions.check_fact(state, data),
         },
     )

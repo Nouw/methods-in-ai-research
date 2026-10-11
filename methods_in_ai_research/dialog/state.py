@@ -1,12 +1,4 @@
 """Define the data carried between dialog turns.
-
-TODO:
-- Define dialog phases using an enum.
-- Define dataclasses for dialog state and classified user input (act + text).
-- Distinguish unknown preferences, explicit "don't care", and specific values.
-- Track excluded values, pending confirmations, and the last requested slot.
-- Track additional requirements and whether they have been collected.
-- Track the current restaurant, remaining alternatives, and previous response.
 """
 from dataclasses import dataclass, field
 from enum import Enum
@@ -41,6 +33,18 @@ class SlotProposal:
     given: str = field(default="", compare=False)
 
 @dataclass(frozen=True)
+class ExclusionProposal:
+    """A value the user does not want, e.g. "not chinese"."""
+    slot: Slot
+    value: str
+
+@dataclass(frozen=True)
+class UnknownProposal:
+    """A food the user asked for that is not in the data, e.g. "swedish food"."""
+    slot: Slot
+    given: str
+
+@dataclass(frozen=True)
 class RequirementProposal:
     property: RestaurantProperty
     value: bool
@@ -51,12 +55,16 @@ class SystemActionType(str, Enum):
     ASK_PRICE_RANGE = "ask_price_range"
     ASK_FOOD = "ask_food"
     CONFIRM_VALUE = "confirm_value"
+    UNKNOWN_VALUE = "unknown_value"
     ASK_REQUIREMENT = "ask_requirement"
     RECOMMEND = "recommend"
     NO_MATCH = "no_match"
+    NO_MATCH_REQUIREMENTS = "no_match_requirements"
     NO_ALTERNATIVE = "no_alternative"
     DETAIL = "detail"
     DETAIL_UNKNOWN = "detail_unknown"
+    FACT_TRUE = "fact_true"
+    FACT_FALSE = "fact_false"
     REPEAT = "repeat"
     CLARIFY = "clarify"
     ANYTHING_ELSE = "anything_else"
@@ -77,6 +85,7 @@ class DialogState:
     area: Preference = None
     price: Preference = None
     pending: tuple[SlotProposal, ...] = ()
+    excluded: tuple[tuple[Slot, str], ...] = ()
     last_requested_slot: Slot | None = None
     requirements: tuple[tuple[RestaurantProperty, bool], ...] = ()
     requirements_asked: bool = False
@@ -84,3 +93,5 @@ class DialogState:
     current_restaurant_id: str | None = None
     alternative_ids: tuple[str, ...] = ()
     requested_detail: str | None = None
+    # Values the user asks about, e.g. "is it in the centre?", checked against the current restaurant.
+    checked: tuple[tuple[Slot, str], ...] = ()

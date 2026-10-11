@@ -1,0 +1,304 @@
+Reference Dialogs
+----------------------------------------------------------------------------------------------
+
+This file lists 20 example dialogs.
+
+The exact behavior of your system will depend on your state transition function and response templates, so changes from these dialogs are to be expected. What matters is that the content is correct: the right slots are extracted, the right rules fire, and a restaurant is recommended that fits the requirements.
+
+If you spot any mistakes in this file, send me an e-mail (a.eijpe@uu.nl).
+
+Notation:
+  S:  system utterance
+  U:  user utterance
+
+
+----------------------------------------------------------------------------------------------
+
+
+--- Dialog 1 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I want a cheap italian restaurant in the centre
+S: Pizza hut city centre is a nice cheap italian restaurant in the centre.
+U: thanks bye
+S: Goodbye!
+
+
+--- Dialog 2 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: Hello
+S: What kind of food would you like?
+U: indian
+S: What part of town would you prefer?
+U: north
+S: What price range are you looking for?
+U: moderate
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: no
+S: Meghna is a nice moderate indian restaurant in the north.
+U: another one
+S: The nirala is a nice moderate indian restaurant in the north.
+U: another one in the west
+S: Sorry, I couldn't find any restaurant matching food=indian, area=west, pricerange=moderate
+U: okay, thank you bye
+S: Goodbye! 
+
+
+--- Dialog 3 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I am looking for expensive british food in the centre
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: none
+S: Fitzbillies restaurant is a nice expensive british restaurant in the centre.
+U: what is the phone number
+S: The phone number of fitzbillies restaurant is 01223 352500.
+U: address please
+S: Fitzbillies restaurant is located at 51 trumpington street city centre.
+U: post code
+S: The postcode of fitzbillies restaurant is c.b 1.
+U: thank you goodbye
+S: Good bye!
+
+
+--- Dialog 4 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: cheap chinese food
+S: What part of town would you prefer?
+U: south
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: no
+S: The missing sock is a nice cheap chinese restaurant in the south.
+U: thank you goodbye
+S: Good bye!
+
+
+--- Dialog 5 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I'm looking for an expensive restaurant in the east that serves indian food
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: nothing else
+S: Maharajah tandoori restaurant is a nice expensive indian restaurant in the east.
+U: thank you goodbye
+S: Good bye!
+
+
+--- Dialog 6 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I would like some Swedish food.
+S: Sorry, I am not familiar with this preference. Would you like something else?
+U: How about Lebanese food
+S: What part of town would you prefer?
+U: Any part of town is fine
+S: What price range are you looking for?
+U: moderate
+S: Ali baba is a nice moderate lebanese restaurant in the centre.
+U: thank you goodbye
+S: Good bye!
+
+
+--- Dialog 7 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: never mind, goodbye
+S: Goodbye!
+
+
+--- Dialog 8 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: Find an expensive british restaurant in the centre
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: no
+S: Midsummer house restaurant is a nice expensive british restaurant in the centre.
+U: is it in the centre?
+S: Yes, that's correct.
+U: Is it a cheap restaurant?
+S: No, the pricerange is actually expensive.
+U: thank you goodbye
+S: Good bye!
+
+
+--- Dialog 9 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I want italian food, any area is fine, any price
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: no
+S: caffe uno is a nice expensive italian restaurant in the centre.
+U: what is their phone number?
+S: The phone number of caffe uno is 01223 448620.
+U: Okay, thank you!
+S: Good bye!
+
+
+--- Dialog 10 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I want to go to a vietnamese restaurant in the centre
+S: What price range are you looking for?
+U: I don't care
+S: Sorry, I couldn't find any restaurant matching food=vietnamese, area=centre.
+U: what about in the north?
+S: Sorry, I couldn't find any restaurant matching food=vietnamese, area=north.
+U: Any area then.
+S: thanh binh is a nice cheap vietnamese restaurant in the west.
+U: more
+S: I'm afraid that's all the options I have. Would you like to change a preference?
+U: How about Chinese food?
+S: The missing sock is a nice cheap chinese restaurant in the south.
+U: Can you give me their address 
+S: The missing sock is located at finders corner newmarket road.
+U: Thank you!
+S: Good bye!
+
+
+--- Dialog 11 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I'm looking for a restaurant in any area that serves tuscan food
+S: What price range are you looking for?
+U: It doesn't matter
+S: city stop restaurant is a nice expensive tuscan restaurant in the north.
+U: Thank you!
+S: Good bye!
+
+
+--- Dialog 12 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I want spenish food in the centre
+S: Sorry, I don't know spenish. Did you mean spanish?
+U: yes
+S: What price range are you looking for?
+U: Expensive
+S: I couldn't find a restaurant matching those preferences.
+U: start over
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I'm looking for a restaurant in the center
+S: What kind of food would you like?
+U: Spanish food
+S: What price range?
+U: any
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: No
+S: la raza is a nice cheap spanish restaurant in the centre.
+
+
+--- Dialog 13 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I want spenish food
+S: Sorry, I don't know spenish. Did you mean spanish?
+U: no
+S: What kind of food would you like?
+U: French food
+S: What part of town would you prefer?
+U: I don't care
+S: What price range are you looking for?
+U: expensive
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: I would like a restaurant with assigned seats.
+S: Cote is a nice expensive french restaurant in the centre. The waiter decides where you sit because, it is a busy restaurant.
+U: What is the address?
+S: Cote is located at bridge street city centre.
+
+
+--- Dialog 14 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: 'm looking for a moderately priced restaurant in any part of town and it should serve Turkish food.
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: I would like it to be romantic
+S: I recommend sesame restaurant and bar, a moderately priced turkish restaurant. The restaurant is romantic because spending a long time in a restaurant is romantic.
+U: Thank you!
+S: Good bye!
+
+
+--- Dialog 15 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I'm looking to eat cheap in the centre
+S: What kind of food would you like?
+U: any
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: something touristic
+S: I recommend la raza, a cheap spanish restaurant in the centre of town. The restaurant is touristic because a cheap restaurant with good food attracts tourists.
+
+
+
+--- Dialog 16 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I want a moderately priced restaurant in the west
+S: What kind of food would you like?
+U: british
+S: Saint johns chop house is a nice moderate british restaurant in the west.
+U: Okay, thanks bye
+S: Good bye!
+
+
+--- Dialog 17 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: I want to eat expensive italian food in the south
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: I want it to be romantic
+S: I recommend frankie and bennys, an expensive italian restaurant in the south of town.
+   The restaurant is romantic because spending a long time in a restaurant is romantic.
+   (Note: one rule suggested otherwise - a busy restaurant is not romantic.)
+U: What is the address?
+S: frankie and bennys is located at cambridge leisure park clifton way cherry hinton.
+
+
+
+--- Dialog 18 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: Hi
+S: What kind of food would you like?
+U: seafood
+S: What part of town would you prefer?
+U: any part of town
+S: What price range are you looking for?
+U: any price range is ok
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: It should be suitable for children
+S: None of the restaurants matching your preferences are suitable for children.
+
+
+--- Dialog 19 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: Can I have an expensive restaurant
+S: What kind of food would you like?
+U: I'm looking for a restaurant in any area that serves Tuscan food
+S: City stop restaurant is a nice expensive tuscan restaurant in the north.
+U: Another one
+S: I'm afraid that's all the options I have. Would you like to change a preference?
+U: Do you have a postal code?
+S: The postcode of city stop restaurant is unknown.
+U: Address then?
+S: City stop restaurant is located at cambridge city football club milton road chesterton.
+U: Thanks
+S: Goodbye!
+
+--- Dialog 20 ---
+
+S: Hello, welcome to the Cambridge restaurant recommendation system. How may I help you?
+U: sdfhsdjkhjdhsdf
+S: What kind of food would you like?
+U: French food
+S: What part of town would you prefer?
+U: any location would be fine
+S: What price range are you looking for?
+U: I don't care
+S: I found some restaurants matching your preferences. Do you have any additional requirements?
+U: No
+S: Cote is a nice expensive french restaurant in the centre. 
+U: What is the address?
+S: Cote is located at bridge street city centre.

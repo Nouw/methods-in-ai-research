@@ -79,8 +79,11 @@ def load_dialog_acts(file_path: str | Path) -> pd.DataFrame:
     return pd.DataFrame(records, columns=["label", "utterance"])
 
 def normalize_utterance(utterance: str) -> str:
-    """Remove leading and trailing whitespace and convert utterance to lowercase."""
-    return utterance.strip().lower()
+    """Remove leading and trailing whitespace, convert to lowercase and drop apostrophes.
+
+    The DSTC2 transcriptions write "dont" and "doesnt", so "don't" would be an unknown word.
+    """
+    return utterance.strip().lower().replace("'", "").replace("’", "")
 
 def preprocess(file_path: str) -> pd.DataFrame:
     """Read and print a single-column table, then add label and sentence columns by splitting at the first

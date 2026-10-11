@@ -1,14 +1,6 @@
 """Load restaurant data and retrieve matching restaurants.
-
-TODO:
-- Load and validate the basic or extended restaurant CSV.
-- Preserve phone numbers and postcodes as strings; handle missing values.
-- Match committed preferences and exclusions, respecting "don't care".
-- Return matching restaurants with stable identifiers.
-- Provide restaurant details for follow-up questions.
-- Leave conversation state and alternative tracking to the dialog manager.
 """
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 
 from methods_in_ai_research.dialog.state import AnyValue, Slot, Preference
 
@@ -18,8 +10,11 @@ import pandas as pd
 
 PREFERENCE_COLUMNS = {Slot.FOOD: "food", Slot.AREA: "area", Slot.PRICE: "pricerange"}
 
-def find_restaurants(data: pd.DataFrame, preferences: Mapping[Slot, Preference]) -> pd.DataFrame:
-    """Return rows matching every concrete preference: None and ANY do not filter."""
+def find_restaurants(data: pd.DataFrame, preferences: Mapping[Slot, Preference], excluded: Iterable[tuple[Slot, str]] = ()) -> pd.DataFrame:
+    """Return rows matching every concrete preference and none of the excluded values.
+
+    None and ANY do not filter.
+    """
     matches = data
 
     for slot, value in preferences.items():
@@ -27,6 +22,9 @@ def find_restaurants(data: pd.DataFrame, preferences: Mapping[Slot, Preference])
             continue
 
         matches = matches[matches[PREFERENCE_COLUMNS[slot]] == value]
+
+    for slot, value in excluded:
+        matches = matches[matches[PREFERENCE_COLUMNS[slot]] != value]
 
     return matches
 

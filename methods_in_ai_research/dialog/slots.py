@@ -6,8 +6,10 @@ Matching runs in three steps:
    the closest known value. Fallback matches are flagged for confirmation.
 3. "Don't care" phrases set a slot to ANY: the slot they mention, or the slot just asked for.
 
-TODO:
-- Handle negation ("not chinese") and extract additional requirements.
+Additional requirements (romantic, touristic, ...) are found by keyword as well.
+
+A negation word flips the meaning of the first value after it: "not chinese" excludes chinese
+food, and "not touristic" asks for the property to be false.
 """
 import re
 from collections.abc import Collection, Mapping
@@ -16,8 +18,12 @@ from typing import Protocol
 import numpy as np
 import pandas as pd
 
+from methods_in_ai_research.dialog.reasoning import RestaurantProperty
 from methods_in_ai_research.dialog.restaurants import PREFERENCE_COLUMNS
-from methods_in_ai_research.dialog.state import AnyValue, ClassifiedInput, DialogState, RequirementProposal, Slot, SlotProposal
+from methods_in_ai_research.dialog.state import AnyValue, ClassifiedInput, DialogState, ExclusionProposal, \
+    RequirementProposal, Slot, SlotProposal, UnknownProposal
+
+Proposal = SlotProposal | ExclusionProposal | RequirementProposal | UnknownProposal
 
 # Spelling variants mapped to their value in the restaurant data.
 SYNONYMS = {
@@ -39,7 +45,19 @@ PATTERNS = (
     (Slot.FOOD, r"(\w+) (?:restaurant|place)"),
 )
 
-DONTCARE_PHRASES = ("any", "anything", "anywhere", "whatever", "don't care", "dont care", "doesn't matter", "does not matter", "no preference")
+# Phrases that name an additional requirement.
+REQUIREMENT_PHRASES = {
+    RestaurantProperty.TOURISTIC: ("touristic", "touristy", "tourists", "tourist"),
+    RestaurantProperty.ASSIGNED_SEATS: ("assigned seats", "assigned seating", "assigned seat"),
+    RestaurantProperty.CHILDREN: ("child friendly", "children", "child", "kids", "kid"),
+    RestaurantProperty.ROMANTIC: ("romantic", "romance"),
+}
+
+# Words that negate the first value after them. "no" is left out: in DSTC2, "no indian food" corrects
+# the system rather than excluding indian food.
+NEGATIONS = {"not", "never", "without", "dont", "doesnt", "isnt"}
+
+DONTCARE_PHRASES = ("any", "anything", "anywhere", "whatever", "dont care", "doesnt matter", "does not matter", "no preference")
 
 # Words that tie a "don't care" phrase to a slot, e.g. "any kind of food".
 SLOT_CUES = {
@@ -49,14 +67,33 @@ SLOT_CUES = {
 }
 
 # Words that patterns capture but that never name a value.
-STOPWORDS = {"a", "an", "the", "some", "that", "this", "what", "which", "good", "nice", "other", "another", "restaurant", "place"}
+STOPWORDS = {"a", "an", "the", "some", "that", "this", "what", "which", "good", "nice", "other", "another", "restaurant", "place",
+             "for", "eat"}
 STOPWORDS |= {word for phrase in DONTCARE_PHRASES for word in phrase.split()}
 STOPWORDS |= {cue for cues in SLOT_CUES.values() for cue in cues}
 
 
+def _negated_starts(text: str, value_starts: Collection[int]) -> set[int]:
+    """Return the positions of the values that are negated.
+
+    A negation word negates the first value after it, so "dont want chinese i want thai" excludes
+    chinese but asks for thai. "dont care" and "doesnt matter" are not negations.
+    """
+    negated = set()
+
+    for match in re.finditer(r"\w+", text):
+        is_negation = match.group() in NEGATIONS and not text[match.end():].startswith((" care", " matter"))
+        later = [start for start in value_starts if start > match.start()]
+
+        if is_negation and later:
+            negated.add(min(later))
+
+    return negated
+
+
 class SlotExtractor(Protocol):
-    def extract(self, user_input: ClassifiedInput, state: DialogState) -> tuple[SlotProposal | RequirementProposal, ...]:
-        """Extract preferences and additional requirements using the utterance and conversation context.
+    def extract(self, user_input: ClassifiedInput, state: DialogState) -> tuple[Proposal, ...]:
+        """Extract preferences, exclusions and additional requirements using the utterance and conversation context.
 
         Flag uncertain matches for confirmation. Do not modify state.
         """
@@ -137,13 +174,18 @@ class KeywordSlotExtractor:
         self.matcher = matcher
         self.keywords = self._keywords()
 
-    def extract(self, user_input: ClassifiedInput, state: DialogState) -> tuple[SlotProposal, ...]:
-        """Propose at most one value per slot; fallback matches need confirmation."""
-        text = user_input.text.lower().replace("’", "'")
-        found, used = self._match_keywords(text)
+    def extract(self, user_input: ClassifiedInput, state: DialogState) -> tuple[Proposal, ...]:
+        """Propose at most one value per slot and per requirement; fallback matches need confirmation."""
+        text = user_input.text.lower().replace("'", "").replace("’", "")
+        negated = _negated_starts(text, self._value_starts(text))
+        requirements, requirement_words = self._match_requirements(text, negated)
+        found, exclusions, used = self._match_keywords(text, negated)
+        used |= requirement_words
 
-        for slot, word in self._captured_words(text):
-            if slot in found or not self._is_candidate(word, used):
+        unknown = []
+
+        for slot, word, start in self._captured_words(text):
+            if slot in found or not self._is_candidate(word, used) or start in negated:
                 continue
 
             value = self.matcher.closest(word, self.values[slot])
@@ -151,6 +193,9 @@ class KeywordSlotExtractor:
             if value is not None:
                 found[slot] = SlotProposal(slot, value, needs_confirmation=True, given=word)
                 used.add(word)
+            elif text[start + len(word):].startswith((" food", " cuisine")):
+                # Only "{word} food" surely names a food, so only then is an unmatched word reported.
+                unknown.append(UnknownProposal(slot, word))
 
         dontcare = [phrase for phrase in DONTCARE_PHRASES if re.search(rf"\b{phrase}\b", text)]
 
@@ -162,41 +207,78 @@ class KeywordSlotExtractor:
         requested = state.last_requested_slot
 
         if requested is not None and requested not in found and user_input.act == "inform":
-            # A short reply answers the question the system just asked.
             if dontcare:
                 found[requested] = SlotProposal(requested, AnyValue.ANY)
             else:
-                proposal = self._match_reply(text, requested, used)
+                proposal = self._match_reply(text, requested, used, negated)
 
                 if proposal is not None:
                     found[requested] = proposal
 
-        return tuple(found.values())
+        unknown = [proposal for proposal in unknown if proposal.slot not in found]
+
+        return tuple(found.values()) + exclusions + requirements + tuple(unknown)
+
+    def _value_starts(self, text: str) -> list[int]:
+        """Return the positions of all words and phrases that may name a value or requirement."""
+        phrases = [phrase for phrase, _, _ in self.keywords]
+        phrases += [phrase for phrases_ in REQUIREMENT_PHRASES.values() for phrase in phrases_]
+        starts = [match.start() for phrase in phrases for match in re.finditer(rf"\b{re.escape(phrase)}\b", text)]
+
+        return starts + [start for _, word, start in self._captured_words(text) if word not in STOPWORDS]
+
+    @staticmethod
+    def _match_requirements(text: str, negated: set[int]) -> tuple[tuple[RequirementProposal, ...], set[str]]:
+        """Find requirement phrases and whether each is negated, at most one per property."""
+        proposals = []
+        used = set()
+
+        for property_, phrases in REQUIREMENT_PHRASES.items():
+            for phrase in phrases:
+                match = re.search(rf"\b{re.escape(phrase)}\b", text)
+
+                if match is None:
+                    continue
+
+                proposals.append(RequirementProposal(property_, match.start() not in negated))
+                used.update(phrase.split())
+                break
+
+        return tuple(proposals), used
 
     def _keywords(self) -> list[tuple[str, Slot, str]]:
         """List (phrase, slot, value) for values and synonyms, longest phrase first."""
         keywords = [(value, slot, value) for slot, values in self.values.items() for value in values]
         keywords += [(phrase, slot, value) for slot, synonyms in SYNONYMS.items() for phrase, value in synonyms.items()]
 
-        # Longest first, so "north american" is food rather than "north" being an area.
         return sorted(keywords, key=lambda keyword: len(keyword[0]), reverse=True)
 
-    def _match_keywords(self, text: str) -> tuple[dict[Slot, SlotProposal], set[str]]:
-        """Find known phrases and blank them out so shorter phrases cannot reuse them."""
+    def _match_keywords(self, text: str,
+                        negated: set[int]) -> tuple[dict[Slot, SlotProposal], tuple[ExclusionProposal, ...], set[str]]:
+        """Find known phrases and blank them out so shorter phrases cannot reuse them.
+
+        Negated phrases become exclusions, so "not chinese but italian" gives both.
+        """
         found = {}
+        exclusions = []
         used = set()
 
         for phrase, slot, value in self.keywords:
             pattern = rf"\b{re.escape(phrase)}\b"
 
-            if slot in found or not re.search(pattern, text):
-                continue
+            for match in re.finditer(pattern, text):
+                if match.start() in negated:
+                    exclusions.append(ExclusionProposal(slot, value))
+                elif slot not in found:
+                    found[slot] = SlotProposal(slot, value)
+                else:
+                    continue
 
-            found[slot] = SlotProposal(slot, value)
-            used.update(phrase.split())
-            text = re.sub(pattern, " ", text)
+                used.update(phrase.split())
 
-        return found, used
+            text = re.sub(pattern, lambda match: " " * len(match.group()), text)
+
+        return found, tuple(dict.fromkeys(exclusions)), used
 
     @staticmethod
     def _is_candidate(word: str, used: set[str]) -> bool:
@@ -204,14 +286,16 @@ class KeywordSlotExtractor:
         return len(word) >= 3 and word not in used and word not in STOPWORDS
 
     @staticmethod
-    def _captured_words(text: str) -> list[tuple[Slot, str]]:
-        """Return the words that patterns capture, in pattern order."""
-        return [(slot, match.group(1)) for slot, pattern in PATTERNS for match in re.finditer(pattern, text)]
+    def _captured_words(text: str) -> list[tuple[Slot, str, int]]:
+        """Return the words that patterns capture with their position, in pattern order."""
+        return [(slot, match.group(1), match.start(1)) for slot, pattern in PATTERNS for match in re.finditer(pattern, text)]
 
-    def _match_reply(self, text: str, slot: Slot, used: set[str]) -> SlotProposal | None:
+    def _match_reply(self, text: str, slot: Slot, used: set[str], negated: set[int]) -> SlotProposal | None:
         """Map the first unused word that is close to a value of the requested slot."""
-        for word in re.findall(r"[\w']+", text):
-            if not self._is_candidate(word, used):
+        for match in re.finditer(r"[\w']+", text):
+            word = match.group()
+
+            if not self._is_candidate(word, used) or match.start() in negated:
                 continue
 
             value = self.matcher.closest(word, self.values[slot])

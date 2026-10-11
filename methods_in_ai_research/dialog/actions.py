@@ -12,8 +12,8 @@ from dataclasses import replace
 import pandas as pd
 import difflib
 from methods_in_ai_research.dialog.reasoning import infer, satisfies
-from methods_in_ai_research.dialog.restaurants import find_restaurants, restaurant_details
-from methods_in_ai_research.dialog.state import DialogState, Slot, SystemAction, SystemActionType
+from methods_in_ai_research.dialog.restaurants import PREFERENCE_COLUMNS, find_restaurants, restaurant_details
+from methods_in_ai_research.dialog.state import DialogState, Preference, Slot, SystemAction, SystemActionType
 import re
 
 
@@ -46,6 +46,25 @@ def ask_requirements(state: DialogState) -> tuple[DialogState, SystemAction]:
     return replace(state, requirements_asked=True, last_requested_slot=None), SystemAction(SystemActionType.ASK_REQUIREMENT)
 
 
+def describe(price: Preference, food: Preference, area: Preference) -> str:
+    """Describe a restaurant or the wanted one, e.g. "cheap italian restaurant in the centre".
+
+    Unknown and "don't care" values are left out, as are missing areas in the data.
+    """
+    words = [value for value in (price, food) if _is_known(value)] + ["restaurant"]
+    description = " ".join(words)
+
+    return f"{description} in the {area}" if _is_known(area) else description
+
+def _is_known(value: Preference) -> bool:
+    return isinstance(value, str) and value != ""
+
+def has_matches(state: DialogState, data: pd.DataFrame) -> bool:
+    """Check whether any restaurant fits the preferences, before asking for requirements."""
+    preferences = {Slot.FOOD: state.food, Slot.AREA: state.area, Slot.PRICE: state.price}
+    return not find_restaurants(data, preferences, state.excluded).empty
+
+
 def recommend(state: DialogState, data: pd.DataFrame) -> tuple[DialogState, SystemAction]:
     """Find all matching restaurants, shuffle them, and recommend the first one."""
     preferences = {Slot.FOOD: state.food, Slot.AREA: state.area, Slot.PRICE: state.price}
@@ -53,12 +72,18 @@ def recommend(state: DialogState, data: pd.DataFrame) -> tuple[DialogState, Syst
 
     names = []
 
-    for restaurant in find_restaurants(data, preferences).to_dict(orient="records"):
+    for restaurant in find_restaurants(data, preferences, state.excluded).to_dict(orient="records"):
         if satisfies(infer(restaurant), requirements):
             names.append(restaurant["restaurantname"])
 
     if not names:
-        return replace(state, current_restaurant_id=None, alternative_ids=()), SystemAction(SystemActionType.NO_MATCH)
+        # Tell apart "nothing fits the preferences" from "nothing fits the additional requirements".
+        no_match = SystemActionType.NO_MATCH_REQUIREMENTS if has_matches(state, data) else SystemActionType.NO_MATCH
+        description = describe(state.price, state.food, state.area)
+        article = "an" if description[0] in "aeiou" else "a"
+        action = SystemAction(no_match, parameters=(("description", f"{article} {description}"),))
+
+        return replace(state, current_restaurant_id=None, alternative_ids=()), action
 
     random.shuffle(names)
 
@@ -79,11 +104,30 @@ def _recommend_next(state: DialogState, data: pd.DataFrame) -> tuple[DialogState
 
     action = SystemAction(
         SystemActionType.RECOMMEND,
-        parameters=tuple((field, restaurant[field]) for field in ("restaurantname", "food", "area", "pricerange")),
+        parameters=(
+            ("restaurantname", restaurant["restaurantname"]),
+            ("description", describe(restaurant["pricerange"], restaurant["food"], restaurant["area"])),
+        ),
         explanation=tuple(inferences[property_] for property_, _ in state.requirements),
     )
 
     return replace(state, current_restaurant_id=name, alternative_ids=state.alternative_ids[1:]), action
+
+def check_fact(state: DialogState, data: pd.DataFrame) -> tuple[DialogState, SystemAction]:
+    """Answer a yes/no question about the current restaurant, e.g. "is it in the centre?"."""
+    if state.current_restaurant_id is None or not state.checked:
+        return state, SystemAction(SystemActionType.CLARIFY)
+
+    restaurant = restaurant_details(data, state.current_restaurant_id)
+    labels = {Slot.FOOD: "food", Slot.AREA: "area", Slot.PRICE: "price range"}
+
+    for slot, value in state.checked:
+        actual = restaurant[PREFERENCE_COLUMNS[slot]]
+
+        if actual != value:
+            return state, SystemAction(SystemActionType.FACT_FALSE, parameters=(("field", labels[slot]), ("value", actual)))
+
+    return state, SystemAction(SystemActionType.FACT_TRUE)
 
 def requested_detail(text: str) -> str | None:
     """Look for which piece of information the user asked for"""

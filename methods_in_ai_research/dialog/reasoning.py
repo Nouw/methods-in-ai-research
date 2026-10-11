@@ -23,8 +23,9 @@ RULES = (
     Rule(2, (("food", "romanian"),), RestaurantProperty.TOURISTIC, False, priority=1),
     Rule(3, (("crowdedness", "busy"),), RestaurantProperty.ASSIGNED_SEATS, True),
     Rule(4, (("length of stay", "long"),), RestaurantProperty.CHILDREN, False),
-    Rule(5, (("crowdedness", "busy"),), RestaurantProperty.ROMANTIC, False, priority=1),
-    Rule(6, (("length of stay", "long"),), RestaurantProperty.ROMANTIC, True),
+    Rule(5, (("crowdedness", "busy"),), RestaurantProperty.ROMANTIC, False),
+    # Like the reference dialogs, a long stay outweighs a busy restaurant.
+    Rule(6, (("length of stay", "long"),), RestaurantProperty.ROMANTIC, True, priority=1),
 )
 
 class RestaurantField(str, Enum):
@@ -39,23 +40,18 @@ class RestaurantField(str, Enum):
     CROWDEDNESS = "crowdedness"
     LENGTH_OF_STAY = "length of stay"
 
-# Assumed value when no rule fires for a property.
-DEFAULTS = {
-    RestaurantProperty.TOURISTIC: False,
-    RestaurantProperty.ASSIGNED_SEATS: False,
-    RestaurantProperty.CHILDREN: True,
-    RestaurantProperty.ROMANTIC: False,
-}
-
 @dataclass(frozen=True)
 class Inference:
     property: RestaurantProperty
     value: bool
-    rule: Rule | None = None
+    rule: Rule
     overruled: tuple[Rule, ...] = ()
 
 def infer(restaurant: Mapping[str, str]) -> dict[RestaurantProperty, Inference]:
-    """Apply every rule that fires and resolve condtradictions by priority."""
+    """Apply every rule that fires and resolve contradictions by priority.
+
+    A property that no rule derives is left out, because nothing is known about it.
+    """
     fired = [rule for rule in RULES if all(restaurant[column] == value for column, value in rule.antecedent)]
     inferences = {}
 
@@ -63,7 +59,6 @@ def infer(restaurant: Mapping[str, str]) -> dict[RestaurantProperty, Inference]:
         rules = sorted((rule for rule in fired if rule.consequent is property_), key=lambda rule: rule.priority, reverse=True)
 
         if not rules:
-            inferences[property_] = Inference(property_, DEFAULTS[property_])
             continue
 
         winner = rules[0]
@@ -73,5 +68,7 @@ def infer(restaurant: Mapping[str, str]) -> dict[RestaurantProperty, Inference]:
     return inferences
 
 def satisfies(inferences: Mapping[RestaurantProperty, Inference], requirements: Mapping[RestaurantProperty, bool]) -> bool:
-    return all(inferences[property_].value == wanted for property_, wanted in requirements.items())
+    """Check that a rule derives every requested property with the requested value."""
+    return all(property_ in inferences and inferences[property_].value == wanted
+               for property_, wanted in requirements.items())
 
