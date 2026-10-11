@@ -36,4 +36,4 @@ source .venv/bin/activate
 To see the specific commands used by the classification and dialog system.
 Take a look at their respective markdown files:
 - [Classification](./docs/classification.md)
-- [Dialoag](./docs/dialog.md)
+- [Dialog](./docs/dialog.md)
